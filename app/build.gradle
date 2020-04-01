@@ -1,0 +1,29 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+group 'com.malin.java'
+version '1.0.0'
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+mainClassName = "com.malin.java.Main"
+
+
+jar {
+    baseName = 'malin-java'
+    version = '1.0.0'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes "Manifest-Version": 1.0, 'Main-Class': 'com.malin.java.Main'
+    }
+}
+dependencies {
+    compile project(path: ':skeletalImplementation')
+}
+
+

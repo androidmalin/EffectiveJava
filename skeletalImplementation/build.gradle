@@ -1,0 +1,26 @@
+apply plugin: 'java-library'
+
+group 'com.malin.java.lib'
+version '1.0.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+}
+
+jar {
+    baseName = 'malin-java-lib'
+    version = '1.0.0'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+dependencies {
+}
