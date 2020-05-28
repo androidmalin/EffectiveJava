@@ -9,7 +9,7 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-mainClassName = "com.malin.java.Main"
+mainClassName = "com.malin.proxy.Main"
 
 
 jar {
@@ -23,7 +23,7 @@ jar {
         }
     }
     manifest {
-        attributes "Manifest-Version": 1.0, 'Main-Class': 'com.malin.java.Main'
+        attributes "Manifest-Version": 1.0, 'Main-Class': 'com.malin.proxy.Main'
     }
 }
 dependencies {
