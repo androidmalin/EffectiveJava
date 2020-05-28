@@ -12,7 +12,7 @@ public class DrinkVending extends VendingService implements IVending {
         }
     }
 
-    private AbstractVendingDelegate delegate = new AbstractVendingDelegate();
+    private final AbstractVendingDelegate delegate = new AbstractVendingDelegate();
 
     @Override
     public void start() {

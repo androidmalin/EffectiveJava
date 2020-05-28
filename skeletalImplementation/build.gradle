@@ -13,7 +13,9 @@ repositories {
 }
 
 jar {
+    //noinspection GrDeprecatedAPIUsage
     baseName = 'malin-java-lib'
+    //noinspection GrDeprecatedAPIUsage
     version = '1.0.0'
     from {
         configurations.compile.collect {
