@@ -15,6 +15,7 @@ public class CoffeeCup implements Cup {
     /**
      * @return the cupSize
      */
+    @Override
     public double getCupSize() {
         return cupSize;
     }
@@ -29,6 +30,7 @@ public class CoffeeCup implements Cup {
     /**
      * @return the type
      */
+    @Override
     public CoffeeType getType() {
         return type;
     }

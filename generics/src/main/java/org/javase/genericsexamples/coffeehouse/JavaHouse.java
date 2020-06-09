@@ -10,12 +10,12 @@ import java.util.List;
  */
 public class JavaHouse {
 
-    List<CoffeeSaleType> purchase = new ArrayList<>();
-    List<Cup> cupsPurchased = new ArrayList<>();
-    List<Bag> bagsPurchased = new ArrayList<>();
-    List<Dark> darkTypes = new ArrayList<>();
-    List<CoffeeType> mediumTypes = new ArrayList<>();
-    List<Light> lightTypes = new ArrayList<>();
+    private List<CoffeeSaleType> purchase = new ArrayList<>();
+    private List<Cup> cupsPurchased = new ArrayList<>();
+    private List<Bag> bagsPurchased = new ArrayList<>();
+    private List<Dark> darkTypes = new ArrayList<>();
+    private List<CoffeeType> mediumTypes = new ArrayList<>();
+    private List<Light> lightTypes = new ArrayList<>();
 
     public JavaHouse() {
 
@@ -47,9 +47,7 @@ public class JavaHouse {
      * @param cups cups
      */
     public void addCups(List<CoffeeCup> cups) {
-        for (CoffeeCup c : cups) {
-            cupsPurchased.add(c);
-        }
+        cupsPurchased.addAll(cups);
     }
 
     /**
@@ -69,9 +67,7 @@ public class JavaHouse {
      * @param bags bags
      */
     public void addBags(List<CoffeeBag> bags) {
-        for (CoffeeBag bag : bags) {
-            bagsPurchased.add(bag);
-        }
+        bagsPurchased.addAll(bags);
     }
 
     /**
@@ -82,9 +78,7 @@ public class JavaHouse {
      * @param saleList saleList
      */
     public <T extends CoffeeSaleType> void addToPurchase(List<T> saleList) {
-        for (CoffeeSaleType sale : saleList) {
-            purchase.add(sale);
-        }
+        purchase.addAll(saleList);
     }
 
     /**
@@ -124,10 +118,9 @@ public class JavaHouse {
      * @return
      */
     public <T> long countTypes(T coffeeType) {
-        long count = purchase.stream().filter(
+        return purchase.stream().filter(
                 (sale) -> (sale.getType().getType().equals(coffeeType)))
                 .count();
-        return count;
     }
 
     /**

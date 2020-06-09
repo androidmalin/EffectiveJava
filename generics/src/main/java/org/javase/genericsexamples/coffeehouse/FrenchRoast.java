@@ -10,7 +10,7 @@ public class FrenchRoast extends CoffeeType implements Dark {
     List<String> description;
 
     public FrenchRoast() {
-        description = new ArrayList();
+        description = new ArrayList<>();
         description.add(AROMATIC);
         description.add(BOLD);
         description.add(WHOLE_BEAN);

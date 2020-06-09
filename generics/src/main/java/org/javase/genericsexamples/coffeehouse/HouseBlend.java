@@ -11,7 +11,7 @@ public class HouseBlend extends CoffeeType implements Light {
     List<String> description;
 
     public HouseBlend() {
-        description = new ArrayList();
+        description = new ArrayList<>();
         description.add(TOASTY);
         description.add(GROUND);
     }

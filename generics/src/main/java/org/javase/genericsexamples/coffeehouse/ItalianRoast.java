@@ -10,7 +10,7 @@ public class ItalianRoast extends CoffeeType implements Dark {
     List<String> description;
 
     public ItalianRoast() {
-        description = new ArrayList();
+        description = new ArrayList<>();
         description.add(BOLD);
         description.add(ROBUST);
         description.add(WINEY_UNDERTONES);
