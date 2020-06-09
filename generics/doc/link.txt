@@ -1,0 +1,21 @@
+
+0. generics
+https://www.oracle.com/cn/technical-resources/articles/java/juneau-generics.html
+https://github.com/juneau001/GenericsExamples
+
+oracle generics tutorial
+https://docs.oracle.com/javase/tutorial/java/generics/index.html
+https://docs.oracle.com/javase/tutorial/extra/generics/index.html
+
+
+1. understanding-the-use-cases-of-generics
+https://dzone.com/articles/hack-1-understanding-the-use-cases-of-generics
+
+2. Compile Time Dynamism Using Java Generics
+https://dzone.com/articles/compile-time-dynamism-using-java-generics
+
+3. 5 Important Points about Java Generics
+https://dzone.com/articles/5-things-you-should-know-about-java-generics
+
+4. java-generics-and-erasure
+https://dzone.com/articles/java-generics-and-erasure
