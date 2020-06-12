@@ -1,8 +1,8 @@
-package generics.fabonacci;
+package generics.fibonacci;
 
 import generics.Generator;
 
-public class Fabonacci implements Generator<Integer> {
+public class Fibonacci implements Generator<Integer> {
     private int count = 0;
 
     @Override
@@ -16,9 +16,9 @@ public class Fabonacci implements Generator<Integer> {
     }
 
     public static void main(String[] args) {
-        Fabonacci fabonacci = new Fabonacci();
+        Fibonacci fibonacci = new Fibonacci();
         for (int i = 0; i < 18; i++) {
-            System.out.println(fabonacci.next());
+            System.out.println(fibonacci.next());
         }
     }
 }

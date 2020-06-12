@@ -1,8 +1,8 @@
-package generics.fabonacci;
+package generics.fibonacci;
 
 import java.util.Iterator;
 
-public class IterableFabonacci extends Fabonacci implements Iterable<Integer> {
+public class IterableFabonacci extends Fibonacci implements Iterable<Integer> {
 
     private int n;
 
