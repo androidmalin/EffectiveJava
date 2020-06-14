@@ -27,6 +27,8 @@ jar {
     }
 }
 dependencies {
+    // https://mvnrepository.com/artifact/net.bytebuddy/byte-buddy
+    compile 'net.bytebuddy:byte-buddy:1.10.11'
     compile project(path: ':skeletalImplementation')
 }
 

@@ -1,5 +1,4 @@
-//: generics/WatercolorSets.java
-package generics; /* Added by Eclipse.py */
+package generics;
 
 import java.util.EnumSet;
 import java.util.Set;

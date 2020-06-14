@@ -44,8 +44,7 @@ public class RandomGenerator {
         }
     }
 
-    public static class
-    Integer implements Generator<java.lang.Integer> {
+    public static class Integer implements Generator<java.lang.Integer> {
         private int mod = 10000;
 
         public Integer() {
@@ -60,8 +59,7 @@ public class RandomGenerator {
         }
     }
 
-    public static class
-    Long implements Generator<java.lang.Long> {
+    public static class Long implements Generator<java.lang.Long> {
         private int mod = 10000;
 
         public Long() {

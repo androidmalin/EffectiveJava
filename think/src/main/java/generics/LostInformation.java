@@ -1,5 +1,4 @@
-//: generics/LostInformation.java
-package generics; /* Added by Eclipse.py */
+package generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;

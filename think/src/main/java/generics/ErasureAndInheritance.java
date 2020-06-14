@@ -1,4 +1,3 @@
-//: generics/ErasureAndInheritance.java
 package generics;
 
 class GenericBase<T> {

@@ -1,4 +1,3 @@
-//: holding/LinkedListFeatures.java
 package holding;
 
 import java.util.LinkedList;

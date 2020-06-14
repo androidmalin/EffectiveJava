@@ -1,4 +1,3 @@
-//: generics/watercolors/Watercolors.java
 package generics.watercolors;
 
 public enum Watercolors {

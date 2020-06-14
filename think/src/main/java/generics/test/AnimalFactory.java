@@ -4,6 +4,7 @@ package generics.test;
 //5.
 class Animal<T> {
     T t;
+
     public <F extends FactoryIII<T>> Animal(F factory) {
         t = factory.create();
     }

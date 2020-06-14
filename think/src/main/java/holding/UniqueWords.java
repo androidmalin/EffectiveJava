@@ -1,4 +1,3 @@
-//: holding/UniqueWords.java
 package holding;
 
 import net.mindview.util.TextFile;

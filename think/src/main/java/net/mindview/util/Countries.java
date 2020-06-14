@@ -1,4 +1,3 @@
-//: net/mindview/util/Countries.java
 // "Flyweight" Maps and Lists of sample data.
 package net.mindview.util;
 

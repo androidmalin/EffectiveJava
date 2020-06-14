@@ -1,4 +1,3 @@
-//: holding/ModifyingArraysAsList.java
 package holding;
 
 import java.util.ArrayList;
@@ -24,11 +23,4 @@ public class ModifyingArraysAsList {
         System.out.println("After shuffling: " + list2);
         System.out.println("array: " + Arrays.toString(ia));
     }
-} /* Output:
-Before shuffling: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-After shuffling: [4, 6, 3, 1, 8, 7, 2, 5, 10, 9]
-array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-Before shuffling: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-After shuffling: [9, 1, 6, 3, 7, 2, 5, 10, 4, 8]
-array: [9, 1, 6, 3, 7, 2, 5, 10, 4, 8]
-*///:~
+}

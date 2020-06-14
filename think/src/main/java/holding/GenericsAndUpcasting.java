@@ -1,4 +1,3 @@
-//: holding/GenericsAndUpcasting.java
 package holding;
 
 import java.util.ArrayList;
@@ -25,9 +24,4 @@ public class GenericsAndUpcasting {
         for (Apple c : apples)
             System.out.println(c);
     }
-} /* Output: (Sample)
-GrannySmith@7d772e
-Gala@11b86e7
-Fuji@35ce36
-Braeburn@757aef
-*///:~
+}
