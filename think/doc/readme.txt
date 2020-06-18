@@ -12,8 +12,17 @@
      的电子文档中找到，读者可以从www.MindView.net处购买此文档。
 
 
-    onjava8
+    On Java 8
+    英文版
+    https://b-ok.asia/book/5261294/9a3ce7?regionChanged
+    配套代码
+    https://github.com/BruceEckel/OnJava8-Examples
+
+    翻译版
+    https://github.com/LingCoder/OnJava8/blob/master/SUMMARY.md
     https://www.javascriptc.com/books/onjava8/20-Generics.html#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BC%98%E5%8A%A3
+
+
 
 
     图片在线识别
@@ -21,6 +30,11 @@
 
     Thinking in java
     https://cread.jd.com/read/startRead.action?bookId=30534990&readType=3
+    https://github.com/LingCoder/OnJava8/blob/master/docs/book/20-Generics.md#%E7%AE%80%E5%8D%95%E6%B3%9B%E5%9E%8B
 
+    配套代码
+    https://github.com/BruceEckel/TIJ4-code
 
+    联系题目答案
+    http://greggordon.org/java/tij4/solutions.htm
     TIJ4-solutions.zip
