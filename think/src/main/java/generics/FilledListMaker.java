@@ -18,13 +18,3 @@ public class FilledListMaker<T> {
         System.out.println(list);
     }
 }
-
-class Fill<String> {
-    List<String> create(String t, int n) {
-        List<String> result = new ArrayList<String>();
-        for (int i = 0; i < n; i++) {
-            result.add(t);
-        }
-        return result;
-    }
-}

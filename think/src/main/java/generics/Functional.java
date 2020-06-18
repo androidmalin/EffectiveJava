@@ -35,8 +35,9 @@ public class Functional {
         Iterator<T> it = seq.iterator();
         if (it.hasNext()) {
             T result = it.next();
-            while (it.hasNext())
+            while (it.hasNext()) {
                 result = combiner.combine(result, it.next());
+            }
             return result;
         }
         // If seq is the empty list:
@@ -148,20 +149,32 @@ public class Functional {
     }
 
     /**
-     * 进阶阅读
-     * 泛型的入门文档是 《Generics in the Java Programming Language》，作者是 Gilad Bracha，
-     * 可以从 https://www.oracle.com/technetwork/java/javase/generics-tutorial-159168.pdf
      * <p>
-     * Angelika Langer 的《Java Generics FAQs》是一份非常有帮助的资料，可以从
-     * http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.html 获取。
-     * http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.pdf
+     * 如果只查看尝试添加对象的过程，就会看到这是在多个类中的公共操作，但
+     * 是这个操作没有在任何我们可以指定的基类中表示一有时甚至可以使用"+"操作符，
+     * 而其他时间可以使用某种add方法。
      * <p>
-     * 可以在Torgerson、Ernst、Hansen、vonderAhe、Bracha和Gafter所著的
-     * 《AddingWiIdcardst0theJavaProgrammingLanguage》中找到更多有关通
-     * 配符的知识，它位于www.j0t.fm/issues/issue—2004—12/articIe50
-     * 所选习题的答案都可以在名为The Thinking in JavaAnnotated SoIution
-     * Guide的电子文档中找到，读者可以从www.MindView.net处购买此文档。
-     *
+     * 这是在试图编写泛化代码的时候通常会碰到的情况，因为你想将这些代码应用于多个类上
+     * 特别是，像本例一样，作用于多个已经存在且我们不能"修正"的类上。
+     * <p>
+     * 即使你可以将这种情况窄化到Number的子类，这个超类也不包括任何有关"可添加性"的东西。
+     * 解决方案是使用策略设计模式，这种设计模式可以产生更优雅的代码，
+     * 因为它将"变化的事物"完全隔离到了一个函数对象中。
+     * <p>
+     * 函数对象就是在某种程度上行为像函数的对象,一般地，会有一个相关的方法
+     * （在支持操作符重载的语言中，可以创建对这个方法的调用，而这个调用看起来就和普通的方法调用一样）。
+     * <p>
+     * 函数对象的价值就在于，与普通方法不同，它们可以传递出去，并且还可
+     * 以拥有在多个调用之间持久化的状态。
+     * <p>
+     * 当然，可以用类中的任何方法来实现与此相似的操作，
+     * 但是（与使用任何设计模式一样）函数对象主要是由其目的来区别的。
+     * <p>
+     * 这里的目的就是要创建某种事物，使它的行为就像是一个可以传递出去的单
+     * 个方法一样，这样，它就和策略设计模式紧耦合了，有时甚至无法区分。
+     * <p>
+     * 尽管可以发现我使用了大量的设计模式，但是在这里它们之间的界限是模糊
+     * 的:我们在创建执行适配操作的函数对象，而它们将被传递到用作策略的方法中。
      */
     public static void main(String[] args) {
         // Generics, varargs & boxing working together:
