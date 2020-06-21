@@ -38,3 +38,6 @@
     联系题目答案
     http://greggordon.org/java/tij4/solutions.htm
     TIJ4-solutions.zip
+
+
+    http://www.cs.ust.hk/~dekai/library/ECKEL_Bruce/
