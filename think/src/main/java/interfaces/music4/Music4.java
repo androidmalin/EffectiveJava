@@ -1,4 +1,3 @@
-
 package interfaces.music4;
 
 import polymorphism.music.Note;
