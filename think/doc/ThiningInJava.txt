@@ -1,0 +1,24 @@
+
+
+1.京东电子书(目前唯一的中文版购买渠道)
+https://cread.jd.com/read/startRead.action?bookId=30534990&readType=1
+
+实体书
+https://item.jd.com/10058164.html
+
+配套代码
+https://github.com/BruceEckel/TIJ4-code
+
+练习题答案
+http://greggordon.org/java/tij4/solutions.htm
+
+
+2.阅读工具(网页在线阅读)
+2.1 chrome 浏览器黑色背景插件
+https://chrome.google.com/webstore/detail/dark-mode/dmghijelimhndkbmpgbldicpogfkceaj
+
+2.2 腾讯截图(方便截图,划线阅读)
+https://jietu.qq.com/
+
+2.3 在线文字识别(方便截图后,取出文字部分)
+http://ocrmaker.com/

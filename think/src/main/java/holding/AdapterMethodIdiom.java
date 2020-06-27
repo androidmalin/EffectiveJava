@@ -1,12 +1,12 @@
 package holding;
-// The "Adapter Method" idiom allows you to use foreach
-// with additional kinds of Iterables.
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
+// The "Adapter Method" idiom allows you to use foreach
+// with additional kinds of Iterables.
 class ReversibleArrayList<T> extends ArrayList<T> {
     public ReversibleArrayList(Collection<T> c) {
         super(c);
@@ -38,8 +38,9 @@ class ReversibleArrayList<T> extends ArrayList<T> {
 public class AdapterMethodIdiom {
     public static void main(String[] args) {
         ReversibleArrayList<String> ral =
-                new ReversibleArrayList<String>(
-                        Arrays.asList("To be or not to be".split(" ")));
+                new ReversibleArrayList<>(
+                        Arrays.asList("To be or not to be".split(" "))
+                );
         // Grabs the ordinary iterator via iterator():
         for (String s : ral)
             System.out.print(s + " ");

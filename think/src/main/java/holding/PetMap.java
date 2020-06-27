@@ -15,6 +15,7 @@ public class PetMap {
         petMap.put("My Cat", new Cat("Molly"));
         petMap.put("My Dog", new Dog("Ginger"));
         print(petMap);
+
         Pet dog = petMap.get("My Dog");
         print(dog);
         print(petMap.containsKey("My Dog"));

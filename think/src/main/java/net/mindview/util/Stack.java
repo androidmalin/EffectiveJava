@@ -3,7 +3,7 @@ package net.mindview.util;
 import java.util.LinkedList;
 
 public class Stack<T> {
-    private LinkedList<T> storage = new LinkedList<T>();
+    private LinkedList<T> storage = new LinkedList<>();
 
     public void push(T v) {
         storage.addFirst(v);
@@ -21,6 +21,7 @@ public class Stack<T> {
         return storage.isEmpty();
     }
 
+    @Override
     public String toString() {
         return storage.toString();
     }
