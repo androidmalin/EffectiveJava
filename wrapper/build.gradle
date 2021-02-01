@@ -1,5 +1,4 @@
-apply plugin: 'application'
-apply plugin: 'java'
+apply plugin: 'java-library'
 
 group 'com.malin.java'
 version '1.0.0'
@@ -9,12 +8,15 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-mainClassName = "com.malin.java.Main"
-
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+}
 
 jar {
     //noinspection GrDeprecatedAPIUsage
-    baseName = 'malin-java'
+    baseName = 'malin-java-lib'
     //noinspection GrDeprecatedAPIUsage
     version = '1.0.0'
     from {
@@ -22,12 +24,7 @@ jar {
             it.isDirectory() ? it : zipTree(it)
         }
     }
-    manifest {
-        attributes "Manifest-Version": 1.0, 'Main-Class': 'com.malin.java.Main'
-    }
 }
+
 dependencies {
-    compile project(path: ':skeletalImplementation')
 }
-
-

@@ -1,5 +1,9 @@
-package com.malin.java.lib;
+package com.malin.java.lib.java7;
 
+
+/**
+ * Step 2:创建一个抽象类实现这个接口，并且在抽象类中实现一些接口中的通用方法.
+ */
 public abstract class AbstractVending implements IVending {
 
     @Override

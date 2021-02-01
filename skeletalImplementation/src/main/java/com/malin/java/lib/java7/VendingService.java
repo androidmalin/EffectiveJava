@@ -1,4 +1,4 @@
-package com.malin.java.lib;
+package com.malin.java.lib.java7;
 
 class VendingService {
     void service() {

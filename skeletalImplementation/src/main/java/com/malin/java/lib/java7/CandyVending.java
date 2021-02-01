@@ -1,4 +1,4 @@
-package com.malin.java.lib;
+package com.malin.java.lib.java7;
 
 public class CandyVending implements IVending {
 

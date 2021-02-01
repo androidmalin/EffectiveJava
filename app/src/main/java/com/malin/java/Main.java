@@ -1,6 +1,6 @@
 package com.malin.java;
 
-import com.malin.java.lib.VendingManager;
+import com.malin.java.lib.java7.VendingManager;
 
 /**
  * https://dzone.com/articles/favour-skeletal-interface-in-java
