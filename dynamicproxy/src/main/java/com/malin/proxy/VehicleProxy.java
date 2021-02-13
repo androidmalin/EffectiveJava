@@ -11,6 +11,7 @@ public class VehicleProxy implements IVehicle {
         this.iVehicle = iVehicle;
     }
 
+    @Override
     public void start() {
         System.out.println("VehicleProxy: Begin of start()");
         iVehicle.start();

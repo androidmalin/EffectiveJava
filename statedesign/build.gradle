@@ -1,0 +1,12 @@
+apply plugin: 'application'
+apply plugin: 'java-library'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    compile group: 'org.springframework.statemachine', name: 'spring-statemachine-autoconfigure', version: '2.4.0'
+    compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.4.2'
+}

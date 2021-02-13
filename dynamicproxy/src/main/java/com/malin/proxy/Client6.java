@@ -9,6 +9,8 @@ import java.lang.reflect.Proxy;
 public class Client6 {
     public static void main(String[] args) {
         IShape rect = new Rectangle();
+        //System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+        //System.getProperties().put("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true");
         IShape s = (IShape) Proxy.newProxyInstance(
                 IShape.class.getClassLoader(),
                 new Class[]{IShape.class},
