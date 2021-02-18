@@ -4,7 +4,7 @@ public class ToyDuck extends Duck {
 
 
     public ToyDuck() {
-        // TODO Auto-generated constructor stub
+        
         flyBehavior = new NoFlyBehavior();
     }
 

@@ -5,12 +5,10 @@ import java.util.HashMap;
 
 /**
  * 变量的解释器
- *
- * @author Administrator
  */
 public class VarExpression extends Expression {
 
-    private String key; // key=a,key=b,key=c
+    private final String key; // key=a,key=b,key=c
 
     public VarExpression(String key) {
         this.key = key;

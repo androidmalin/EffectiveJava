@@ -4,7 +4,7 @@ public class DepartmentApprover extends Approver {
 
 
     public DepartmentApprover(String name) {
-        // TODO Auto-generated constructor stub
+        
         super(name);
     }
 

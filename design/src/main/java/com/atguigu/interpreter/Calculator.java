@@ -6,7 +6,7 @@ import java.util.Stack;
 public class Calculator {
 
     // 定义表达式
-    private Expression expression;
+    private final Expression expression;
 
     // 构造函数传参，并解析
     public Calculator(String expStr) { // expStr = a+b
@@ -15,8 +15,8 @@ public class Calculator {
         // 表达式拆分成字符数组
         char[] charArray = expStr.toCharArray();// [a, +, b]
 
-        Expression left = null;
-        Expression right = null;
+        Expression left;
+        Expression right;
         //遍历我们的字符数组， 即遍历  [a, +, b]
         //针对不同的情况，做处理
         for (int i = 0; i < charArray.length; i++) {
@@ -24,12 +24,17 @@ public class Calculator {
                 case '+': //
                     left = stack.pop();// 从stack取出left => "a"
                     right = new VarExpression(String.valueOf(charArray[++i]));// 取出右表达式 "b"
-                    stack.push(new AddExpression(left, right));// 然后根据得到left 和 right 构建 AddExpresson加入stack
+                    stack.push(new AddExpression(left, right));// 然后根据得到left 和 right 构建 AddExpression加入stack
                     break;
                 case '-': //
                     left = stack.pop();
                     right = new VarExpression(String.valueOf(charArray[++i]));
                     stack.push(new SubExpression(left, right));
+                    break;
+                case '*': //
+                    left = stack.pop();
+                    right = new VarExpression(String.valueOf(charArray[++i]));
+                    stack.push(new CExpression(left, right));
                     break;
                 default:
                     //如果是一个 Var 就创建要给 VarExpression 对象，并push到 stack

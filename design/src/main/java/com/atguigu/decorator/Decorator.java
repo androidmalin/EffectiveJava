@@ -1,26 +1,23 @@
 package com.atguigu.decorator;
 
 public class Decorator extends Drink {
-    private Drink obj;
+    private final Drink drink;
 
-    public Decorator(Drink obj) { //组合
-        // TODO Auto-generated constructor stub
-        this.obj = obj;
+    //组合
+    public Decorator(Drink drink) {
+        this.drink = drink;
     }
 
     @Override
     public float cost() {
-
-        // getPrice 自己价格
-        return super.getPrice() + obj.cost();
+        return super.getPrice() + drink.cost();
     }
 
+    /**
+     * 输出被装饰者的信息
+     */
     @Override
-    public String getDes() {
-
-        // obj.getDes() 输出被装饰者的信息
-        return des + " " + getPrice() + " && " + obj.getDes();
+    public String getDescription() {
+        return description + " " + getPrice() + " && " + drink.getDescription();
     }
-
-
 }

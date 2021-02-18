@@ -1,16 +1,18 @@
 package com.atguigu.decorator;
 
 public abstract class Drink {
-
-    public String des; // 描述
+    /**
+     * 描述
+     */
+    public String description;
     private float price = 0.0f;
 
-    public String getDes() {
-        return des;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDes(String des) {
-        this.des = des;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public float getPrice() {
@@ -21,8 +23,10 @@ public abstract class Drink {
         this.price = price;
     }
 
-    //计算费用的抽象方法
-    //子类来实现
+    /**
+     * 计算费用的抽象方法
+     * 子类来实现
+     */
     public abstract float cost();
 
 }

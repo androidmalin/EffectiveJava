@@ -4,7 +4,7 @@ public class CoffeeMachine extends Colleague {
 
     public CoffeeMachine(Mediator mediator, String name) {
         super(mediator, name);
-        // TODO Auto-generated constructor stub
+        
         mediator.Register(name, this);
     }
 

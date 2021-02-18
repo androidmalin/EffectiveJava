@@ -6,7 +6,7 @@ public class Department extends OrganizationComponent {
 
     public Department(String name, String des) {
         super(name, des);
-        // TODO Auto-generated constructor stub
+        
     }
 
 

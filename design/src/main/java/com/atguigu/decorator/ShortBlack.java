@@ -3,7 +3,7 @@ package com.atguigu.decorator;
 public class ShortBlack extends Coffee {
 
     public ShortBlack() {
-        setDes(" shortblack ");
+        setDescription(" ShortBlack ");
         setPrice(4.0f);
     }
 }

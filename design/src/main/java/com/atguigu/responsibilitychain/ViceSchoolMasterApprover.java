@@ -3,7 +3,7 @@ package com.atguigu.responsibilitychain;
 public class ViceSchoolMasterApprover extends Approver {
 
     public ViceSchoolMasterApprover(String name) {
-        // TODO Auto-generated constructor stub
+        
         super(name);
     }
 

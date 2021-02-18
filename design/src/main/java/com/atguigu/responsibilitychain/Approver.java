@@ -6,7 +6,7 @@ public abstract class Approver {
     String name; // 名字
 
     public Approver(String name) {
-        // TODO Auto-generated constructor stub
+        
         this.name = name;
     }
 

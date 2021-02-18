@@ -5,7 +5,7 @@ public class PekingDuck extends Duck {
 
     //假如北京鸭可以飞翔，但是飞翔技术一般
     public PekingDuck() {
-        // TODO Auto-generated constructor stub
+        
         flyBehavior = new BadFlyBehavior();
 
     }

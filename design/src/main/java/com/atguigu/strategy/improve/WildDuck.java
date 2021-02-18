@@ -5,7 +5,7 @@ public class WildDuck extends Duck {
 
     //构造器，传入FlyBehavor 的对象
     public WildDuck() {
-        // TODO Auto-generated constructor stub
+        
         flyBehavior = new GoodFlyBehavior();
     }
 
