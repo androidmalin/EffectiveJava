@@ -8,3 +8,8 @@
 .externalNativeBuild
 .cxx
 *.obj
+/design-samples
+.project
+.classpath
+.settings
+bin/

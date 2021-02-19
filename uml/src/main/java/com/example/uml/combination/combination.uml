@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.uml.combination.Body</OriginalElement>
+  <nodes>
+    <node x="0.0" y="91.0">com.example.uml.combination.Body</node>
+    <node x="0.0" y="182.0">com.example.uml.combination.Head</node>
+    <node x="0.0" y="0.0">com.example.uml.combination.Human</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="64.0" y="114.0" />
+  <SelectedNodes>
+    <node>com.example.uml.combination.Body</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

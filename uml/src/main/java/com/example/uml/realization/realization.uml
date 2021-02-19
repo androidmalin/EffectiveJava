@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.uml.realization.InterfaceDemo</OriginalElement>
+  <nodes>
+    <node x="0.0" y="96.0">com.example.uml.realization.InterfaceImpl</node>
+    <node x="0.0" y="0.0">com.example.uml.realization.InterfaceDemo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.uml.realization.InterfaceImpl" target="com.example.uml.realization.InterfaceDemo">
+      <point x="0.0" y="-23.0" />
+      <point x="0.0" y="23.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="107.0" y="71.0" />
+  <SelectedNodes>
+    <node>com.example.uml.realization.InterfaceDemo</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

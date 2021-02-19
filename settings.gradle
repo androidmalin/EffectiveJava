@@ -1,26 +1,89 @@
 rootProject.name = 'EffectiveJava'
 include 'app'
-include 'dynamicproxy'
-include 'skeletalImplementation'
 include 'generics'
-include 'think'
-include 'wrapper'
-include 'bridgePattern'
-include 'adapterDesign'
-include 'bridgePattern2'
-include 'decoratorPattern'
-include 'design'
-include 'builderdesign'
-include 'factorydesign'
-include 'protodesign'
-include 'singledesign'
-include 'nullobjdesign'
-include 'commanddesign'
-include 'statedesign'
-include 'mementodesign'
 include 'interfaceabs'
-include 'springdesign'
-include 'templatedesign'
-include 'strategydesign'
-include 'emptydesign'
-include 'delegatedesign'
+include 'think'
+include 'uml'
+
+//Creational Patterns (创建型设计模式)
+//1. Factory Method（工厂方法）
+//2. Abstract Factory（抽象工厂）
+//3. Builder（建造者）
+//4. Prototype（原型）
+//5. Singleton（单例）
+include ':factory_patterns'
+include ':builder_patterns'
+include ':single_patterns'
+include ':proto_patterns'
+project(':factory_patterns').projectDir = new File('patterns_creational/factory_patterns')
+project(':builder_patterns').projectDir = new File('patterns_creational/builder_patterns')
+project(':single_patterns').projectDir = new File('patterns_creational/single_patterns')
+project(':proto_patterns').projectDir = new File('patterns_creational/proto_patterns')
+
+
+//Structural Patterns（结构型模式）
+//1. Adapter Class/Object（适配器）
+//2. Bridge（桥接）
+//3. Composite（组合）
+//4. Decorator（装饰）
+//5. Facade（外观）
+//6. Flyweight（享元）
+//7. Proxy（代理）
+include ':adapter_patterns'
+include ':bridge_patterns'
+include ':bridge_patterns2'
+include ':composite_patterns'
+include ':decorator_patterns'
+include ':facade_patterns'
+include ':dynamicproxy_patterns'
+project(':adapter_patterns').projectDir = new File('patterns_structural/adapter_patterns')
+project(':bridge_patterns').projectDir = new File('patterns_structural/bridge_patterns')
+project(':bridge_patterns2').projectDir = new File('patterns_structural/bridge_patterns2')
+project(':composite_patterns').projectDir = new File('patterns_structural/composite_patterns')
+project(':decorator_patterns').projectDir = new File('patterns_structural/decorator_patterns')
+project(':facade_patterns').projectDir = new File('patterns_structural/facade_patterns')
+project(':dynamicproxy_patterns').projectDir = new File('patterns_structural/dynamicproxy_patterns')
+
+
+//Behavioral Patterns(行为型设计模式)
+//1. Interpreter（解释器）
+//2. Template Method（模板方法）
+//3. Chain of Responsibility（责任链）
+//4. Command（命令）
+//5. Iterator（迭代器）
+//6. Mediator（中介者）
+//7. Memento（备忘录）
+//8. Observer（观察者）
+//9. State（状态）
+//10. Strategy（策略）
+//11. Visitor（访问者）
+include ':template_patterns'
+include ':command_patterns'
+include ':memento_patterns'
+include ':strategy_patterns'
+include ':state_patterns'
+project(':template_patterns').projectDir = new File('patterns_behavioral/template_patterns')
+project(':command_patterns').projectDir = new File('patterns_behavioral/command_patterns')
+project(':memento_patterns').projectDir = new File('patterns_behavioral/memento_patterns')
+project(':strategy_patterns').projectDir = new File('patterns_behavioral/strategy_patterns')
+project(':state_patterns').projectDir = new File('patterns_behavioral/state_patterns')
+
+
+//new Patterns(行为型设计模式)
+include ':nullobj_patterns'
+project(':nullobj_patterns').projectDir = new File('patterns_new/nullobj_patterns')
+
+
+//other Patterns
+include ':spring_patterns'
+include ':empty_patterns'
+include ':delegate_patterns'
+include ':skeletalImplementation'
+project(':spring_patterns').projectDir = new File('patterns_other/spring_patterns')
+project(':empty_patterns').projectDir = new File('patterns_other/empty_patterns')
+project(':delegate_patterns').projectDir = new File('patterns_other/delegate_patterns')
+project(':skeletalImplementation').projectDir = new File('patterns_other/skeletalImplementation')
+
+//patterns example
+include ':design'
+project(':design').projectDir = new File('patterns_example/design')

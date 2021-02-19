@@ -1,0 +1,11 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+}
