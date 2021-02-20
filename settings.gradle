@@ -34,6 +34,8 @@ project(':proto_patterns').projectDir = new File('patterns_creational/proto_patt
 //5. Facade（外观）
 //6. Flyweight（享元）
 //7. Proxy（代理）
+include ':proxy_patterns'
+include ':flyweight_patterns'
 include ':adapter_patterns'
 include ':bridge_patterns'
 include ':bridge_patterns2'
@@ -41,6 +43,8 @@ include ':composite_patterns'
 include ':decorator_patterns'
 include ':facade_patterns'
 include ':dynamicproxy_patterns'
+project(':proxy_patterns').projectDir = new File('patterns_structural/proxy_patterns')
+project(':flyweight_patterns').projectDir = new File('patterns_structural/flyweight_patterns')
 project(':adapter_patterns').projectDir = new File('patterns_structural/adapter_patterns')
 project(':bridge_patterns').projectDir = new File('patterns_structural/bridge_patterns')
 project(':bridge_patterns2').projectDir = new File('patterns_structural/bridge_patterns2')
