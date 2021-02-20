@@ -15,7 +15,7 @@ public class Course {
             return this;
         }
 
-        public Builder addPpt(String ppt) {
+        public Builder addPPT(String ppt) {
             course.setPpt(ppt);
             return this;
         }
@@ -35,7 +35,7 @@ public class Course {
             return this;
         }
 
-        public Course builder() {
+        public Course build() {
             return course;
         }
 

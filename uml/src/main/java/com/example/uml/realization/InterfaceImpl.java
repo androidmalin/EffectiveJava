@@ -1,4 +1,4 @@
 package com.example.uml.realization;
 
-public class InterfaceImpl implements InterfaceDemo{
+public class InterfaceImpl implements InterfaceDemo {
 }

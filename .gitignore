@@ -9,6 +9,7 @@
 .cxx
 *.obj
 /design-samples
+/patterns_example
 .project
 .classpath
 .settings

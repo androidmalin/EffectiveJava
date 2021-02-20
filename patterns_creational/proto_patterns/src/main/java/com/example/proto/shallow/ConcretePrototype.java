@@ -1,8 +1,8 @@
 package com.example.proto.shallow;
-
 import java.util.List;
 
 public class ConcretePrototype implements Cloneable {
+
     private int age;
     private String name;
     private List<String> hobbies;
@@ -16,7 +16,6 @@ public class ConcretePrototype implements Cloneable {
             return null;
         }
     }
-
 
     @Override
     public String toString() {
@@ -51,4 +50,3 @@ public class ConcretePrototype implements Cloneable {
         this.hobbies = hobbies;
     }
 }
-

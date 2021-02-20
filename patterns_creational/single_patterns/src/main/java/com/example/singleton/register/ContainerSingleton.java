@@ -16,21 +16,20 @@ public class ContainerSingleton {
     private ContainerSingleton() {
     }
 
-    private static final Map<String, Object> ioc = new ConcurrentHashMap<>();
+    private static final Map<Class<?>, Object> iocMap = new ConcurrentHashMap<>();
 
-    public static Object getInstance(String className) {
+    public static Object getInstance(Class<?> clazz) {
         Object instance = null;
-        if (!ioc.containsKey(className)) {
+        if (!iocMap.containsKey(clazz)) {
             try {
-                instance = Class.forName(className).newInstance();
-                ioc.put(className, instance);
+                instance = clazz.newInstance();
+                iocMap.put(clazz, instance);
             } catch (Exception e) {
                 e.printStackTrace();
             }
             return instance;
         } else {
-            return ioc.get(className);
+            return iocMap.get(clazz);
         }
     }
-
 }

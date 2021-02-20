@@ -1,8 +1,11 @@
 package com.example.proto.deep;
 
 
-import java.io.*;
-import java.util.ArrayList;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.List;
 
 public class ConcretePrototype implements Cloneable, Serializable {
@@ -10,6 +13,10 @@ public class ConcretePrototype implements Cloneable, Serializable {
     private int age;
     private String name;
     private List<String> hobbies;
+
+    public ConcretePrototype() {
+        System.out.println("ConcretePrototype 构造函数");
+    }
 
     @Override
     public ConcretePrototype clone() {
@@ -21,19 +28,9 @@ public class ConcretePrototype implements Cloneable, Serializable {
         }
     }
 
-    public ConcretePrototype deepCloneHobbies() {
-        try {
-            ConcretePrototype result = (ConcretePrototype) super.clone();
-            result.hobbies = (List) ((ArrayList) result.hobbies).clone();
-            return result;
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public ConcretePrototype deepClone() {
         try {
+            System.out.println("ConcretePrototype deepClone");
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(bos);
             oos.writeObject(this);
@@ -53,6 +50,10 @@ public class ConcretePrototype implements Cloneable, Serializable {
                 ", name='" + name + '\'' +
                 ", hobbies=" + hobbies +
                 '}';
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public void setAge(int age) {

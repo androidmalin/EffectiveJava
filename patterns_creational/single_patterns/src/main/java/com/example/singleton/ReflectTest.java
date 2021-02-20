@@ -18,6 +18,7 @@ public class ReflectTest {
         //reflectSingleton(LazyStaticInnerClassSingleton.class);
         //reflectSingleton(EnumSingleton.class);
         //reflectEnum();
+        //threadTest();
     }
 
     private static void reflectSingleton(Class<?> clazz) {
@@ -63,7 +64,6 @@ public class ReflectTest {
         public void run() {
             LazyStaticInnerClassSingleton singleton = LazyStaticInnerClassSingleton.getInstance();
             System.out.println(Thread.currentThread().getName() + ":" + singleton);
-            System.out.println("=");
         }
     }
 }

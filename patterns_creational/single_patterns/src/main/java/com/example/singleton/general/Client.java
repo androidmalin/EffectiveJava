@@ -6,7 +6,9 @@ public class Client {
         System.out.println(instance);
     }
 
-    //饿汉式,在类加载的时候.立即初始化.它绝对线程安全.
+    /**
+     * 饿汉式,在类加载的时候.立即初始化.它绝对线程安全.
+     */
     @SuppressWarnings("InstantiationOfUtilityClass")
     private static class Singleton {
         private static final Singleton instance = new Singleton();

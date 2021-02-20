@@ -1,4 +1,4 @@
-rootProject.name = 'EffectiveJava'
+rootProject.name = 'java'
 include 'app'
 include 'generics'
 include 'interfaceabs'
@@ -11,11 +11,16 @@ include 'uml'
 //3. Builder（建造者）
 //4. Prototype（原型）
 //5. Singleton（单例）
-include ':factory_patterns'
+
+include ':simple_factory_patterns'
+include ':factory_method_patterns'
+include ':abstract_factory_patterns'
 include ':builder_patterns'
 include ':single_patterns'
 include ':proto_patterns'
-project(':factory_patterns').projectDir = new File('patterns_creational/factory_patterns')
+project(':simple_factory_patterns').projectDir = new File('patterns_creational/simple_factory_patterns')
+project(':factory_method_patterns').projectDir = new File('patterns_creational/factory_method_patterns')
+project(':abstract_factory_patterns').projectDir = new File('patterns_creational/abstract_factory_patterns')
 project(':builder_patterns').projectDir = new File('patterns_creational/builder_patterns')
 project(':single_patterns').projectDir = new File('patterns_creational/single_patterns')
 project(':proto_patterns').projectDir = new File('patterns_creational/proto_patterns')
@@ -83,7 +88,3 @@ project(':spring_patterns').projectDir = new File('patterns_other/spring_pattern
 project(':empty_patterns').projectDir = new File('patterns_other/empty_patterns')
 project(':delegate_patterns').projectDir = new File('patterns_other/delegate_patterns')
 project(':skeletalImplementation').projectDir = new File('patterns_other/skeletalImplementation')
-
-//patterns example
-include ':design'
-project(':design').projectDir = new File('patterns_example/design')

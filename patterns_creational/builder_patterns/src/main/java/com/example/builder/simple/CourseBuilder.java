@@ -7,7 +7,7 @@ public class CourseBuilder {
         course.setName(name);
     }
 
-    public void addPpt(String ppt) {
+    public void addPPT(String ppt) {
         course.setPpt(ppt);
     }
 
@@ -23,7 +23,7 @@ public class CourseBuilder {
         course.setHomework(homework);
     }
 
-    public Course builder() {
+    public Course build() {
         return course;
     }
 }
