@@ -1,6 +1,5 @@
 package com.example.command.player.actions;
 
-
 import com.example.command.player.GPlayer;
 import com.example.command.player.IAction;
 

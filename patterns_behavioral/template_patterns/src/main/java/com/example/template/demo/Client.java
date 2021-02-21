@@ -1,6 +1,6 @@
 package com.example.template.demo;
 
-public class Test {
+public class Client {
     public static void main(String[] args) {
 
         System.out.println("=========架构师课程=========");

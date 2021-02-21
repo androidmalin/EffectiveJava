@@ -1,14 +1,15 @@
 package com.example.strategy.demo;
 
 
-public class PromotionActivity {
+public class PromotionActivity implements IPromotionStrategy {
     private final IPromotionStrategy strategy;
 
     public PromotionActivity(IPromotionStrategy strategy) {
         this.strategy = strategy;
     }
 
-    public void execute() {
+    @Override
+    public void doPromotion() {
         strategy.doPromotion();
     }
 }

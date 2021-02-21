@@ -1,4 +1,4 @@
-package com.example.command.simple;
+package com.example.command.common;
 
 /**
  * 具体命令

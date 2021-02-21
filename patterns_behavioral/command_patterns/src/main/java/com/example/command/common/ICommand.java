@@ -1,4 +1,4 @@
-package com.example.command.simple;
+package com.example.command.common;
 
 /**
  * 抽象命令接口

@@ -5,12 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class Test {
+public class Client {
     public static void main(String[] args) {
 
         Thread.currentThread().setName("主线程");
 
-        ConfigurableApplicationContext context = SpringApplication.run(Test.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(Client.class, args);
 
         IOrderService orderService = (IOrderService) context.getBean("orderService");
 

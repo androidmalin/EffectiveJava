@@ -5,9 +5,8 @@ import com.example.command.player.actions.PlayAction;
 import com.example.command.player.actions.SpeedAction;
 import com.example.command.player.actions.StopAction;
 
-public class Test {
+public class Client {
     public static void main(String[] args) {
-
         GPlayer player = new GPlayer();
         Controller controller = new Controller();
         controller.execute(new PlayAction(player));

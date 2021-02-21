@@ -1,17 +1,17 @@
-package com.example.strategy.simple;
+package com.example.memento.common;
 
 /**
  * 备忘录管理者角色
  */
 public class Caretaker {
     // 备忘录对象
-    private IMemento memento;
+    private Memento memento;
 
-    public IMemento getMemento() {
+    public Memento getMemento() {
         return this.memento;
     }
 
-    public void storeMemento(IMemento memento) {
+    public void storeMemento(Memento memento) {
         this.memento = memento;
     }
 }

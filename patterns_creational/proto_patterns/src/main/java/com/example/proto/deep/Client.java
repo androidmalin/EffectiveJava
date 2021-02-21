@@ -1,7 +1,5 @@
 package com.example.proto.deep;
 
-import com.example.proto.deep.ConcretePrototype;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.example.state.demo;
 
 
-public class Test {
+public class Client {
     public static void main(String[] args) {
         AppContext context = new AppContext();
         context.favorite();

@@ -1,4 +1,5 @@
 package com.example.proto.shallow;
+
 import java.util.List;
 
 public class ConcretePrototype implements Cloneable {
