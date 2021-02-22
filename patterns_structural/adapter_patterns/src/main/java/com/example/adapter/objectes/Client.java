@@ -14,7 +14,7 @@ package com.example.adapter.objectes;
  * 这个包装类包装了一个Adaptee的实例，从而此包装类能够把Adaptee的API与Target类的API衔接起来。
  * Adapter与Adaptee是委派关系，这决定了适配器模式是对象的。
  */
-public class Test {
+public class Client {
     public static void main(String[] args) {
         Target target = new Adapter(new Adaptee());
         target.sampleOperation1();

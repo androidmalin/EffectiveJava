@@ -8,7 +8,7 @@
   </nodes>
   <notes />
   <edges>
-    <edge source="com.example.uml.generalization.Son" target="com.example.uml.generalization.Parent">
+    <edge source="com.example.uml.generalization.Son" Target="com.example.uml.generalization.Parent">
       <point x="0.0" y="-23.0" />
       <point x="0.0" y="23.0" />
     </edge>

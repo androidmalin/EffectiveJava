@@ -8,7 +8,7 @@
   </nodes>
   <notes />
   <edges>
-    <edge source="com.example.uml.realization.InterfaceImpl" target="com.example.uml.realization.InterfaceDemo">
+    <edge source="com.example.uml.realization.InterfaceImpl" Target="com.example.uml.realization.InterfaceDemo">
       <point x="0.0" y="-23.0" />
       <point x="0.0" y="23.0" />
     </edge>

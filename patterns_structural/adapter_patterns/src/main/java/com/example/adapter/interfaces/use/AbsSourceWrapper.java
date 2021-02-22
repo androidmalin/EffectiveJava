@@ -1,4 +1,4 @@
-package com.example.adapter.interfaces;
+package com.example.adapter.interfaces.use;
 
 public abstract class AbsSourceWrapper implements ISource {
     @Override

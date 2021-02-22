@@ -1,4 +1,4 @@
-package com.example.adapter.interfaces;
+package com.example.adapter.interfaces.use;
 
 public class SourceSub2 extends AbsSourceWrapper {
     @Override

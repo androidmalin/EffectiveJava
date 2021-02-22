@@ -1,4 +1,4 @@
-package com.example.adapter.interfaces;
+package com.example.adapter.interfaces.use;
 
 public interface ISource {
     void function1();

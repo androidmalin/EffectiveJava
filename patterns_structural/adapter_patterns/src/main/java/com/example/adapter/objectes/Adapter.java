@@ -2,8 +2,10 @@ package com.example.adapter.objectes;
 
 public class Adapter implements Target {
 
+    /**
+     * 关联关系--聚合
+     */
     private final Adaptee adaptee;
-
 
     public Adapter(Adaptee adaptee) {
         this.adaptee = adaptee;
