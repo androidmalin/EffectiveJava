@@ -1,6 +1,6 @@
-package com.example.bridge.pattern2;
+package com.example.bridge.pattern.demo2;
 
-public class Test {
+public class Client {
 
     public static void main(String[] args) {
         //原味

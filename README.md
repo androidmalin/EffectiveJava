@@ -19,5 +19,6 @@
 
 #### 2.3 创建一个匿名内部类
 [can-we-instantiate-an-abstract-class](https://stackoverflow.com/questions/13670991/can-we-instantiate-an-abstract-class)
+[instantiating-interfaces-in-java](https://stackoverflow.com/questions/16750772/instantiating-interfaces-in-java/35708932)
 
 

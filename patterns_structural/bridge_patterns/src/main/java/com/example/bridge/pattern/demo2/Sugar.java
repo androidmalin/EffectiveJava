@@ -1,4 +1,4 @@
-package com.example.bridge.pattern2;
+package com.example.bridge.pattern.demo2;
 
 public class Sugar implements ICoffeeAdditives {
     @Override
