@@ -76,14 +76,21 @@ include ':strategy_patterns'
 include ':state_patterns'
 include ':chain_of_responsibility_patterns'
 include ':iterator_patterns'
+include ':mediator_patterns'
+include ':interpreter_patterns'
+include ':observer_patterns'
+include ':visitor_patterns'
 project(':template_patterns').projectDir = new File('patterns_behavioral/template_patterns')
 project(':command_patterns').projectDir = new File('patterns_behavioral/command_patterns')
 project(':memento_patterns').projectDir = new File('patterns_behavioral/memento_patterns')
 project(':strategy_patterns').projectDir = new File('patterns_behavioral/strategy_patterns')
 project(':state_patterns').projectDir = new File('patterns_behavioral/state_patterns')
 project(':chain_of_responsibility_patterns').projectDir = new File('patterns_behavioral/chain_of_responsibility_patterns')
+project(':mediator_patterns').projectDir = new File('patterns_behavioral/mediator_patterns')
 project(':iterator_patterns').projectDir = new File('patterns_behavioral/iterator_patterns')
-
+project(':interpreter_patterns').projectDir = new File('patterns_behavioral/interpreter_patterns')
+project(':observer_patterns').projectDir = new File('patterns_behavioral/observer_patterns')
+project(':visitor_patterns').projectDir = new File('patterns_behavioral/visitor_patterns')
 
 //new Patterns(new设计模式)
 include ':nullobj_patterns'
