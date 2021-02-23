@@ -8,8 +8,8 @@
 .externalNativeBuild
 .cxx
 *.obj
-/design-samples
-/patterns_example
+/patterns_design_book_samples
+/patterns_example_shang
 .project
 .classpath
 .settings

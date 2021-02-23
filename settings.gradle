@@ -1,9 +1,15 @@
 rootProject.name = 'java'
-include 'app'
-include 'generics'
-include 'interfaceabs'
-include 'think'
-include 'uml'
+
+//java基础知识
+include ':think'
+include ':uml'
+include ':generics'
+include ':interfaceabs'
+include ':javabase'
+project(':interfaceabs').projectDir = new File('javabase/interfaceabs')
+project(':generics').projectDir = new File('javabase/generics')
+project(':uml').projectDir = new File('javabase/uml')
+
 
 //Creational Patterns (创建型设计模式)
 //1. Factory Method（工厂方法）
@@ -11,7 +17,6 @@ include 'uml'
 //3. Builder（建造者）
 //4. Prototype（原型）
 //5. Singleton（单例）
-
 include ':simple_factory_patterns'
 include ':factory_method_patterns'
 include ':abstract_factory_patterns'
@@ -85,8 +90,8 @@ project(':nullobj_patterns').projectDir = new File('patterns_new/nullobj_pattern
 include ':spring_patterns'
 include ':empty_patterns'
 include ':delegate_patterns'
-include ':skeletalImplementation'
-project(':spring_patterns').projectDir = new File('patterns_other/spring_patterns')
-project(':empty_patterns').projectDir = new File('patterns_other/empty_patterns')
-project(':delegate_patterns').projectDir = new File('patterns_other/delegate_patterns')
-project(':skeletalImplementation').projectDir = new File('patterns_other/skeletalImplementation')
+include ':skeletal_implementation'
+project(':spring_patterns').projectDir = new File('patterns_not_gof23/spring_patterns')
+project(':empty_patterns').projectDir = new File('patterns_not_gof23/empty_patterns')
+project(':delegate_patterns').projectDir = new File('patterns_not_gof23/delegate_patterns')
+project(':skeletal_implementation').projectDir = new File('patterns_not_gof23/skeletal_implementation')
