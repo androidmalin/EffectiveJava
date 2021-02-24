@@ -1,6 +1,8 @@
 package com.example.nullobj;
 
-//真实对象
+/**
+ * 真实对象
+ */
 public class RealObject extends AbstractObject {
     private String name;
 

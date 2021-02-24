@@ -1,4 +1,4 @@
-package com.example.composite.general.safe;
+package com.example.composite.general.transparent;
 
 /**
  * 叶子节点

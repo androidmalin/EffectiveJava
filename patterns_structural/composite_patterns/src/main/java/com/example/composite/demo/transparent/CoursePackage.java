@@ -3,38 +3,36 @@ package com.example.composite.demo.transparent;
 import java.util.ArrayList;
 import java.util.List;
 
+public class CoursePackage extends CourseComponent {
+    private final List<CourseComponent> items = new ArrayList<>();
 
-public class CoursePackage extends CourseComponet {
-    private List<CourseComponet> itmes = new ArrayList<>();
-
-    private String name;
-    private Integer level;
+    private final String name;
+    private final Integer level;
 
     public CoursePackage(String name, Integer level) {
         this.name = name;
         this.level = level;
     }
 
-
     @Override
-    public void addChild(CourseComponet componet) {
-        itmes.add(componet);
+    public void addChild(CourseComponent component) {
+        items.add(component);
     }
 
     @Override
-    public void removeChild(CourseComponet componet) {
-        itmes.remove(componet);
+    public void removeChild(CourseComponent component) {
+        items.remove(component);
     }
 
     @Override
-    public String getName(CourseComponet componet) {
+    public String getName(CourseComponent component) {
         return this.name;
     }
 
     @Override
     public void print() {
         System.out.println(this.name);
-        for (CourseComponet c : itmes) {
+        for (CourseComponent c : items) {
             if (this.level != null) {
                 for (int i = 0; i < this.level; i++) {
                     System.out.print("   ");

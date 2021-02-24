@@ -3,8 +3,8 @@ package com.example.composite.demo.safe;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Folder extends Direcotry {
-    private final List<Direcotry> dirs;
+public class Folder extends Directory {
+    private final List<Directory> dirs;
     private final Integer level;
 
     public Folder(String name, Integer level) {
@@ -15,7 +15,7 @@ public class Folder extends Direcotry {
 
     public void show() {
         System.out.println(this.name);
-        for (Direcotry c : dirs) {
+        for (Directory c : dirs) {
             if (this.level != null) {
                 for (int i = 0; i < this.level; i++) {
                     System.out.print("   ");
@@ -31,20 +31,20 @@ public class Folder extends Direcotry {
         }
     }
 
-    public boolean add(Direcotry dir) {
+    public boolean add(Directory dir) {
         return this.dirs.add(dir);
     }
 
-    public boolean remove(Direcotry dir) {
+    public boolean remove(Directory dir) {
         return this.dirs.remove(dir);
     }
 
-    public Direcotry get(int index) {
+    public Directory get(int index) {
         return this.dirs.get(index);
     }
 
     public void list() {
-        for (Direcotry dir : dirs) {
+        for (Directory dir : dirs) {
             System.out.println(dir.name);
         }
     }

@@ -1,7 +1,7 @@
 package com.example.composite.demo.safe;
 
 
-public class File extends Direcotry {
+public class File extends Directory {
     public File(String name) {
         super(name);
     }

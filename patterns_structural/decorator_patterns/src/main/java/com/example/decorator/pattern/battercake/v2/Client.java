@@ -1,7 +1,7 @@
 package com.example.decorator.pattern.battercake.v2;
 
 
-public class Test {
+public class Client {
 
     public static void main(String[] args) {
         BatterCake battercake;

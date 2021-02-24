@@ -1,6 +1,8 @@
 package com.example.composite.general.safe;
 
-// 抽象根节点
+/**
+ * 抽象根节点
+ */
 public abstract class Component {
     protected String name;
 

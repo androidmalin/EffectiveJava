@@ -1,7 +1,8 @@
 package com.example.nullobj;
 
-
-//空对象
+/**
+ * 空对象
+ */
 public class NullObject extends AbstractObject {
 
     @Override

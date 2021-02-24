@@ -25,7 +25,7 @@ import java.io.ObjectOutputStream;
  * 将持久化的字节码内容，通过IO输入流读到内存中来
  * 转化成一个Java对象
  */
-public class SerializableTest {
+public class SerializableClient {
     public static void main(String[] args) {
         testSerializable();
         catSerializableFileContent();

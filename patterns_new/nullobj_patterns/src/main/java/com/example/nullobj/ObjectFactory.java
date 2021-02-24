@@ -1,6 +1,8 @@
 package com.example.nullobj;
 
-//对象工厂
+/**
+ * 对象工厂
+ */
 public class ObjectFactory {
     private static final String[] NAMES_ARRAY = {"Tom", "Mic", "James"};
 

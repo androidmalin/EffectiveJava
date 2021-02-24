@@ -10,7 +10,7 @@ import java.lang.reflect.Constructor;
 /**
  * https://juejin.cn/post/6844903960009162759
  */
-public class ReflectTest {
+public class ReflectClient {
 
     public static void main(String[] args) {
         reflectSingleton(LazySimpleSingleton.class);

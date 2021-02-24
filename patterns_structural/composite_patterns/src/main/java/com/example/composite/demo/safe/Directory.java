@@ -1,10 +1,9 @@
 package com.example.composite.demo.safe;
 
-
-public abstract class Direcotry {
+public abstract class Directory {
     protected String name;
 
-    public Direcotry(String name) {
+    public Directory(String name) {
         this.name = name;
     }
 

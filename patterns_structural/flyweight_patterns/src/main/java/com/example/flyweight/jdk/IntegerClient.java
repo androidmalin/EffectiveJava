@@ -1,7 +1,7 @@
 package com.example.flyweight.jdk;
 
 
-public class IntegerTest {
+public class IntegerClient {
     public static void main(String[] args) {
         Integer a = Integer.valueOf(127);
         Integer b = 127;

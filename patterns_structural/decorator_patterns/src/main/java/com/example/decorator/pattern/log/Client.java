@@ -5,7 +5,7 @@ package com.example.decorator.pattern.log;
  * <p>
  * 别看尚学堂的视频,那个没有解释清楚.浪费时间.
  */
-public class Test {
+public class Client {
 
     public static void main(String[] args) {
         ILogger iLogger = new Logger();

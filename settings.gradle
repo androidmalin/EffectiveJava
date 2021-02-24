@@ -94,8 +94,13 @@ project(':visitor_patterns').projectDir = new File('patterns_behavioral/visitor_
 
 //new Patterns(new设计模式)
 include ':nullobj_patterns'
+include ':servant_patterns'
+include ':specification_patterns'
+include ':object_pool_patterns'
 project(':nullobj_patterns').projectDir = new File('patterns_new/nullobj_patterns')
-
+project(':servant_patterns').projectDir = new File('patterns_new/servant_patterns')
+project(':specification_patterns').projectDir = new File('patterns_new/specification_patterns')
+project(':object_pool_patterns').projectDir = new File('patterns_new/object_pool_patterns')
 
 //other Patterns
 include ':spring_patterns'

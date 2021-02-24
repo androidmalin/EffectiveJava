@@ -1,4 +1,4 @@
-package com.example.composite.general.safe;
+package com.example.composite.general.transparent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,17 +24,18 @@ public class Composite extends Component {
         return builder.toString();
     }
 
-
+    @Override
     public boolean addChild(Component component) {
-        return this.components.add(component);
+        return components.add(component);
     }
 
-
+    @Override
     public boolean removeChild(Component component) {
-        return this.components.remove(component);
+        return components.remove(component);
     }
 
+    @Override
     public Component getChild(int index) {
-        return this.components.get(index);
+        return components.get(index);
     }
 }

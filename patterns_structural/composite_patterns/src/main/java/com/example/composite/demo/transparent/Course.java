@@ -1,7 +1,7 @@
 package com.example.composite.demo.transparent;
 
 
-public class Course extends CourseComponet {
+public class Course extends CourseComponent {
 
     private final String name;
     private final double price;
@@ -12,12 +12,12 @@ public class Course extends CourseComponet {
     }
 
     @Override
-    public String getName(CourseComponet componet) {
+    public String getName(CourseComponent component) {
         return this.name;
     }
 
     @Override
-    public double getPrice(CourseComponet componet) {
+    public double getPrice(CourseComponent component) {
         return this.price;
     }
 

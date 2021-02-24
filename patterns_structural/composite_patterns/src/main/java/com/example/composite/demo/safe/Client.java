@@ -1,6 +1,6 @@
 package com.example.composite.demo.safe;
 
-public class Test {
+public class Client {
     public static void main(String[] args) {
         System.out.println("==========安全模式的写法=============");
 

@@ -13,7 +13,7 @@ public abstract class AbstractMessage {
     }
 
     //委派给实现部分的方法
-    void sendMessage(String message, String toUser) {
+    public void sendMessage(String message, String toUser) {
         this.message.send(message, toUser);
     }
 }

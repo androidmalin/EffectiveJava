@@ -1,7 +1,7 @@
 package com.example.flyweight.jdk;
 
 
-public class StringTest {
+public class StringClient {
     public static void main(String[] args) {
         String s1 = "hello";
         String s2 = "hello";
