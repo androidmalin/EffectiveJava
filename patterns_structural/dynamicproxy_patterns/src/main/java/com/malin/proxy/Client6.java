@@ -1,5 +1,8 @@
 package com.malin.proxy;
 
+import com.malin.proxy.shape.IShape;
+import com.malin.proxy.shape.Rectangle;
+
 import java.lang.reflect.Proxy;
 
 /**
@@ -17,7 +20,5 @@ public class Client6 {
                 new GenericLogger(rect)
         );
         s.draw();
-        s.move();
-        s.resize();
     }
 }

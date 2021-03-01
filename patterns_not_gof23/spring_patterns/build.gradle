@@ -1,10 +1,11 @@
 apply plugin: 'application'
+apply plugin: 'java-library'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 dependencies {
-    compile group: 'org.springframework', name: 'spring-core', version: '5.3.3'
-    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.3.3'
+    compile 'org.springframework:spring-webmvc:5.3.3'
+    compile 'org.springframework:spring-core:5.3.3'
 }

@@ -1,4 +1,4 @@
-package com.example.spring.dao;
+package com.example.spring.java.dao;
 
 public class UserDaoOracleImpl implements IUserDao {
     @Override

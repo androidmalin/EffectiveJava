@@ -1,4 +1,4 @@
-package com.example.spring;
+package com.example.spring.spring.xml;
 
 public class Hello {
 
@@ -6,6 +6,6 @@ public class Hello {
     }
 
     public void sayHello() {
-        System.out.println("sayHello");
+        System.err.println("sayHello");
     }
 }
