@@ -9,7 +9,9 @@ package com.malin.java.lib.java7;
  * 是想skeletal implementation步骤:
  * Step 1: 创建一个接口.
  * Step 2: 创建一个抽象类实现这个接口，并且在抽象类中实现一些接口中的通用方法.
- * Step 3: 子类在实现接口的同时，在内部定义一个私有内部类继承抽象类．这样在就可以通过内部类调用抽象类中的已写好的方法来去除冗余代码，同时子类还可以继承其他类如VendServicing.
+ * Step 3: 子类在实现接口的同时，在内部定义一个私有内部类继承抽象类．
+ * 这样在就可以通过内部类调用抽象类中的已写好的方法来去除冗余代码，
+ * 同时子类还可以继承其他类如VendServicing.
  * <p>
  * Skeletal Implementation优点
  * 子类可以挣脱单继承规则，继续继承其他类，如上面的VendingService.
@@ -21,7 +23,7 @@ package com.malin.java.lib.java7;
  * 该方法叫skeletal implementation．(就像使用一个骨架支起一副血肉一样，形象)
  */
 public class VendingManager {
-    public static void main() {
+    public static void main(String[] args) {
         IVending candy = new CandyVending();
         IVending drink = new DrinkVending();
         candy.process();
@@ -31,5 +33,10 @@ public class VendingManager {
 
         VendingService vs = (VendingService) drink;
         vs.service();
+    }
+
+    private static void test() {
+        ToyVending toyVending = new ToyVending();
+        toyVending.process();
     }
 }

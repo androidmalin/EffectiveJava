@@ -19,6 +19,7 @@ project(':uml').projectDir = new File('javabase/uml')
 //3. Builder（建造者）
 //4. Prototype（原型）
 //5. Singleton（单例）
+include ':patterns_creational'
 include ':simple_factory_patterns'
 include ':factory_method_patterns'
 include ':abstract_factory_patterns'
@@ -41,6 +42,7 @@ project(':proto_patterns').projectDir = new File('patterns_creational/proto_patt
 //5. Facade（外观）
 //6. Flyweight（享元）
 //7. Proxy（代理）
+include ':patterns_structural'
 include ':proxy_patterns'
 include ':flyweight_patterns'
 include ':adapter_patterns'
@@ -71,6 +73,7 @@ project(':dynamicproxy_patterns').projectDir = new File('patterns_structural/dyn
 //9. State（状态）
 //10. Strategy（策略）
 //11. Visitor（访问者）
+include ':patterns_behavioral'
 include ':template_patterns'
 include ':command_patterns'
 include ':memento_patterns'
@@ -95,6 +98,11 @@ project(':observer_patterns').projectDir = new File('patterns_behavioral/observe
 project(':visitor_patterns').projectDir = new File('patterns_behavioral/visitor_patterns')
 
 //new Patterns(new设计模式)
+//1. null object patterns（空对象设计模式）
+//2. servant patterns（雇工设计模式）
+//3. specification patterns（规格模式 (组合模式的一种扩展)）
+//4. object pool patterns（对象池模式）
+include ':patterns_new'
 include ':nullobj_patterns'
 include ':servant_patterns'
 include ':specification_patterns'
@@ -105,6 +113,8 @@ project(':specification_patterns').projectDir = new File('patterns_new/specifica
 project(':object_pool_patterns').projectDir = new File('patterns_new/object_pool_patterns')
 
 //other Patterns
+//1. skeletal implementation patterns（骨架设计模式）
+include ':patterns_not_gof23'
 include ':spring_patterns'
 include ':empty_patterns'
 include ':delegate_patterns'
@@ -115,19 +125,26 @@ project(':delegate_patterns').projectDir = new File('patterns_not_gof23/delegate
 project(':skeletal_implementation').projectDir = new File('patterns_not_gof23/skeletal_implementation')
 
 
-//design principle
-include ':patterns_six_design_principle'
+//design principle (七大设计原则)
+//1. open close principle（开闭原则）
+//2. dependence inversion principle（依赖倒置原则）
+//3. simple responsibility principle（单一职责原则）
+//4. interface segregation principle（接口隔离原则）
+//5. law of demeter principle（迪米特法则）
+//6. liskov substitution principle（里氏替换原则）
+//7. composition/aggregate reuse principle（合成复用原则）
+include ':patterns_design_principle'
 include ':open_close_principle'
-include ':simple_responsibility_principle'
-include ':liskov_substitution_principle'
-include ':law_of_demeter'
-include ':interface_segregation_principle'
 include ':dependence_inversion_principle'
+include ':simple_responsibility_principle'
+include ':interface_segregation_principle'
+include ':law_of_demeter_principle'
+include ':liskov_substitution_principle'
 include ':composition_aggregate_reuse_principle'
-project(':open_close_principle').projectDir = new File('patterns_six_design_principle/open_close_principle')
-project(':simple_responsibility_principle').projectDir = new File('patterns_six_design_principle/simple_responsibility_principle')
-project(':liskov_substitution_principle').projectDir = new File('patterns_six_design_principle/liskov_substitution_principle')
-project(':law_of_demeter').projectDir = new File('patterns_six_design_principle/law_of_demeter')
-project(':interface_segregation_principle').projectDir = new File('patterns_six_design_principle/interface_segregation_principle')
-project(':dependence_inversion_principle').projectDir = new File('patterns_six_design_principle/dependence_inversion_principle')
-project(':composition_aggregate_reuse_principle').projectDir = new File('patterns_six_design_principle/composition_aggregate_reuse_principle')
+project(':open_close_principle').projectDir = new File('patterns_design_principle/open_close_principle')
+project(':dependence_inversion_principle').projectDir = new File('patterns_design_principle/dependence_inversion_principle')
+project(':simple_responsibility_principle').projectDir = new File('patterns_design_principle/simple_responsibility_principle')
+project(':interface_segregation_principle').projectDir = new File('patterns_design_principle/interface_segregation_principle')
+project(':law_of_demeter_principle').projectDir = new File('patterns_design_principle/law_of_demeter_principle')
+project(':liskov_substitution_principle').projectDir = new File('patterns_design_principle/liskov_substitution_principle')
+project(':composition_aggregate_reuse_principle').projectDir = new File('patterns_design_principle/composition_aggregate_reuse_principle')
