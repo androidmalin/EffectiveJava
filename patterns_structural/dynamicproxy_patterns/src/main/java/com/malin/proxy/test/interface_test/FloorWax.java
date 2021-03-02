@@ -1,4 +1,4 @@
 package com.malin.proxy.test.interface_test;
 
-public interface FloorWax extends IFloorParent{
+public interface FloorWax extends IFloorParent {
 }

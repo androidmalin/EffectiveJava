@@ -113,3 +113,21 @@ project(':spring_patterns').projectDir = new File('patterns_not_gof23/spring_pat
 project(':empty_patterns').projectDir = new File('patterns_not_gof23/empty_patterns')
 project(':delegate_patterns').projectDir = new File('patterns_not_gof23/delegate_patterns')
 project(':skeletal_implementation').projectDir = new File('patterns_not_gof23/skeletal_implementation')
+
+
+//design principle
+include ':patterns_six_design_principle'
+include ':open_close_principle'
+include ':simple_responsibility_principle'
+include ':liskov_substitution_principle'
+include ':law_of_demeter'
+include ':interface_segregation_principle'
+include ':dependence_inversion_principle'
+include ':composition_aggregate_reuse_principle'
+project(':open_close_principle').projectDir = new File('patterns_six_design_principle/open_close_principle')
+project(':simple_responsibility_principle').projectDir = new File('patterns_six_design_principle/simple_responsibility_principle')
+project(':liskov_substitution_principle').projectDir = new File('patterns_six_design_principle/liskov_substitution_principle')
+project(':law_of_demeter').projectDir = new File('patterns_six_design_principle/law_of_demeter')
+project(':interface_segregation_principle').projectDir = new File('patterns_six_design_principle/interface_segregation_principle')
+project(':dependence_inversion_principle').projectDir = new File('patterns_six_design_principle/dependence_inversion_principle')
+project(':composition_aggregate_reuse_principle').projectDir = new File('patterns_six_design_principle/composition_aggregate_reuse_principle')
