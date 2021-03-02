@@ -5,3 +5,5 @@ find . -name "*.iml" -type f | xargs rm -rf && \
 find . -name ".settings" -type d | xargs rm -rf && \
 find . -name ".project" -type f | xargs rm -rf && \
 find . -name ".classpath" -type f | xargs rm -rf
+find . -name "*.obj" -type f | xargs rm -rf
+find . -name "*.class" -type f | xargs rm -rf

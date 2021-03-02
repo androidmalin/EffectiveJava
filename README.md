@@ -22,3 +22,7 @@
 [instantiating-interfaces-in-java](https://stackoverflow.com/questions/16750772/instantiating-interfaces-in-java/35708932)
 
 
+#### 参考文献
+[设计模式就该这么学](https://item.jd.com/12699413.html)
+[写最好的设计模式专栏](https://www.kancloud.cn/digest/xing-designpattern/143732)
+[设计模式之禅（第2版）](https://www.kancloud.cn/sstd521/design/193489)
