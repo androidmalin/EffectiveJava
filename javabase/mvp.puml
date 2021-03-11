@@ -1,0 +1,28 @@
+@startuml
+interface IPresenter {
+    void freshTextView()
+}
+interface IView{
+    void updateTextView()
+}
+
+class PresenterImpl{
+    private final IView iView
+    public PresenterImpl(IView iView)
+    public void freshTextView()
+}
+note left:依赖注入IView
+
+class MVPActivity{
+    private IPresenter iPresenter
+    public void updateTextView()
+}
+note left:构造函数依赖注入IPresenter
+
+IPresenter <-- MVPActivity:关联
+IView <|.. MVPActivity:实现
+IPresenter <|.. PresenterImpl:实现
+IView <-- PresenterImpl:关联
+
+
+@enduml

@@ -1,7 +1,14 @@
 rootProject.name = 'java'
 
 include ':architecture'
-
+include ':mvc_example'
+include ':mvp_example'
+include ':dependency_injection'
+include ':dependency_injection_create'
+project(':mvc_example').projectDir = new File('architecture/mvc_example')
+project(':mvp_example').projectDir = new File('architecture/mvp_example')
+project(':dependency_injection').projectDir = new File('architecture/dependency_injection')
+project(':dependency_injection_create').projectDir = new File('architecture/dependency_injection_create')
 //java基础知识
 include ':think'
 include ':uml'

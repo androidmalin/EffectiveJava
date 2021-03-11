@@ -7,6 +7,6 @@ java {
 }
 
 dependencies {
-    compile group: 'org.springframework.statemachine', name: 'spring-statemachine-autoconfigure', version: '2.4.0'
-    compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.4.2'
+    implementation group: 'org.springframework.statemachine', name: 'spring-statemachine-autoconfigure', version: '2.4.0'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.4.2'
 }

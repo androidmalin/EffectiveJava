@@ -6,6 +6,6 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 dependencies {
-    compile 'org.springframework:spring-webmvc:5.3.3'
-    compile 'org.springframework:spring-core:5.3.3'
+    implementation 'org.springframework:spring-webmvc:5.3.3'
+    implementation 'org.springframework:spring-core:5.3.3'
 }

@@ -6,7 +6,7 @@ import org.slf4j.impl.Log4jLoggerFactory;
 
 /**
  * Logback
- * compile 'org.slf4j:slf4j-log4j12:1.7.2'
+ * implementation 'org.slf4j:slf4j-log4j12:1.7.2'
  */
 public class SdkClient {
 

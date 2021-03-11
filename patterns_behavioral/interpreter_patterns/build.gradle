@@ -7,5 +7,5 @@ java {
 }
 
 dependencies {
-    compile 'org.springframework:spring-expression:5.0.2.RELEASE'
+    implementation 'org.springframework:spring-expression:5.3.3'
 }

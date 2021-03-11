@@ -7,5 +7,5 @@ java {
 }
 
 dependencies {
-    compile 'com.alibaba:fastjson:1.2.32'
+    implementation 'com.alibaba:fastjson:1.2.32'
 }
