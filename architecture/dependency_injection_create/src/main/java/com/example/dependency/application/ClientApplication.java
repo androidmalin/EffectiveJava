@@ -14,10 +14,11 @@ import com.example.dependency.services.UserService;
 public class ClientApplication {
 
     @CustomAutowired
+    @CustomQualifier(value = "UserServiceImpl2")
     private UserService userService;
 
     @CustomAutowired
-    @CustomQualifier(value = "AccountServiceImpl")
+    @CustomQualifier(value = "AccountServiceImpl2")
     private AccountService accountService;
 
     public void displayUserAccount() {

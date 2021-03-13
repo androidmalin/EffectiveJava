@@ -20,6 +20,7 @@ package com.example.injection;
  * <p>
  * https://en.wikipedia.org/wiki/Dependency_injection
  * https://stackoverflow.com/questions/21218868/explain-why-constructor-inject-is-better-than-other-options/34228255
+ * https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC
  */
 public class Client {
     public static void main(String[] args) {

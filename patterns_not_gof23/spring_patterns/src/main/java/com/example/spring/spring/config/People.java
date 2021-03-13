@@ -1,7 +1,6 @@
 package com.example.spring.spring.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -10,7 +9,6 @@ import javax.annotation.Resource;
 public class People {
 
     @Autowired
-    @Qualifier("cat")
     Cat cat;
 
     @Resource

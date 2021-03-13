@@ -1,0 +1,12 @@
+apply plugin: 'application'
+apply plugin: 'java-library'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation 'org.reflections:reflections:0.9.12'
+    implementation 'org.burningwave:core:8.8.1'
+}

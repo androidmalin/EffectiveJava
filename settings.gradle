@@ -1,14 +1,22 @@
 rootProject.name = 'java'
 
+//mvc,
+//mvp,
+//mvvm,
+//dependency_injection
+//dependency_injection_create
 include ':architecture'
 include ':mvc_example'
 include ':mvp_example'
 include ':dependency_injection'
 include ':dependency_injection_create'
+include ':dependency_injection_create_using_burningwave'
 project(':mvc_example').projectDir = new File('architecture/mvc_example')
 project(':mvp_example').projectDir = new File('architecture/mvp_example')
 project(':dependency_injection').projectDir = new File('architecture/dependency_injection')
 project(':dependency_injection_create').projectDir = new File('architecture/dependency_injection_create')
+project(':dependency_injection_create_using_burningwave').projectDir = new File('architecture/dependency_injection_create_using_burningwave')
+
 //java基础知识
 include ':think'
 include ':uml'

@@ -4,10 +4,10 @@ import com.example.dependency.di.framework.annotations.CustomComponent;
 import com.example.dependency.services.AccountService;
 
 @CustomComponent
-public class AccountServiceImpl implements AccountService {
+public class AccountServiceImpl2 implements AccountService {
 
     @Override
     public Long getAccountNumber(String userName) {
-        return 111111L;
+        return 222222L;
     }
 }
