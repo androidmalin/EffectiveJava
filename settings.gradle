@@ -5,6 +5,9 @@ rootProject.name = 'java'
 //mvvm,
 //dependency_injection
 //dependency_injection_create
+include ':int_code'
+include ':algorithm_practice'
+include ':head_First_Design_Patterns'
 include ':architecture'
 include ':mvc_example'
 include ':mvp_example'
