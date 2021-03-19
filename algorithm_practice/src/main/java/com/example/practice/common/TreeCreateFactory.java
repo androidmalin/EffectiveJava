@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
+ * 本地测试环境, 能打印出二叉树的  字符串
+ * 给定一个数组, 生成一个TreeNode的数据, 并将这颗树打印出来.
  * https://blog.csdn.net/seagal890/article/details/79732214
  */
 public final class TreeCreateFactory {
