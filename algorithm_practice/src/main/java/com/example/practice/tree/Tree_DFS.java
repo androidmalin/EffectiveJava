@@ -14,7 +14,7 @@ import java.util.Stack;
 public class Tree_DFS {
 
     public static void main(String[] args) {
-        TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, null, null));
+        TreeCreateFactory.init(1, 2, 3, 4, 5, null, null);
         TreeNode root = TreeCreateFactory.getRootNode();
 
         System.out.println("DFS深度优先遍历");

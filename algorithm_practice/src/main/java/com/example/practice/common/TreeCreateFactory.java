@@ -93,10 +93,15 @@ public final class TreeCreateFactory {
         return result;
     }
 
+
+    public static TreeNode init(Integer... integers) {
+        return init(Arrays.asList(integers));
+    }
+
     /**
      * 使用方法  TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6, null));
      */
-    public static void init(List<Integer> list) {
+    public static TreeNode init(List<Integer> list) {
         Integer[] array = (Integer[]) list.toArray();
         TreeCreateFactory.createBinTree(array);
         TreeNode rootNode = TreeCreateFactory.nodeList.get(0);
@@ -111,9 +116,10 @@ public final class TreeCreateFactory {
         System.out.println("-----------------结束-------------------");
         System.out.println(" ");
         System.out.println(" ");
+        return rootNode;
     }
 
     public static void main(String[] args) {
-        TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6, null));
+        TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
     }
 }

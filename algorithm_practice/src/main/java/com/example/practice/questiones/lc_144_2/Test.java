@@ -14,7 +14,7 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6));
+        TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
         TreeNode root = TreeCreateFactory.getRootNode();
 
         List<Integer> list = solution.preorderTraversal(root);

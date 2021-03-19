@@ -3,7 +3,6 @@ package com.example.practice.questiones.lc_144;
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,7 +13,7 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6));
+        TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
         TreeNode root = TreeCreateFactory.getRootNode();
 
         List<Integer> list = solution.preorderTraversal(root);

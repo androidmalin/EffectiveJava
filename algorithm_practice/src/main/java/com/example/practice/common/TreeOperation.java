@@ -1,8 +1,6 @@
 package com.example.practice.common;
 
 
-import java.util.Arrays;
-
 /**
  * https://blog.nowcoder.net/n/f3799d64ed764fd49c63947d617d4cd5
  */
@@ -83,7 +81,7 @@ public class TreeOperation {
 
     public static void main(String[] args) {
         // 根据给定的数组创建一棵树
-        TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6, null));
+        TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
         TreeNode root = TreeCreateFactory.getRootNode();
         // 将刚刚创建的树打印出来
         TreeOperation.show(root);
