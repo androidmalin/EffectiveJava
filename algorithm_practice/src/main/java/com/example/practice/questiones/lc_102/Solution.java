@@ -1,4 +1,4 @@
-package com.example.practice.tree.lc_102;
+package com.example.practice.questiones.lc_102;
 
 import com.example.practice.common.TreeNode;
 

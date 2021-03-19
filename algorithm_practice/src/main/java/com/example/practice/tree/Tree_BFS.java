@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
+ * 二叉树的层次遍历 / 广度优先遍历 BFS
+ * <p>
  * 循环和递归的区别和联系
  * https://blog.csdn.net/Beyond_2016/article/details/81283054
  * <p>
@@ -21,13 +23,13 @@ public class Tree_BFS {
     public static void main(String[] args) {
         TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6, null));
         TreeNode root = TreeCreateFactory.getRootNode();
-        System.out.println("level ");
+        System.out.println("二叉树的层次遍历--非递归实现");
         printLine(root);
         System.out.println(" ");
-        System.out.println("levelOrder");
+        System.out.println("二叉树的层次遍历--分组--非递归实现");
         levelOrder(root);
         System.out.println(" ");
-        System.out.println("bfs_recursion_traversal");
+        System.out.println("二叉树的层次遍历--分组--递归实现");
         recursion_traversal(root);
         System.out.println(" ");
     }

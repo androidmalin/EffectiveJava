@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 二叉树的深度优先遍历 DFS
+ */
 public class Tree_DFS {
 
     public static void main(String[] args) {
