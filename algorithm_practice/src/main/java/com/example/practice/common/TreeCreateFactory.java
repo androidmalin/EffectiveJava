@@ -40,14 +40,24 @@ public final class TreeCreateFactory {
         }
         // 最后一个父节点:因为最后一个父节点可能没有右孩子，所以单独拿出来处理  
         int lastParentIndex = ARRAY_DATA.length / 2 - 1;
-        // 左孩子
-        if (nodeList.get(lastParentIndex) != null) {
-            nodeList.get(lastParentIndex).left = nodeList.get(lastParentIndex * 2 + 1);
-        }
-        // 右孩子,如果数组的长度为奇数才建立右孩子
-        if (ARRAY_DATA.length % 2 == 1) {
+
+        if (ARRAY_DATA.length == 1) {
+            //只有一个根节点的情况
+            // 左孩子
+            if (nodeList.get(0) != null) {
+                nodeList.get(0).left = null;
+                nodeList.get(0).right = null;
+            }
+        } else {
+            // 左孩子
             if (nodeList.get(lastParentIndex) != null) {
-                nodeList.get(lastParentIndex).right = nodeList.get(lastParentIndex * 2 + 2);
+                nodeList.get(lastParentIndex).left = nodeList.get(lastParentIndex * 2 + 1);
+            }
+            // 右孩子,如果数组的长度为奇数才建立右孩子
+            if (ARRAY_DATA.length % 2 == 1) {
+                if (nodeList.get(lastParentIndex) != null) {
+                    nodeList.get(lastParentIndex).right = nodeList.get(lastParentIndex * 2 + 2);
+                }
             }
         }
     }
@@ -120,6 +130,6 @@ public final class TreeCreateFactory {
     }
 
     public static void main(String[] args) {
-        TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
+        TreeCreateFactory.init(1);
     }
 }
