@@ -2,7 +2,6 @@ package com.example.practice.questiones.heap.lc_40;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;

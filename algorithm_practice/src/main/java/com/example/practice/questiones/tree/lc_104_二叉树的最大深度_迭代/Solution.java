@@ -12,7 +12,7 @@ import java.util.Queue;
 @SuppressWarnings("all")
 public class Solution {
     public int maxDepth(TreeNode root) {
-        return level(root);
+        return level2(root);
     }
 
     /**
@@ -28,9 +28,99 @@ public class Solution {
         while (!queue.isEmpty()) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
-                TreeNode node = queue.poll();
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
+                TreeNode currentNode = queue.poll();
+                if (currentNode.left != null) queue.offer(currentNode.left);
+                if (currentNode.right != null) queue.offer(currentNode.right);
+            }
+            height++;
+        }
+        return height;
+    }
+
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+//                 ``````````````````
+
+
+    /**
+     * ``````1``````
+     * ````/```\````
+     * ``2```````3``
+     * `/`\`````/`\`
+     * 4```5```6```7
+     */
+    private int level2(TreeNode root) {
+        if (root == null) return 0;
+        int height = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size > 0) {
+                TreeNode currentNode = queue.poll();
+                if (currentNode.left != null) queue.offer(currentNode.left);
+                if (currentNode.right != null) queue.offer(currentNode.right);
+                size--;
+            }
+            height++;
+        }
+        return height;
+    }
+
+    /**
+     * ``````1``````
+     * ````/```\````
+     * ``2```````3``
+     * `/`\`````/`\`
+     * 4```5```6```7
+     */
+    public int minDepth(TreeNode root) {
+        if (root == null) return 0;
+        int height = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode currentNode = queue.poll();
+                if (currentNode.left == null && currentNode.right == null) {
+                    return height + 1;
+                }
+                if (currentNode.left != null) queue.offer(currentNode.left);
+                if (currentNode.right != null) queue.offer(currentNode.right);
             }
             height++;
         }
