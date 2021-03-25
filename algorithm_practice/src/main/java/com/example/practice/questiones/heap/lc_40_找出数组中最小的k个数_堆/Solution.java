@@ -1,4 +1,4 @@
-package com.example.practice.questiones.heap.lc_40_找出数组中最小的k个数;
+package com.example.practice.questiones.heap.lc_40_找出数组中最小的k个数_堆;
 
 import java.util.PriorityQueue;
 
@@ -31,11 +31,9 @@ public class Solution {
         for (int value : arr) {
             queue.add(value);
         }
-
-        for (Integer integer : queue) {
-            System.out.print(integer);
-        }
-
+        //此时queue中的数据是: 从小到大排序的
+        //queue poll  操作队首(👈最左边)
+        //queue offer 操作队尾(最右边👉)
         int[] result = new int[k];
         for (int i = 0; i < k; i++) {
             result[i] = queue.poll();

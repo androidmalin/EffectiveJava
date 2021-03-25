@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 94. 二叉树的中序遍历
+ * 94. 二叉树的遍历
  * 非递归写法
  * <p>
  * <p>
