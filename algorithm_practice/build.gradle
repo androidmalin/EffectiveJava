@@ -6,5 +6,18 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+//test {
+//    useJUnit()
+//    maxHeapSize = '1G'
+//    reports {
+//        junitXml {
+//            outputPerTestCase = true // defaults to false
+//            mergeReruns = true // defaults to false
+//        }
+//    }
+//}
+
 dependencies {
+    //implementation 'junit:junit:4.13.2'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.1'
 }
