@@ -20,12 +20,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
-        TreeNode root = TreeCreateFactory.getRootNode();
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
 
         System.out.println("递归--二叉树的层序遍历:");
         List<List<Integer>> lists = solution.levelOrder(root);
         System.out.println(lists);
+
+        System.out.println("递归");
+        List<List<Integer>> lists1 = solution.levelOrder_ReView(root);
+        System.out.println(lists1);
     }
 
     @Test

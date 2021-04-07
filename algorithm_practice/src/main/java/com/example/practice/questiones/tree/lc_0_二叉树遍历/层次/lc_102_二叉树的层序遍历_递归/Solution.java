@@ -27,6 +27,14 @@ public class Solution {
         return res;
     }
 
+
+    /**
+     * ````1````````
+     * ````|```\````
+     * ````2`````3``
+     * ````|`\```|`\
+     * ````4``5``6``7
+     */
     public static void dfs(List<List<Integer>> res, int index, TreeNode root) {
         if (root == null) return;
         //假设res是[ [1],[2,3] ], index是3,就再插入一个空list放到res中
@@ -39,5 +47,36 @@ public class Solution {
         //递归的处理左子树,右子树,同时将层数index+1
         dfs(res, index + 1, root.left);
         dfs(res, index + 1, root.right);
+    }
+
+
+    public List<List<Integer>> levelOrder_ReView(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        dfsLevel(root, 1, res);
+        return res;
+    }
+
+
+    /**
+     * ````1````````
+     * ````|```\````
+     * ````2`````3``
+     * ````|`\```|`\
+     * ````4``5``6``7
+     */
+    private void dfsLevel(TreeNode root, int level, List<List<Integer>> res) {
+        if (root == null) return;
+        if (res.size() < level) {
+            //1.先将空的集合加入到大的集合中
+            res.add(new ArrayList<>());
+        }
+
+        //2.从大集合中, 取出当前层次对应的子集合
+        List<Integer> levelList = res.get(level - 1);
+        //将值加入当前层次对应集合之中.
+        levelList.add(root.val);
+
+        dfsLevel(root.left, level + 1, res);
+        dfsLevel(root.right, level + 1, res);
     }
 }

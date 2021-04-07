@@ -13,8 +13,13 @@ public class Main {
     public static void main(String[] args) {
         TreeNode root = TreeCreateFactory.init(1, 2, 2, 3, 4, 4, 3);
         boolean mirror = new Solution().isSymmetric(root);
-        System.out.println(mirror);
+        System.out.println("isSymmetric:" + mirror);
         System.out.println(" ");
+
+        Solution2 solution2 = new Solution2();
+        boolean symmetric = solution2.isSymmetric(root);
+        System.out.println("test ");
+        System.out.println("isSymmetric:" + symmetric);
     }
 
     @Test
@@ -23,5 +28,9 @@ public class Main {
         Integer[] integers = new Integer[]{1, 2, 2, 3, 4, 4, 3};
         TreeNode root = TreeCreateFactory.init(Arrays.asList(integers));
         assertTrue(solution.isSymmetric(root));
+
+
+        Solution2 solution2 = new Solution2();
+        assertTrue(solution2.isSymmetric(root));
     }
 }

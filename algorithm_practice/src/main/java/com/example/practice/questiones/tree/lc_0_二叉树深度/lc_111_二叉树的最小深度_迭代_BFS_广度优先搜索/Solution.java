@@ -52,4 +52,154 @@ public class Solution {
         }
         return depth;
     }
+
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+
+    /**
+     * 2021.4.6
+     * 17:30
+     */
+    public int minDepth_ReView(TreeNode root) {
+        if (root == null) return 0;
+        int depth = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode tempNode = queue.poll();
+                if (tempNode.left == null && tempNode.right == null) return depth + 1;
+                if (tempNode.left != null) queue.offer(tempNode.left);
+                if (tempNode.right != null) queue.offer(tempNode.right);
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    ////////////
+    //      1
+    //    /   \
+    //  2       3
+    //         / \
+    //        6   7
+    public int minDepth_ReView2(TreeNode root) {
+        if (root == null) return 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        int depth = 0;
+        while (!queue.isEmpty()) {
+            //层次遍历
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode tempNode = queue.poll();
+                if (tempNode.left == null && tempNode.right == null) return depth + 1;
+                if (tempNode.left != null) queue.offer(tempNode.left);
+                if (tempNode.right != null) queue.offer(tempNode.right);
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+    public int minDepth_ReView3(TreeNode root) {
+        return minDFS(root);
+    }
+
+
+    //        1
+    //      /
+    //    2
+    //  /
+    //4
+
+    //      1
+    //        \
+    //          3
+    //         / \
+    //        6   7
+    private int minDFS(TreeNode root) {
+        //递归的终止条件
+        //1.root==null
+        //2.leaf node
+        // root.left == null && root.right == null
+        if (root == null) return 0;
+        if (root.left == null && root.right == null) return 1;
+        int minValue = Integer.MAX_VALUE;
+
+        if (root.left != null) {
+            int leftMin = minDFS(root.left);
+            minValue = Math.min(leftMin, minValue);
+        }
+        if (root.right != null) {
+            int rightMin = minDFS(root.right);
+            minValue = Math.min(rightMin, minValue);
+        }
+        return minValue + 1;
+    }
 }

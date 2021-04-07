@@ -14,6 +14,10 @@ public class Main {
         int maxDepth = solution.maxDepth(root);
         System.out.println("maxDepth:" + maxDepth);
         System.out.println(" ");
+
+        System.out.println("review1:" + solution.maxDepth_ReView1(root));
+        System.out.println("review2:" + solution.maxDepth_ReView2(root));
+        System.out.println("review3:" + solution.maxDepth_ReView3(root));
     }
 
     @Test

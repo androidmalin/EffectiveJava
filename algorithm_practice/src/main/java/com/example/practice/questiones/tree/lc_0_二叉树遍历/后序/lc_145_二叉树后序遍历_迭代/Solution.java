@@ -45,21 +45,23 @@ public class Solution {
         while (!s1.isEmpty()) {
             TreeNode cur = s1.pop();
             s2.push(cur);
-            //s1:
-            //2:right
-            //1:left
+
 
             //s1--弹出加入--s2中
 
             //s2:
-            //3:left
-            //2:right
-            //1:root
+            //----------------------
+            //  left right root    |
+            //----------------------
 
             //s2--弹出
             //left-->right-->root
             if (cur.left != null) s1.push(cur.left);
             if (cur.right != null) s1.push(cur.right);
+            //s1:
+            //----------------------
+            //  right left          |
+            //----------------------
         }
 
         while (!s2.isEmpty()) res.add(s2.pop().val);
@@ -122,19 +124,88 @@ public class Solution {
         return res;
     }
 
-    /**
-     * 后序遍历--递归
-     */
-    public List<Integer> postorderTraversalDG(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        postorder(root, res);
-        return res;
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+
+
+    //```````````````高度    节点个数
+    //``````1`````````1        1
+    //````/```\```````
+    //``2```````3`````2        3
+    //`/`\`````/`\````
+    //4```5```6```7```3        7
+    public List<Integer> postorderTraversal_ReView1(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        //left->right->root
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack2 = new Stack<>();
+        Stack<TreeNode> stack1 = new Stack<>();
+        stack1.push(root);
+        while (!stack1.isEmpty()) {
+            TreeNode temp = stack1.pop();
+            stack2.push(temp);
+            if (temp.left != null) stack1.push(temp.left);
+            if (temp.right != null) stack1.push(temp.right);
+
+        }
+        while (!stack2.isEmpty()) {
+            list.add(stack2.pop().val);
+        }
+        return list;
     }
 
-    private void postorder(TreeNode root, List<Integer> res) {
-        if (root == null) return;
-        postorder(root.left, res);
-        postorder(root.right, res);
-        res.add(root.val);
-    }
+
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+    ///////////////
+
 }

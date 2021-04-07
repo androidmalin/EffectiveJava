@@ -2,6 +2,9 @@ package com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.lc_107_
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,9 +28,10 @@ public class Main {
         System.out.println(lists);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void test() {
         TreeNode root = TreeCreateFactory.init(3, 9, 20, null, null, 15, 7);
+        TreeOperation.show(root);
         Solution solution = new Solution();
         List<List<Integer>> lists = new ArrayList<>();
         lists.add(Arrays.asList(15, 7));

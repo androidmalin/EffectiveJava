@@ -36,12 +36,12 @@ public class Solution {
 
         //4.开始循环,循环的终止条件是:队列中元素个数为0
         while (!queue.isEmpty()) {
-            List<Integer> list = new ArrayList<>();
+            List<Integer> levelList = new ArrayList<>();
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 //5.取出队列中存储的第一个节点名为tempNode
                 TreeNode tempNode = queue.poll();
-                list.add(tempNode.val);
+                levelList.add(tempNode.val);
 
                 //6.加入tempNode该节点的左子节点到队列(如果左子节点不为空)
                 if (tempNode.left != null) {
@@ -54,7 +54,7 @@ public class Solution {
                 }
             }
             //8.当前节点的值加入集合中
-            dataList.add(list);
+            dataList.add(levelList);
         }
         return dataList;
     }

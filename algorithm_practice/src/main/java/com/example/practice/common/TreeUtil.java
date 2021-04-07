@@ -5,18 +5,6 @@ import java.util.List;
 
 public class TreeUtil {
 
-    public static List<Integer> preOrder(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        pre(root, res);
-        return res;
-    }
-
-    private static void pre(TreeNode root, List<Integer> res) {
-        if (root == null) return;
-        res.add(root.val);
-        pre(root.left, res);
-        pre(root.right, res);
-    }
 
     /**
      * ``````1``````
@@ -52,5 +40,46 @@ public class TreeUtil {
         root.right.left = new TreeNode(5);
         root.right.right = new TreeNode(4);
         return root;
+    }
+
+
+    public static List<Integer> preOrder(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        pre(root, res);
+        return res;
+    }
+
+    private static void pre(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        res.add(root.val);
+        pre(root.left, res);
+        pre(root.right, res);
+    }
+
+    public static List<Integer> inOrder(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        in(root, res);
+        return res;
+    }
+
+    private static void in(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        in(root.left, res);
+        res.add(root.val);
+        in(root.right, res);
+    }
+
+
+    public static List<Integer> postOrder(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        post(root, res);
+        return res;
+    }
+
+    private static void post(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        post(root.left, res);
+        post(root.right, res);
+        res.add(root.val);
     }
 }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Solution {
 
@@ -26,12 +27,166 @@ public class Solution {
             for (int i = 0; i < size; i++) {
                 TreeNode temp = queue.poll();
                 levelList.add(temp.val);
-                if (temp.left != null) queue.offer(temp.left);
-                if (temp.right != null) queue.offer(temp.right);
+                if (temp.left != null) {
+                    queue.offer(temp.left);
+                }
+                if (temp.right != null) {
+                    queue.offer(temp.right);
+                }
             }
             lists.add(levelList);
         }
         //4.返回结果
         return lists;
+    }
+
+
+    /**
+     * pre
+     * push:node=1✅
+     * push:node=3✅, node=2✅, value=1✅
+     * push:node=5✅, node=4✅, value=2✅
+     * push:node=null, node=null, value=4✅
+     * push:node=null, node=null, value=5✅
+     * push:node=null, node=null, value=3✅
+     */
+    public List<Integer> preOrder(TreeNode root) {
+        //1.参数检查
+        if (root == null) return new ArrayList<>();
+
+        //2.颜色标记法
+        //使用一个栈,存储2种类型的数据
+        Stack<Object> stack = new Stack<>();
+
+        //3.加入根节点
+        stack.push(root);
+
+        List<Integer> list = new ArrayList<>();
+
+        //遍历所有元素
+        while (!stack.empty()) {
+            Object object = stack.pop();
+            //System.out.println("pop:" + object+" isNode:"+(object instanceof TreeNode));
+            if (object instanceof TreeNode) {
+                TreeNode tempNode = (TreeNode) object;
+                //root->left->right;
+                stack.push(tempNode.right);
+                stack.push(tempNode.left);
+                stack.push(tempNode.val);
+            } else if (object instanceof Integer) {
+                list.add((Integer) object);
+            }
+        }
+        return list;
+    }
+
+
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+
+    public List<Integer> inOrder(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        Stack<Object> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Object object = stack.pop();
+            if (object instanceof TreeNode) {
+                TreeNode tempNode = (TreeNode) object;
+                //left->root->right;
+                stack.push(tempNode.right);
+                stack.push(tempNode.val);
+                stack.push(tempNode.left);
+
+            } else if (object instanceof Integer) {
+                list.add((Integer) object);
+            }
+        }
+        return list;
+    }
+
+
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    ///
+    ////
+    public List<Integer> postOrder(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+
+        Stack<Object> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.empty()) {
+            Object object = stack.pop();
+            if (object instanceof TreeNode) {
+                TreeNode tempNode = (TreeNode) object;
+                //left->right->root
+                stack.push(tempNode.val);
+                stack.push(tempNode.right);
+                stack.push(tempNode.left);
+            } else if (object instanceof Integer) {
+                list.add((Integer) object);
+            }
+        }
+        return list;
+    }
+
+    public List<Integer> postOrder_(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        post(root, list);
+        return list;
+    }
+
+    private void post(TreeNode root, List<Integer> list) {
+        if (root == null) return;
+        post(root.left, list);
+        post(root.right, list);
+        list.add(root.val);
     }
 }

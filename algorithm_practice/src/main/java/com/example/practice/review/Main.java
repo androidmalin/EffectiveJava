@@ -13,11 +13,27 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Main {
     public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
-        TreeOperation.show(root);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
         Solution solution = new Solution();
         List<List<Integer>> level = solution.level(root);
         System.out.println(level);
+
+
+//        System.out.println("pre");
+//        List<Integer> pre = solution.preOrder(root);
+//        System.out.println(pre);
+
+//        System.out.println("ino");
+//        List<Integer> list = solution.inOrder(root);
+//        System.out.println(list);
+//
+//        System.out.println("post");
+//        List<Integer> list1 = solution.postOrder(root);
+//        System.out.println(list1);
+//
+//        System.out.println("post2");
+//        List<Integer> list2 = solution.postOrder_(root);
+//        System.out.println(list2);
     }
 
     @Test

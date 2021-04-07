@@ -40,12 +40,41 @@ public class Solution {
      * `/`\`````/`\
      * 4```5```6```7
      * 节点 1 先入栈，然后弹出并打印。接下来先把节点 3 压入 stack，再把节点 2 压入，stack 从栈顶到栈底依次为 2，3。
+     * ------
+     * 2 3 |
+     * ------
+     * <p>
      * 节点 2 弹出并打印，把节点 5 压入 stack，再把节点 4 压入，stack 从栈顶到栈底为 4，5，3。
+     * ------
+     * 4 5 3 |
+     * ------
+     * <p>
      * 节点 4 弹出并打印，节点 4 没有孩子节点压入 stack，stack 从栈顶到栈底依次为 5，3。
+     * ------
+     * ``5 3 |
+     * ------
+     * <p>
      * 节点 5 弹出并打印，节点 5 没有孩子节点压入 stack，stack 从栈顶到栈底依次为 3。
+     * ------
+     * ````3 |
+     * ------
+     * <p>
      * 节点 3 弹出并打印，把节点 7 压入 stack，再把节点 6 压入，stack 从栈顶到栈底为 6，7。
+     * ------
+     * ``6 7 |
+     * ------
+     * <p>
+     * <p>
      * 节点 6 弹出并打印，节点 6 没有孩子节点压入 stack，stack 目前从栈顶到栈底为 7。
+     * ------
+     * `````7|
+     * ------
+     * <p>
      * 节点 7 弹出并打印，节点 7 没有孩子节点压入 stack，stack 已经为空，过程停止。
+     * ------
+     * ``````|
+     * ------
+     * <p>
      * 整个过程请参看如下代码中的 preorderTraversal 方法。
      * <p>
      * 时间复杂度：O(n)
@@ -66,19 +95,18 @@ public class Solution {
         return res;
     }
 
-    /**
-     * 递归写法
-     */
-    public List<Integer> preorderTraversalDG(TreeNode root) {
+    public List<Integer> preorderTraversal_ReView(TreeNode root) {
+        if (root == null) return new ArrayList<>();
         List<Integer> res = new ArrayList<>();
-        preorder(root, res);
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode currentNode = stack.pop();
+            res.add(currentNode.val);
+            if (currentNode.right != null) stack.push(currentNode.right);
+            if (currentNode.left != null) stack.push(currentNode.left);
+        }
         return res;
     }
 
-    private void preorder(TreeNode root, List<Integer> res) {
-        if (root == null) return;
-        res.add(root.val);
-        preorder(root.left, res);
-        preorder(root.right, res);
-    }
 }

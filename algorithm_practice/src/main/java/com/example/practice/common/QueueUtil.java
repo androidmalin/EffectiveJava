@@ -25,10 +25,13 @@ public class QueueUtil {
     }
 
     public static void main(String[] args) {
+        System.out.println("printQueueRightOrder");
         printQueueRightOrder();
         System.out.println(" ");
+        System.out.println("printQueueError");
         printQueueError();
         System.out.println(" ");
+        System.out.println("printQueueToListRightOrder ");
         printQueueToListRightOrder();
     }
 

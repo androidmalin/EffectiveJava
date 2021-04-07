@@ -44,10 +44,44 @@ public class Solution {
         //递归的终止条件是两个节点都为空
         //或者两个节点中有一个为空
         //或者两个节点的值不相等
+
+        //①.
+        // 1
+
+        //②
+        //```1```
+        //``/````
+        //`2`````
+
+        //③
+        //```1```
+        //````\``
+        //`````3`
+
+        //④
+        //```1```
+        //``/`\``
+        //`2```2`
+
+        //⑤
+        //`````````````````````1``````
+        //`````````````/```````````````\````
+        //```````````2(left)``````````````````2(right)
+        //``````````/`\```````````````````/````````````\`
+        //`````````3```4(left.right)```4(right.left)`````3
+
+        //①.
         if (left == null || right == null) return true;
+        //②.
         if (left != null && right == null) return false;
+
+        //③
         if (left == null && right != null) return false;
+
+        //④
         if (left.val != right.val) return false;
+
+        //⑤
         return mirror(left.left, right.right) && mirror(left.right, right.left);
     }
 }

@@ -53,8 +53,8 @@ public class Solution {
 
     private int level2(TreeNode root) {
         if (root == null) return 0;
-        Queue<TreeNode> queue = new LinkedList<>();
         int depth = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
@@ -68,4 +68,82 @@ public class Solution {
         }
         return depth;
     }
+
+
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+    ///////
+
+
+    public int maxDepth_ReView1(TreeNode root) {
+        if (root == null) return 0;
+        int depth = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode tempNode = queue.poll();
+                if (tempNode.left != null) queue.offer(tempNode.left);
+                if (tempNode.right != null) queue.offer(tempNode.right);
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+    public int maxDepth_ReView2(TreeNode root) {
+        if (root == null) return 0;
+        int depth = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size > 0) {
+                TreeNode tempNode = queue.poll();
+                if (tempNode.left != null) queue.offer(tempNode.left);
+                if (tempNode.right != null) queue.offer(tempNode.right);
+                size--;
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+
+    public int maxDepth_ReView3(TreeNode root) {
+        if (root == null) return 0;
+        int leftMax = maxDepth_ReView3(root.left);
+        int rightMax = maxDepth_ReView3(root.right);
+        return Math.max(leftMax, rightMax) + 1;
+    }
+
 }

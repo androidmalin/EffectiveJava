@@ -31,6 +31,7 @@ public class Main {
         List<Integer> list = Arrays.asList(2, 3, 4, 1);
         assertEquals(solution.postorder(root), solution.postorder2(root));
         assertEquals(solution.postorder(root), solution.postorder3(root));
+        assertEquals(solution.postorder2(root), solution.postorder3(root));
         assertEquals(list, solution.postorder(root));
         assertEquals(list, solution.postorder2(root));
         assertEquals(list, solution.postorder3(root));

@@ -25,4 +25,28 @@ public class Main {
         TreeNode mirrorTree = TreeUtil.getMirrorTreeNode();
         assertEquals(TreeUtil.preOrder(mirrorTree), TreeUtil.preOrder(invertTree));
     }
+
+    @Test
+    public void test_review() {
+        TreeOperation.show(TreeUtil.getTreeNode());
+        Solution2 solution2 = new Solution2();
+        TreeNode invertTree = solution2.invertTree(TreeUtil.getTreeNode());
+        TreeNode mirrorTree = TreeUtil.getMirrorTreeNode();
+        assertEquals(TreeUtil.preOrder(mirrorTree), TreeUtil.preOrder(invertTree));
+    }
+
+
+    @Test
+    public void test_review2() {
+        TreeOperation.show(TreeUtil.getTreeNode());
+        Solution3 solution3 = new Solution3();
+        TreeNode pre = solution3.invert_pre(TreeUtil.getTreeNode());
+        TreeNode in = solution3.invert_in(TreeUtil.getTreeNode());
+        TreeNode post = solution3.invert_post(TreeUtil.getTreeNode());
+
+        TreeNode mirrorTree = TreeUtil.getMirrorTreeNode();
+        assertEquals(TreeUtil.preOrder(mirrorTree), TreeUtil.preOrder(pre));
+        assertEquals(TreeUtil.preOrder(mirrorTree), TreeUtil.preOrder(in));
+        assertEquals(TreeUtil.preOrder(mirrorTree), TreeUtil.preOrder(post));
+    }
 }

@@ -14,6 +14,9 @@ public class Main {
         int minDepth = solution.minDepth(root);
         System.out.println("minDepth:" + minDepth);
         System.out.println(" ");
+
+//        int depth_reView = solution.minDepth_ReView(root);
+//        System.out.println("minDepth_ReView:" + depth_reView);
     }
 
     @Test

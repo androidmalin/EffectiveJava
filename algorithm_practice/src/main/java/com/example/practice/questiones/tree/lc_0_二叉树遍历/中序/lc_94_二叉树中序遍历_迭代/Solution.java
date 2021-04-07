@@ -62,6 +62,11 @@ public class Solution {
      * （如果把整个左中右的遍历都理解成子树的话，就是处理完 左子树->中间(就是一个节点)->右子树）如果有右节点，其也要进行中序遍历。
      * <p>
      * 当整个左子树退栈的时候这个时候输出了该子树的根节点2，之后输出中间节点1。然后处理根节点为3右子树。
+     * 可以通过debug, 设置断点
+     * 同时画图理解;
+     * 深入理解其中 "记录了来源" 的含义, cur 节点的含义是什么?
+     * 反复练习直接理解了. 同时要注意和层次遍历使用的Queue的区别.(层次遍历一上来,就queue.offer(root)) 这里要区别理解.
+     * <p>
      * https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/leetcodesuan-fa-xiu-lian-dong-hua-yan-shi-xbian-2/
      */
     public List<Integer> inorderTraversal(TreeNode root) {
@@ -81,19 +86,142 @@ public class Solution {
         return res;
     }
 
+
     /**
-     * 中序遍历--递归
+     * 2021.4.6
+     * 注意理解2个while循环的含义.
      */
-    public List<Integer> inorderTraversalDG(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        inorder(root, res);
-        return res;
+    public List<Integer> inorderTraversal_ReView0(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) return list;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (!stack.isEmpty() || cur != null) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            TreeNode tempNode = stack.pop();
+            list.add(tempNode.val);
+            if (tempNode.right != null) {
+                cur = tempNode.right;
+            }
+        }
+        return list;
     }
 
-    private void inorder(TreeNode root, List<Integer> res) {
-        if (root == null) return;
-        inorder(root.left, res);
-        res.add(root.val);
-        inorder(root.right, res);
+
+    //```````````````高度    节点个数
+    //``````1`````````1        1
+    //````/```\```````
+    //``2```````3`````2        3
+    //`/`\`````/`\````
+    //4```5```6```7```3        7
+    public List<Integer> inorderTraversal_ReView1(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        //left->root->right;
+        //思路:
+        //尽量将左子树.
+        //使用2个while循环
+        TreeNode currentNode = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || currentNode != null) {
+            while (currentNode != null) {
+                stack.push(currentNode);
+                currentNode = currentNode.left;
+            }
+
+            TreeNode tempNode = stack.pop();
+            result.add(tempNode.val);
+            if (tempNode.right != null) {
+                currentNode = tempNode.right;
+            }
+        }
+        return result;
+    }
+
+
+    public List<Integer> inorderTraversal_ReView2(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode currentNode = root;
+        while (!stack.isEmpty() || currentNode != null) {
+            while (currentNode != null) {
+                stack.push(currentNode);
+                currentNode = currentNode.left;
+            }
+            TreeNode tempNode = stack.pop();
+            list.add(tempNode.val);
+            if (tempNode.right != null) {
+                currentNode = tempNode.right;
+            }
+        }
+        return list;
+    }
+
+
+    //```````````````高度    节点个数
+    //``````1`````````1        1
+    //````/```\```````
+    //``2```````3`````2        3
+    //`/`\`````/`\````
+    //4```5```6```7```3        7
+    public List<Integer> inorderTraversal_ReView3(TreeNode root) {
+        //1.params
+
+        //2.list
+
+        //3.stack
+
+        //4.memory current node
+
+        //1.
+        if (root == null) return new ArrayList<>();
+
+        //2.
+        List<Integer> list = new ArrayList<>();
+
+        //3.
+        Stack<TreeNode> stack = new Stack<>();
+
+        //4.
+        TreeNode currentNode = root;
+
+        while (!stack.isEmpty() || currentNode != null) {
+            while (currentNode != null) {
+                stack.push(currentNode);
+                currentNode = currentNode.left;
+            }
+            TreeNode tempNode = stack.pop();
+            list.add(tempNode.val);
+
+            if (tempNode.right != null) {
+                currentNode = tempNode.right;
+            }
+        }
+        return list;
+    }
+
+
+    public List<Integer> inorderTraversal_ReView4(TreeNode root) {
+        //left->root->right;
+        if (root == null) return new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode currentNode = root;
+        while (!stack.isEmpty() || currentNode != null) {
+            while (currentNode != null) {
+                stack.push(currentNode);
+                currentNode = currentNode.left;
+            }
+            TreeNode tempNode = stack.pop();
+            list.add(tempNode.val);
+            if (tempNode.right != null) {
+                currentNode = tempNode.right;
+            }
+        }
+        return list;
     }
 }

@@ -2,10 +2,11 @@ package com.example.practice.questiones.tree.lc_0_二叉树遍历.前序.lc_144_
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
+import com.example.practice.common.TreeUtil;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,25 +25,17 @@ public class Main {
         System.out.println("非递归--二叉树的前序遍历:");
         System.out.println(list);
 
-        List<Integer> list1 = solution.preorderTraversalDG(root);
-        System.out.println("递归--二叉树的前序遍历:");
-        System.out.println(list1);
+        System.out.println("非递归--二叉树的前序遍历2:");
+        List<Integer> list2 = solution.preorderTraversal_ReView(root);
+        System.out.println(list2);
     }
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        assertEquals(solution.preorderTraversalDG(root), solution.preorderTraversal(root));
-    }
-
-    @Test
-    public void test1() {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        List<Integer> resList = Arrays.asList(1, 2, 4, 5, 3, 6, 7);
-        assertEquals(resList, solution.preorderTraversal(root));
-        assertEquals(resList, solution.preorderTraversalDG(root));
+        TreeNode root = TreeUtil.getTreeNode();
+        TreeOperation.show(root);
+        assertEquals(TreeUtil.preOrder(root), new Solution().preorderTraversal(root));
+        assertEquals(TreeUtil.preOrder(root), new Solution().preorderTraversal_ReView(root));
     }
 
 }
