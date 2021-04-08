@@ -35,6 +35,7 @@ public class Solution {
         for (int i = 0; i < k; i++) {
             queue.offer(arr[i]);
         }
+        System.out.println(queue);
         //此时queue中的数据是: 从大到小排序的
         //queue poll  操作队首(👈最左边)
         //queue offer 操作队尾(最右边👉)
@@ -44,6 +45,7 @@ public class Solution {
                 queue.offer(arr[i]);
             }
         }
+        System.out.println(queue);
         for (int i = 0; i < k; i++) {
             vec[i] = queue.poll();
         }

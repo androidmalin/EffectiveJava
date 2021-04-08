@@ -26,14 +26,17 @@ import java.util.PriorityQueue;
  */
 public class Solution {
 
+    /**
+     * 视频讲解
+     * https://u.geekbang.org/lesson/14?article=239051
+     */
     public int[] getLeastNumbers(int[] arr, int k) {
         PriorityQueue<Integer> queue = new PriorityQueue<>();
         for (int value : arr) {
             queue.add(value);
         }
         //此时queue中的数据是: 从小到大排序的
-        //queue poll  操作队首(👈最左边)
-        //queue offer 操作队尾(最右边👉)
+        //queue poll  返回队首元素,即队列中最少的值
         int[] result = new int[k];
         for (int i = 0; i < k; i++) {
             result[i] = queue.poll();

@@ -13,11 +13,9 @@ import java.util.Stack;
 public class Tree_DFS {
 
     public static void main(String[] args) {
-        TreeCreateFactory.init(1, 2, 3, 4, 5, null, null);
-        TreeNode root = TreeCreateFactory.getRootNode();
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, null, null);
 
         System.out.println("DFS深度优先遍历");
-
         System.out.println("DFS 递归写法");
         dfs_recursion_traversal(root);
         System.out.println(" ");
@@ -26,6 +24,7 @@ public class Tree_DFS {
     }
 
     /**
+     * 前序遍历
      * DFS 递归写法
      */
     public static void dfs_recursion_traversal(TreeNode root) {
@@ -36,6 +35,7 @@ public class Tree_DFS {
     }
 
     /**
+     * 前序遍历
      * DFS 非递归写法
      */
     public static List<Integer> dfs_not_recursion_traversal(TreeNode root) {
@@ -46,12 +46,8 @@ public class Tree_DFS {
         while (!stack.empty()) {
             TreeNode tempNode = stack.pop();
             resultList.add(tempNode.val);
-            if (tempNode.right != null) {
-                stack.push(tempNode.right);
-            }
-            if (tempNode.left != null) {
-                stack.push(tempNode.left);
-            }
+            if (tempNode.right != null) stack.push(tempNode.right);
+            if (tempNode.left != null) stack.push(tempNode.left);
         }
         System.out.println(resultList);
         return resultList;

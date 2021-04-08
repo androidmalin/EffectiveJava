@@ -1,4 +1,4 @@
-package com.example.practice.questiones.heap.lc_239;
+package com.example.practice.questiones.heap.lc_239_滑动窗口最大值;
 
 import java.util.PriorityQueue;
 

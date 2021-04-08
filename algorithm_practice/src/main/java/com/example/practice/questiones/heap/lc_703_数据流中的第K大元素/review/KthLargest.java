@@ -1,4 +1,5 @@
-package com.example.practice.questiones.heap.lc_703;
+package com.example.practice.questiones.heap.lc_703_数据流中的第K大元素.review;
+
 
 import java.util.PriorityQueue;
 
@@ -8,22 +9,22 @@ import java.util.PriorityQueue;
  * https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/
  */
 public class KthLargest {
-    PriorityQueue<Integer> pq;
+
+    PriorityQueue<Integer> queue = new PriorityQueue<>();
     int k;
 
     public KthLargest(int k, int[] nums) {
         this.k = k;
-        pq = new PriorityQueue<>();
-        for (int x : nums) {
-            add(x);
+        for (int num : nums) {
+            add(num);
         }
     }
 
     public int add(int val) {
-        pq.offer(val);
-        if (pq.size() > k) {
-            pq.poll();
+        queue.offer(val);
+        if (queue.size() > k) {
+            queue.poll();
         }
-        return pq.peek();
+        return queue.peek();
     }
 }

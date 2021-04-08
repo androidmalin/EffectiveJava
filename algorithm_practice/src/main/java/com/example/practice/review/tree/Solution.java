@@ -1,5 +1,4 @@
-package com.example.practice.review;
-
+package com.example.practice.review.tree;
 
 import com.example.practice.common.TreeNode;
 
@@ -14,25 +13,19 @@ public class Solution {
     public List<List<Integer>> level(TreeNode root) {
         //1.检查参数
         if (root == null) return new ArrayList<>();
-
         //2.根节点加入队列
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         List<List<Integer>> lists = new ArrayList<>();
-
         //3.每次循环=>即:每次的节点加入一个集合
         while (!queue.isEmpty()) {
             int size = queue.size();
             List<Integer> levelList = new ArrayList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode temp = queue.poll();
-                levelList.add(temp.val);
-                if (temp.left != null) {
-                    queue.offer(temp.left);
-                }
-                if (temp.right != null) {
-                    queue.offer(temp.right);
-                }
+                TreeNode tempNode = queue.poll();
+                levelList.add(tempNode.val);
+                if (tempNode.left != null) queue.offer(tempNode.left);
+                if (tempNode.right != null) queue.offer(tempNode.right);
             }
             lists.add(levelList);
         }
@@ -60,7 +53,6 @@ public class Solution {
 
         //3.加入根节点
         stack.push(root);
-
         List<Integer> list = new ArrayList<>();
 
         //遍历所有元素
@@ -81,33 +73,6 @@ public class Solution {
     }
 
 
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-
     public List<Integer> inOrder(TreeNode root) {
         if (root == null) return new ArrayList<>();
         List<Integer> list = new ArrayList<>();
@@ -121,7 +86,6 @@ public class Solution {
                 stack.push(tempNode.right);
                 stack.push(tempNode.val);
                 stack.push(tempNode.left);
-
             } else if (object instanceof Integer) {
                 list.add((Integer) object);
             }
@@ -129,37 +93,9 @@ public class Solution {
         return list;
     }
 
-
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
-    ///
-    ////
     public List<Integer> postOrder(TreeNode root) {
         if (root == null) return new ArrayList<>();
         List<Integer> list = new ArrayList<>();
-
         Stack<Object> stack = new Stack<>();
         stack.push(root);
         while (!stack.empty()) {
@@ -175,18 +111,5 @@ public class Solution {
             }
         }
         return list;
-    }
-
-    public List<Integer> postOrder_(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        post(root, list);
-        return list;
-    }
-
-    private void post(TreeNode root, List<Integer> list) {
-        if (root == null) return;
-        post(root.left, list);
-        post(root.right, list);
-        list.add(root.val);
     }
 }

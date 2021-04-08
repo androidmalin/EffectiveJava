@@ -9,11 +9,9 @@
 3.N叉树前后序遍历
 迭代
 
-5.二叉树每层的最大值
+4.二叉树每层的最大值
 
-6.
-
-4.二叉树的(最大,最小)高度
+5.二叉树的(最大,最小)高度
 递归
 迭代
 
@@ -48,9 +46,6 @@ https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/
 637. 二叉树的层平均值
 https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/
 
-958. 二叉树的完全性检验
-https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree/
-
 116. 填充每个节点的下一个右侧节点指针
 https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/
 
@@ -70,3 +65,6 @@ https://leetcode-cn.com/problems/invert-binary-tree/
 
 101. 对称二叉树
 https://leetcode-cn.com/problems/symmetric-tree/
+
+958. 二叉树的完全性检验
+https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree/

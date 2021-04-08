@@ -1,11 +1,8 @@
-package com.example.practice.questiones.heap.lc_40;
+package com.example.practice.questiones.heap.lc_40_找出数组中最小的k个数;
 
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.Random;
 
 
 class Solution {
@@ -55,32 +52,5 @@ class Solution {
             res[idx++] = num;
         }
         return res;
-    }
-
-
-    //3, 90, 20, 1, 2, 0
-    public static void main(String[] args) {
-        List<Integer> list = insertSort();
-        System.out.println(list);
-    }
-
-    private static List<Integer> insertSort() {
-        List<Integer> list = new ArrayList<>();
-        PriorityQueue<Integer> queue = new PriorityQueue<>(7);
-        Random random = new Random();
-        for (int i = 0; i < 7; i++) {
-            queue.add(random.nextInt(100));
-        }
-        for (int i = 0; i < queue.size(); i++) {
-            list.add(queue.poll());
-        }
-        return list;
-    }
-
-    public static void print(PriorityQueue<Integer> queue) {
-        for (Integer i : queue) {
-            System.out.print(i + "==>");
-        }
-        System.out.println("  ");
     }
 }

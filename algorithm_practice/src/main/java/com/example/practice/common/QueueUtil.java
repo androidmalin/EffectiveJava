@@ -24,13 +24,71 @@ public class QueueUtil {
     private QueueUtil() {
     }
 
+    private static List<Integer> getMinHeap() {
+        List<Integer> list = new ArrayList<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        Random random = new Random();
+        for (int i = 0; i < 7; i++) {
+            queue.add(random.nextInt(100));
+        }
+        for (int i = 0; i < queue.size(); i++) {
+            list.add(queue.poll());
+        }
+        return list;
+    }
+
+    private static List<Integer> getMinHeap2() {
+        List<Integer> list = new ArrayList<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> o1 - o2);
+        Random random = new Random();
+        for (int i = 0; i < 7; i++) {
+            queue.add(random.nextInt(100));
+        }
+        for (int i = 0; i < queue.size(); i++) {
+            list.add(queue.poll());
+        }
+        return list;
+    }
+
+    private static List<Integer> getMaxHeap() {
+        List<Integer> list = new ArrayList<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        Random random = new Random();
+        for (int i = 0; i < 7; i++) {
+            queue.add(random.nextInt(100));
+        }
+        for (int i = 0; i < queue.size(); i++) {
+            list.add(queue.poll());
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
+
+        System.out.println("get min heap");
+        List<Integer> minHeap = getMinHeap();
+        System.out.println(minHeap);
+        System.out.println(" ");
+
+
+        System.out.println("get min heap2");
+        List<Integer> minHeap2 = getMinHeap2();
+        System.out.println(minHeap2);
+        System.out.println(" ");
+
+        System.out.println("get max heap");
+        List<Integer> maxHeap = getMaxHeap();
+        System.out.println(maxHeap);
+        System.out.println(" ");
+
         System.out.println("printQueueRightOrder");
         printQueueRightOrder();
         System.out.println(" ");
+
         System.out.println("printQueueError");
         printQueueError();
         System.out.println(" ");
+
         System.out.println("printQueueToListRightOrder ");
         printQueueToListRightOrder();
     }
