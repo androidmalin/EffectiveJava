@@ -15,7 +15,7 @@ public final class TreeCreateFactory {
 
     public static List<TreeNode> nodeList = null;
 
-    public static TreeNode getRootNode() {
+    private static TreeNode getRootNode() {
         return nodeList.get(0);
     }
 

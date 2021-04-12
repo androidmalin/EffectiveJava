@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class Main {
     public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
+        TreeNode root = TreeCreateFactory.init(3, 9, 20, 15, null, 7, null);
         Solution solution = new Solution();
         List<Double> list = solution.averageOfLevels(root);
         System.out.println(list);
@@ -24,9 +24,9 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
-        List<Double> actualList = new Solution().averageOfLevels(root);
-        List<Double> expectedList = Arrays.asList(1.0, 2.5, 5.0);
-        assertEquals(expectedList, actualList);
+        TreeNode root = TreeCreateFactory.init(3, 9, 20, 15, null, 7, null);
+        List<Double> expectedList = Arrays.asList(3.0, 14.5, 11.0);
+        assertEquals(expectedList, new Solution().averageOfLevels(root));
+        assertEquals(expectedList, new Solution2().averageOfLevels(root));
     }
 }

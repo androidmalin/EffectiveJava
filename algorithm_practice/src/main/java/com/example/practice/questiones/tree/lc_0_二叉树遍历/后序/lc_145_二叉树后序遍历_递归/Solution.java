@@ -18,6 +18,10 @@ public class Solution {
         return res;
     }
 
+    /**
+     * 可视化演示
+     * https://alchemist-al.com/algorithms/binary-tree-postorder-traversal
+     */
     private void postorder(TreeNode root, List<Integer> res) {
         if (root == null) return;
         postorder(root.left, res);

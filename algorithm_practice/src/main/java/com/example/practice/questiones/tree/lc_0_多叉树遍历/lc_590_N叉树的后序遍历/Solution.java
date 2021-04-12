@@ -33,7 +33,7 @@ public class Solution {
      * 迭代
      * 颜色标记法
      */
-    public List<Integer> postorder2(Node root) {
+    public List<Integer> postorder_color(Node root) {
         List<Integer> resultList = new ArrayList<>();
         Stack<Object> stack = new Stack<>();
         stack.push(root);
@@ -62,7 +62,7 @@ public class Solution {
      * 迭代
      * 使用2个栈
      */
-    public List<Integer> postorder3(Node root) {
+    public List<Integer> postorder_two_stack(Node root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
         Stack<Node> s2 = new Stack<>();

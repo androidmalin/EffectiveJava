@@ -47,31 +47,43 @@ public class Solution {
 
         //①.
         // 1
+        //left == null && right == null
+
 
         //②
         //```1```
         //``/````
         //`2`````
+        //
+        //left != null && right == null
 
         //③
         //```1```
         //````\``
         //`````3`
+        //
+        //left == null && right != null
+
 
         //④
         //```1```
         //``/`\``
-        //`2```2`
+        //`2```3`
+        //
+        //left.val != right.val
+
 
         //⑤
-        //`````````````````````1``````
-        //`````````````/```````````````\````
-        //```````````2(left)``````````````````2(right)
-        //``````````/`\```````````````````/````````````\`
-        //`````````3```4(left.right)```4(right.left)`````3
+        //left != null && right != null && left.val = right.val
+        //```````````````````````````1````````````````````````````````````
+        //```````````````````/```````````````\````````````````````````````
+        //``````````````2(left)`````````````````2(right)```````````````
+        //`````````````/`\```````````````````/````````````\`````````````
+        //(left.left)3````4(left.right)```4(right.left)`````3(right.right)
 
         //①.
-        if (left == null || right == null) return true;
+        if (left == null && right == null) return true;
+
         //②.
         if (left != null && right == null) return false;
 
@@ -82,6 +94,7 @@ public class Solution {
         if (left.val != right.val) return false;
 
         //⑤
+        //left != null && right != null && left.val = right.val
         return mirror(left.left, right.right) && mirror(left.right, right.left);
     }
 }

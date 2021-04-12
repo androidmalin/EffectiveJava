@@ -21,21 +21,50 @@ import java.util.Queue;
  */
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
-        if (root == null) return true;
+        if (root == null) return false;
         if (root.left == null && root.right == null) return true;
-        if (root.left == null || root.right == null) return false;
-
-        //root.left!=null&&root.right!=null
+        if (root.left == null && root.right != null) return false;
+        if (root.left != null && root.right == null) return false;
+        //root.left!=null && root.right !=null;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root.left);
         queue.offer(root.right);
         while (!queue.isEmpty()) {
             TreeNode left = queue.poll();
             TreeNode right = queue.poll();
-            if (left == null && right == null) continue;
-            if (left == null || right == null) return false;
-            if (left.val != right.val) return false;
 
+            //``````1``````
+            //````/```\````
+            //``2```````2``
+            //```\`````/```
+            //````4```4````
+            //还不能下最终的结论, 还没有遍历完成
+            if (left == null && right == null) continue;
+
+            //``````1``````
+            //````/```\````
+            //``2```````2``
+            //`/`\`````/```
+            //3```4```4````
+            if (left != null && right == null) return false;
+
+
+            //``````1``````
+            //````/```\````
+            //``2```````2``
+            //```\`````/`\`
+            //````4```4```3
+            if (left == null && right != null) return false;
+
+
+            //``````1``````
+            //````/```\````
+            //``2```````2``
+            //`/`\`````/`\`
+            //3```4```4```3
+            //left!=null && right!=null
+
+            //成对进行比较
             queue.offer(left.left);
             queue.offer(right.right);
 

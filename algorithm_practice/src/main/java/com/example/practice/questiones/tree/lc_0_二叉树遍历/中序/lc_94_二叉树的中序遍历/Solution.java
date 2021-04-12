@@ -10,6 +10,7 @@ import java.util.List;
  * 94. 二叉树的中序遍历
  * 给定一个二叉树的根节点 root ，返回它的 中序 遍历。
  * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+ * <p>
  */
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
@@ -19,6 +20,10 @@ public class Solution {
         return res;
     }
 
+    /**
+     * 可视化演示
+     * https://alchemist-al.com/algorithms/binary-tree-inorder-traversal
+     */
     private void middleOrder(TreeNode root, List<Integer> res) {
         if (root == null) return;
         middleOrder(root.left, res);

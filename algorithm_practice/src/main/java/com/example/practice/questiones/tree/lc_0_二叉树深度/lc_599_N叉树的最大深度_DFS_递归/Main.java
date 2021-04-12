@@ -28,9 +28,9 @@ public class Main {
     private static Node getNode() {
         Node node = new Node(1);
         node.children = new ArrayList<>(3);
-        node.children.add(0, new Node(2));
-        node.children.add(1, new Node(3));
-        node.children.add(2, new Node(4));
+        node.children.add(0, new Node(2, new ArrayList<>()));
+        node.children.add(1, new Node(3, new ArrayList<>()));
+        node.children.add(2, new Node(4, new ArrayList<>()));
         return node;
     }
 }

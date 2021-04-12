@@ -34,7 +34,7 @@ public class Solution {
      * 迭代
      * 颜色标记法
      */
-    public List<Integer> preorder2(Node root) {
+    public List<Integer> preorder_color(Node root) {
         List<Integer> resultList = new ArrayList<>();
         Stack<Object> stack = new Stack<>();
         stack.push(root);
@@ -63,7 +63,7 @@ public class Solution {
      * 迭代
      * 栈
      */
-    public List<Integer> preorder3(Node root) {
+    public List<Integer> preorder_stack(Node root) {
         //root->left->right
         if (root == null) return new ArrayList<>();
         List<Integer> res = new ArrayList<>();

@@ -1,4 +1,4 @@
-package com.example.practice.questiones.tree.lc_958_一棵树是否是完全二叉树.first;
+package com.example.practice.questiones.tree.lc_958_一棵树是否是完全二叉树.bfs;
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;

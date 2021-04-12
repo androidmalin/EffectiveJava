@@ -16,10 +16,10 @@ public class Main {
         List<Integer> postorder = solution.postorder(root);
         System.out.println(postorder);
 
-        List<Integer> postorder2 = solution.postorder2(root);
+        List<Integer> postorder2 = solution.postorder_color(root);
         System.out.println(postorder2);
 
-        List<Integer> postorder3 = solution.postorder3(root);
+        List<Integer> postorder3 = solution.postorder_two_stack(root);
         System.out.println(postorder3);
 
     }
@@ -29,12 +29,14 @@ public class Main {
         Node root = getNode();
         Solution solution = new Solution();
         List<Integer> list = Arrays.asList(2, 3, 4, 1);
-        assertEquals(solution.postorder(root), solution.postorder2(root));
-        assertEquals(solution.postorder(root), solution.postorder3(root));
-        assertEquals(solution.postorder2(root), solution.postorder3(root));
+
+        assertEquals(solution.postorder(root), solution.postorder_color(root));
+        assertEquals(solution.postorder(root), solution.postorder_two_stack(root));
+        assertEquals(solution.postorder_color(root), solution.postorder_two_stack(root));
+
         assertEquals(list, solution.postorder(root));
-        assertEquals(list, solution.postorder2(root));
-        assertEquals(list, solution.postorder3(root));
+        assertEquals(list, solution.postorder_color(root));
+        assertEquals(list, solution.postorder_two_stack(root));
     }
 
     /**

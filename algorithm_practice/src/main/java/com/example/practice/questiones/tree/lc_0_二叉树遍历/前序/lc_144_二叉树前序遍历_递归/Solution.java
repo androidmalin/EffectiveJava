@@ -59,6 +59,10 @@ public class Solution {
         return res;
     }
 
+    /**
+     * 可视化演示
+     * https://alchemist-al.com/algorithms/binary-tree-preorder-traversal
+     */
     private void preorder(TreeNode root, List<Integer> res) {
         if (root == null) return;
         res.add(root.val);

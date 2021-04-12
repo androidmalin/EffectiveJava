@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, null, 5, 6, 7);
 
         List<Integer> list = solution.inorderTraversal(root);
         System.out.println("迭代--二叉树的中序遍历:");

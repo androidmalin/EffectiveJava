@@ -17,12 +17,12 @@ public class Main {
         List<Integer> resultList = solution.preorder(root);
         System.out.println(resultList);
 
-        List<Integer> resultList2 = solution.preorder2(root);
+        List<Integer> resultList2 = solution.preorder_color(root);
         System.out.println(" ");
         System.out.println("preorder2");
         System.out.println(resultList2);
 
-        List<Integer> resultList3 = solution.preorder3(root);
+        List<Integer> resultList3 = solution.preorder_stack(root);
         System.out.println(" ");
         System.out.println("preorder3");
         System.out.println(resultList3);
@@ -35,11 +35,14 @@ public class Main {
         Node root = getNode();
         Solution solution = new Solution();
         List<Integer> list = Arrays.asList(1, 2, 3, 4);
-        assertEquals(solution.preorder(root), solution.preorder2(root));
-        assertEquals(solution.preorder(root), solution.preorder3(root));
+
+        assertEquals(solution.preorder(root), solution.preorder_color(root));
+        assertEquals(solution.preorder(root), solution.preorder_stack(root));
+        assertEquals(solution.preorder_color(root), solution.preorder_stack(root));
+
         assertEquals(list, solution.preorder(root));
-        assertEquals(list, solution.preorder2(root));
-        assertEquals(list, solution.preorder3(root));
+        assertEquals(list, solution.preorder_color(root));
+        assertEquals(list, solution.preorder_stack(root));
     }
 
     /**

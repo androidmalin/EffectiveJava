@@ -3,7 +3,6 @@ package com.example.practice.questiones.tree.lc_0_对称二叉树.lc_101_对称�
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -24,6 +23,5 @@ public class Main {
         Integer[] integers = new Integer[]{1, 2, 2, 3, 4, 4, 3};
         TreeNode root = TreeCreateFactory.init(Arrays.asList(integers));
         assertTrue(solution.isSymmetric(root));
-        Assertions.assertTrue(new Solution2().isMirror(root));
     }
 }

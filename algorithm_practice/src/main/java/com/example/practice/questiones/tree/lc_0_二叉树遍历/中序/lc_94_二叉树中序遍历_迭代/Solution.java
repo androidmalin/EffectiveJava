@@ -3,7 +3,9 @@ package com.example.practice.questiones.tree.lc_0_二叉树遍历.中序.lc_94_�
 import com.example.practice.common.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -15,6 +17,7 @@ public class Solution {
 
     /**
      * 中序遍历 非递归
+     * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
      * <p>
      * 程序员代码面试指南 书籍写法
      * <p>
@@ -81,7 +84,7 @@ public class Solution {
             }
             TreeNode node = stack.pop();
             res.add(node.val);
-            if (node.right != null) cur = node.right;
+            cur = node.right;
         }
         return res;
     }
@@ -103,9 +106,7 @@ public class Solution {
             }
             TreeNode tempNode = stack.pop();
             list.add(tempNode.val);
-            if (tempNode.right != null) {
-                cur = tempNode.right;
-            }
+            cur = tempNode.right;
         }
         return list;
     }
@@ -134,9 +135,7 @@ public class Solution {
 
             TreeNode tempNode = stack.pop();
             result.add(tempNode.val);
-            if (tempNode.right != null) {
-                currentNode = tempNode.right;
-            }
+            currentNode = tempNode.right;
         }
         return result;
     }
@@ -154,9 +153,7 @@ public class Solution {
             }
             TreeNode tempNode = stack.pop();
             list.add(tempNode.val);
-            if (tempNode.right != null) {
-                currentNode = tempNode.right;
-            }
+            currentNode = tempNode.right;
         }
         return list;
     }
@@ -196,10 +193,7 @@ public class Solution {
             }
             TreeNode tempNode = stack.pop();
             list.add(tempNode.val);
-
-            if (tempNode.right != null) {
-                currentNode = tempNode.right;
-            }
+            currentNode = tempNode.right;
         }
         return list;
     }
@@ -218,10 +212,69 @@ public class Solution {
             }
             TreeNode tempNode = stack.pop();
             list.add(tempNode.val);
-            if (tempNode.right != null) {
-                currentNode = tempNode.right;
-            }
+            currentNode = tempNode.right;
         }
         return list;
     }
+
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //////////////////////////
+    //```````````````高度    节点个数
+    //``````1`````````1        1
+    //````/```\```````
+    //``2```````3`````2        3
+    //`/`\`````/`\````
+    //4```5```6```7```3        7
+    private List<Integer> inorderTraversal_ReView5(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode currentNode = root;
+        while (!queue.isEmpty() || currentNode != null) {
+            while (currentNode != null) {
+                queue.offer(currentNode);
+                currentNode = currentNode.left;
+            }
+            TreeNode tempNode = queue.poll();
+            list.add(tempNode.val);
+            currentNode = tempNode.right;
+        }
+        return list;
+    }
+
 }

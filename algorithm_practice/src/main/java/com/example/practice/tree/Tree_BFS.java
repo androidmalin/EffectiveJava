@@ -20,8 +20,7 @@ import java.util.Queue;
  */
 public class Tree_BFS {
     public static void main(String[] args) {
-        TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
-        TreeNode root = TreeCreateFactory.getRootNode();
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
         System.out.println("二叉树的层次遍历--非递归实现");
         printLine(root);
         System.out.println(" ");

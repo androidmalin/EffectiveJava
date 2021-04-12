@@ -16,13 +16,15 @@ public class Main {
     @Test
     public void test() {
         Solution solution = new Solution();
-        TreeNode root1 = new TreeNode(1);
-        root1.left = new TreeNode(2);
-        root1.right = new TreeNode(3);
-        root1.left.left = new TreeNode(4);
-        root1.left.right = new TreeNode(5);
-        root1.right.left = new TreeNode(6);
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = null;
+
+        TreeNode root1 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
         Assertions.assertTrue(solution.isSameTree(root, root1));
     }
 }
