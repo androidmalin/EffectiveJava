@@ -7,5 +7,5 @@ java {
 }
 
 dependencies {
-    //compile group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+    //implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
 }

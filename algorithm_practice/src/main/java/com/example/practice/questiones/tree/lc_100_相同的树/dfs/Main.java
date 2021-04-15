@@ -1,4 +1,4 @@
-package com.example.practice.questiones.tree.lc_100_相同的树;
+package com.example.practice.questiones.tree.lc_100_相同的树.dfs;
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;

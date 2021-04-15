@@ -18,7 +18,7 @@ public class ContainerSingleton {
 
     private static final Map<Class<?>, Object> iocMap = new ConcurrentHashMap<>();
 
-    public static Object getInstance(Class<?> clazz) {
+    public static Object getInstance2(Class<?> clazz) {
         Object instance = null;
         if (!iocMap.containsKey(clazz)) {
             try {
@@ -31,5 +31,21 @@ public class ContainerSingleton {
         } else {
             return iocMap.get(clazz);
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T> T getInstance(Class<?> clazz) {
+        Object object = null;
+        if (!iocMap.containsKey(clazz)) {
+            try {
+                object = clazz.newInstance();
+                iocMap.put(clazz, object);
+            } catch (InstantiationException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } else {
+            object = iocMap.get(clazz);
+        }
+        return (T) object;
     }
 }

@@ -13,24 +13,18 @@ import java.util.Queue;
  */
 public final class TreeCreateFactory {
 
-    public static List<TreeNode> nodeList = null;
-
-    private static TreeNode getRootNode() {
-        return nodeList.get(0);
-    }
-
-    public static void createBinTree(Integer[] ARRAY_DATA) {
-        nodeList = new LinkedList<>();
+    public static TreeNode createBinTree(Integer[] array_integer) {
+        List<TreeNode> nodeList = new LinkedList<>();
         // 将一个数组的值依次转换为Node节点
-        for (Integer arrayDatum : ARRAY_DATA) {
-            if (arrayDatum == null) {
+        for (Integer num_integer : array_integer) {
+            if (num_integer == null) {
                 nodeList.add(null);
             } else {
-                nodeList.add(new TreeNode(arrayDatum));
+                nodeList.add(new TreeNode(num_integer));
             }
         }
         // 对前lastParentIndex-1个父节点按照父节点与孩子节点的数字关系建立二叉树  
-        for (int parentIndex = 0; parentIndex < ARRAY_DATA.length / 2 - 1; parentIndex++) {
+        for (int parentIndex = 0; parentIndex < array_integer.length / 2 - 1; parentIndex++) {
             if (nodeList.get(parentIndex) != null) {
                 // 左孩子
                 nodeList.get(parentIndex).left = nodeList.get(parentIndex * 2 + 1);
@@ -39,9 +33,9 @@ public final class TreeCreateFactory {
             }
         }
         // 最后一个父节点:因为最后一个父节点可能没有右孩子，所以单独拿出来处理  
-        int lastParentIndex = ARRAY_DATA.length / 2 - 1;
+        int lastParentIndex = array_integer.length / 2 - 1;
 
-        if (ARRAY_DATA.length == 1) {
+        if (array_integer.length == 1) {
             //只有一个根节点的情况
             // 左孩子
             if (nodeList.get(0) != null) {
@@ -54,12 +48,13 @@ public final class TreeCreateFactory {
                 nodeList.get(lastParentIndex).left = nodeList.get(lastParentIndex * 2 + 1);
             }
             // 右孩子,如果数组的长度为奇数才建立右孩子
-            if (ARRAY_DATA.length % 2 == 1) {
+            if (array_integer.length % 2 == 1) {
                 if (nodeList.get(lastParentIndex) != null) {
                     nodeList.get(lastParentIndex).right = nodeList.get(lastParentIndex * 2 + 2);
                 }
             }
         }
+        return nodeList.isEmpty() ? null : nodeList.get(0);
     }
 
     /**
@@ -105,21 +100,20 @@ public final class TreeCreateFactory {
 
 
     public static TreeNode init(Integer... integers) {
-        return init(Arrays.asList(integers));
+        return _init(Arrays.asList(integers));
     }
 
     /**
      * 使用方法  TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6, null));
      */
-    public static TreeNode init(List<Integer> list) {
+    private static TreeNode _init(List<Integer> list) {
         Integer[] array = (Integer[]) list.toArray();
-        TreeCreateFactory.createBinTree(array);
-        TreeNode rootNode = TreeCreateFactory.nodeList.get(0);
+        TreeNode rootNode = TreeCreateFactory.createBinTree(array);
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("-----------------开始-------------------");
         System.out.println("二叉树如下所示:");
-        TreeOperation.show(getRootNode());
+        TreeOperation.show(rootNode);
         System.out.println("\n");
         System.out.println("二叉树的层次遍历为:");
         levelOrder(rootNode);
@@ -130,6 +124,6 @@ public final class TreeCreateFactory {
     }
 
     public static void main(String[] args) {
-        TreeCreateFactory.init(1);
+        TreeCreateFactory.init(1, 2, 3);
     }
 }

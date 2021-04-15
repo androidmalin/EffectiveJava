@@ -1,0 +1,7 @@
+Mapping new ns
+
+
+http://schemas.android.com/sdk/android/repo/sys-img2/02
+to old ns
+
+http://schemas.android.com/sdk/android/repo/sys-img2/01

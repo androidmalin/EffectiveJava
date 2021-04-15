@@ -20,8 +20,7 @@ public class Main {
     @Test
     public void test() {
         Solution solution = new Solution();
-        Integer[] integers = new Integer[]{1, 2, 2, 3, 4, 4, 3};
-        TreeNode root = TreeCreateFactory.init(Arrays.asList(integers));
+        TreeNode root = TreeCreateFactory.init(1, 2, 2, 3, 4, 4, 3);
         assertTrue(solution.isSymmetric(root));
     }
 }

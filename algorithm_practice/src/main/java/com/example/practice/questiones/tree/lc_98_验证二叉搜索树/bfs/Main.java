@@ -6,15 +6,13 @@ import com.example.practice.common.TreeNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Main {
     public static void main(String[] args) {
         TreeNode root = TreeCreateFactory.init(1, 1);
         Solution solution = new Solution();
-        boolean validBST = solution.isValidBST2(root);
+        boolean validBST = solution.isValidBST(root);
         System.out.println(validBST);
         System.out.println("  ");
     }

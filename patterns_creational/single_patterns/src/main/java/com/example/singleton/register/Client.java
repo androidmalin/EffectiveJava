@@ -7,8 +7,13 @@ public class Client {
     }
 
     private static void testContainerSingleton() {
-        Util util = (Util) ContainerSingleton.getInstance(Util.class);
+
+        Util util = ContainerSingleton.getInstance(Util.class);
         util.log();
+
+        Util util2 = (Util) ContainerSingleton.getInstance2(Util.class);
+        util2.log();
+
     }
 
     private static void testEnum() {

@@ -1,10 +1,15 @@
-package com.example.practice.questiones.tree.lc_236_二叉树的最近公共祖先;
+package com.example.practice.questiones.tree.lc_236_二叉树的最近公共祖先.dfs;
 
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeOperation;
 
-public class Test {
-    public static void main(String[] args) {
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class Main {
+
+    @Test
+    public void test() {
         TreeNode root = new TreeNode(3);
         root.left = new TreeNode(5);
         root.right = new TreeNode(1);
@@ -18,11 +23,14 @@ public class Test {
         TreeOperation.show(root);
 
         Solution solution = new Solution();
-        TreeNode p = root.left;
+        TreeNode p = root.left.left;
         TreeNode q = root.left.right.right;
-        System.out.println("p==" + p.val);
-        System.out.println("q==" + q.val);
         TreeNode node = solution.lowestCommonAncestor(root, p, q);
-        System.out.println(node);
+
+        System.out.println(" ");
+        System.out.println("p:" + p + ",q:" + q + " lowestCommonAncestor=>" + node);
+
+        Assertions.assertEquals(root.left, node);
+
     }
 }

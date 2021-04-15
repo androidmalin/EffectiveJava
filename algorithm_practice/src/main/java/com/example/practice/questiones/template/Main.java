@@ -19,8 +19,7 @@ public class Main {
     @Test
     public void test() {
         Solution solution = new Solution();
-        Integer[] integers = new Integer[]{1, 2, 3, 4, 5, 6};
-        TreeNode root = TreeCreateFactory.init(Arrays.asList(integers));
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
         assertFalse(false);
     }
 }

@@ -17,7 +17,7 @@ public class Main {
                 2, 3,
                 4, null, 5, null,
                 null, null, null, null, null, 6, null, null};
-        TreeNode root = TreeCreateFactory.init(Arrays.asList(integers));
+        TreeNode root = TreeCreateFactory.init(integers);
 
         boolean completeTree = solution.isCompleteTree(root);
         System.out.println(completeTree);
@@ -31,7 +31,7 @@ public class Main {
                 2, 3,
                 4, null, 5, null,
                 null, null, null, null, null, 6, null, null};
-        TreeNode root = TreeCreateFactory.init(Arrays.asList(integers));
+        TreeNode root = TreeCreateFactory.init(integers);
         assertFalse(solution.isCompleteTree(root));
     }
 }

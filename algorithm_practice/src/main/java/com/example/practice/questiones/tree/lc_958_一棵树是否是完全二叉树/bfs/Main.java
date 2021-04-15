@@ -12,15 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        Integer[] integers = new Integer[]{1, 2, 3, 4, null, null, 5};
-        System.out.println(solution.isCompleteTree(TreeCreateFactory.init(Arrays.asList(integers))));
+        System.out.println(solution.isCompleteTree(TreeCreateFactory.init(1, 2, 3, 4, null, null, 5)));
     }
 
     @Test
     public void test() {
         Solution solution = new Solution();
-        Integer[] integers = new Integer[]{1, 2, 3, 4, null, null, 5};
-        TreeNode root = TreeCreateFactory.init(Arrays.asList(integers));
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, null, null, 5);
         assertFalse(solution.isCompleteTree(root));
     }
 }
