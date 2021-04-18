@@ -70,7 +70,7 @@ public class Solution {
      * 深入理解其中 "记录了来源" 的含义, cur 节点的含义是什么?
      * 反复练习直接理解了. 同时要注意和层次遍历使用的Queue的区别.(层次遍历一上来,就queue.offer(root)) 这里要区别理解.
      * <p>
-     * https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/leetcodesuan-fa-xiu-lian-dong-hua-yan-shi-xbian-2/
+     * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
      */
     public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();

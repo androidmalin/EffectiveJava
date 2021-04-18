@@ -8,6 +8,7 @@ import java.util.Stack;
 public class Solution2 {
 
     /**
+     * 二叉树的中序遍历非递归写法
      * ```2```
      * ``/`\``
      * `1```3`
@@ -27,7 +28,6 @@ public class Solution2 {
             if (tempNode.val <= pre) return false;
 
             pre = tempNode.val;
-            System.out.println(tempNode.val);
             current = tempNode.right;
         }
         return true;

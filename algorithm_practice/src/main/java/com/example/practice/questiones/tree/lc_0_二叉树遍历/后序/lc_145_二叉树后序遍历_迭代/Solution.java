@@ -32,6 +32,7 @@ public class Solution {
      * 3.在整个过程中，每一个从 s1 中弹出的节点都放进 s2 中。
      * 4.不断重复步骤 2 和步骤 3，直到 s1 为空，过程停止。
      * 5.从 s2 中依次弹出节点并打印，打印的顺序就是后序遍历的顺序。
+     * https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
      */
     public List<Integer> postorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();

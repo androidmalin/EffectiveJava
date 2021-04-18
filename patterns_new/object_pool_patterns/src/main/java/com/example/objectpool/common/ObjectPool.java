@@ -27,13 +27,11 @@ public class ObjectPool {
      * 因为内部状态具备不变性，因此作为缓存的键
      */
     public IPooledObject borrowObject() {
-        IPooledObject next;
         if (not_lent.size() > 0) {
             for (IPooledObject returned : not_lent) {
-                next = returned;
-                not_lent.remove(next);
-                has_been_lent.add(next);
-                return next;
+                not_lent.remove(returned);
+                has_been_lent.add(returned);
+                return returned;
             }
         } else {
             //计算出剩余可创建的对象数

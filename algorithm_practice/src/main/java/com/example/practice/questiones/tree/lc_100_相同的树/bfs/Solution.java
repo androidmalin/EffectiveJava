@@ -1,6 +1,5 @@
 package com.example.practice.questiones.tree.lc_100_相同的树.bfs;
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 
 import java.util.LinkedList;
@@ -51,31 +50,6 @@ public class Solution {
     }
 
 
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
-    //////////////////
     public boolean isSameTree2(TreeNode p, TreeNode q) {
         //迭代
         //边界条件
@@ -112,15 +86,5 @@ public class Solution {
         }
         return queue1.isEmpty() && queue2.isEmpty();
     }
-
-
-    public static void main(String[] args) {
-        TreeNode root1 = TreeCreateFactory.init(1, 2, 3);
-        TreeNode root2 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        boolean sameTree2 = solution.isSameTree2(root1, root2);
-        System.out.println(sameTree2);
-    }
-
 
 }

@@ -1,6 +1,5 @@
 package com.example.practice.questiones.tree.lc_958_一棵树是否是完全二叉树.bfs;
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 
 import java.util.LinkedList;
@@ -51,86 +50,6 @@ public class Solution {
                 if (reachedEnd) return false;
                 queue.offer(cur.left);
                 queue.offer(cur.right);
-            }
-        }
-        return true;
-    }
-
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-
-
-    public static void main(String[] args) {
-        TreeCreateFactory.init(1, 2, 3, 4, null, 6, 7);
-    }
-
-    /**
-     * ``````1``````
-     * ````/```\````
-     * ``2```````3``
-     * `/```````````
-     * 4````````````
-     * <p>
-     * <p>
-     * ``````1``````
-     * ````/```\````
-     * ``2```````3``
-     * `/```````/`\`
-     * 4```````6```7
-     * <p>
-     * [1, 2, 3, 4, null, 6, 7]
-     */
-    public boolean isCompleteTree_ReView(TreeNode root) {
-        //1.边界条件
-        if (root == null) return true;
-
-        //2.层序遍历,第一次出现null,之后不能再出现null
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-
-        boolean reachEnd = false;
-        while (!queue.isEmpty()) {
-            TreeNode tempNode = queue.poll();
-            if (tempNode == null) {
-                reachEnd = true;
-            } else {
-                if (reachEnd) return false;
-                queue.offer(tempNode.left);
-                queue.offer(tempNode.right);
             }
         }
         return true;

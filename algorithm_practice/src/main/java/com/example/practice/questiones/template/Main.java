@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,5 +22,6 @@ public class Main {
         Solution solution = new Solution();
         TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
         assertFalse(false);
+        assertTrue(true);
     }
 }

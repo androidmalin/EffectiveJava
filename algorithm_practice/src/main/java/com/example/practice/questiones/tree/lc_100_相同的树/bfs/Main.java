@@ -27,4 +27,14 @@ public class Main {
         TreeNode root1 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
         Assertions.assertTrue(solution.isSameTree(root, root1));
     }
+
+    @Test
+    public void test2() {
+        TreeNode root1 = TreeCreateFactory.init(1, 2, 3);
+        TreeNode root2 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
+        Solution solution = new Solution();
+        boolean sameTree2 = solution.isSameTree2(root1, root2);
+        System.out.println(sameTree2);
+        Assertions.assertFalse(sameTree2);
+    }
 }

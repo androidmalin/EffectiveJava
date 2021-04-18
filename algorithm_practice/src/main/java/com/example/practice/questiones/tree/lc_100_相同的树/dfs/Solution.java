@@ -1,6 +1,5 @@
 package com.example.practice.questiones.tree.lc_100_相同的树.dfs;
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 
 
@@ -25,64 +24,6 @@ public class Solution {
      * https://leetcode-cn.com/problems/same-tree/solution/xiang-tong-de-shu-by-leetcode-solution/
      */
     public boolean isSameTree(TreeNode p, TreeNode q) {
-
-        //1.p==null && q==null
-        if (p == null && q == null) return true;
-
-        //2.p!=null && q==null
-        if (p != null && q == null) return false;
-
-        //3.p==null && q!=null
-        if (p == null && q != null) return false;
-
-        //4.p!=null && q!=null
-        //root
-        if (p.val != q.val) return false;
-        //left
-        boolean left = isSameTree(p.left, q.left);
-        //right
-        boolean right = isSameTree(p.right, q.right);
-        return left && right;
-    }
-
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-    ////////////////////////
-
-    public static void main(String[] args) {
-        TreeCreateFactory.init(1, 2, 3);
-    }
-
-    /**
-     *
-     */
-    public boolean isSameTree2(TreeNode p, TreeNode q) {
         //1.递归终止条件.
 
         //① p==null && q==null
@@ -131,15 +72,21 @@ public class Solution {
         //````````/`\`````````
         //`(left)2```3(right)`
 
-
+        //① p==null && q==null
         if (p == null && q == null) return true;
+
+        //② p==null && q!=null
         if (p == null && q != null) return false;
+
+        //③ p!=null && q==null
         if (p != null && q == null) return false;
+
+        //④ p!=null && q!=null && p.val!=q.val
         if (p.val != q.val) return false;
 
         //2.最小重复子问题.
-        boolean left = isSameTree2(p.left, q.left);
-        boolean right = isSameTree2(p.right, q.right);
+        boolean left = isSameTree(p.left, q.left);
+        boolean right = isSameTree(p.right, q.right);
 
         //3.返回值
         return left && right;
