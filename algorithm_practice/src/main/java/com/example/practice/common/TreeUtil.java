@@ -1,11 +1,24 @@
 package com.example.practice.common;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
 public class TreeUtil {
+
+    /**
+     * two tree is same
+     */
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null ^ q == null) return false;
+        if (p.val != q.val) return false;
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
 
 
     /**
@@ -134,5 +147,95 @@ public class TreeUtil {
             dataList.add(levelList);
         }
         return dataList;
+    }
+
+    public static TreeNode getBinaryTreeNode() {
+        TreeNode root = new TreeNode(8);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(10);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(6);
+        root.left.right.left = new TreeNode(4);
+        return root;
+    }
+
+    public static TreeNode getCompleteTree() {
+        return TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+    }
+
+    public static int getNumber(TreeNode root) {
+        if (root == null) return 0;
+        return getNumber(root.left) + getNumber(root.right) + 1;
+    }
+
+
+    public static boolean isSymmetric(TreeNode root) {
+        if (root == null) return true;
+        return isSameTree(root.left, root.right);
+    }
+
+    private static boolean isSymmetricChild(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null ^ q == null) return false;
+        if (p.val != q.val) return false;
+        boolean left = isSymmetricChild(p.left, q.right);
+        boolean right = isSymmetricChild(p.right, q.left);
+        return left && right;
+    }
+
+    // 平衡二叉树（Balanced BinaryTree）又被称为AVL树。
+    // 它具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，
+    // 并且左右两个子树都是一棵平衡二叉树。
+
+    public static boolean isBalancedTree(TreeNode root) {
+        if (root == null) return true;
+        return childBalanced(root.left) && childBalanced(root.right);
+    }
+
+    private static boolean childBalanced(TreeNode root) {
+        if (root == null) return true;
+        int left = height(root.left);
+        int right = height(root.right);
+        return Math.abs(left - right) <= 1;
+    }
+
+    private static int height(TreeNode root) {
+        if (root == null) return 0;
+        return height(root.left) + height(root.right) + 1;
+    }
+
+    @Test
+    public void test_balanced(){
+        TreeNode root = TreeCreateFactory.init(false,3,9,10,null,null,15,7);
+        boolean balancedTree = TreeUtil.isBalancedTree(root);
+        System.out.println(balancedTree);
+        Assertions.assertTrue(balancedTree);
+
+        TreeNode root2 = TreeCreateFactory.init(1,
+                2,2,
+                3,3,null,null,
+                4,4);
+        TreeOperation.show(root2);
+
+        boolean balancedTree1 = TreeUtil.isBalancedTree(root2);
+        Assertions.assertFalse(balancedTree1);
+
+        TreeNode root3 = null;
+        boolean balancedTree2 = TreeUtil.isBalancedTree(root3);
+        Assertions.assertTrue(balancedTree2);
+
+
+    }
+
+
+
+    //TODO:balance
+    //TODO:binary
+    //TODO:complete
+
+
+    public static void main(String[] args) {
+        TreeNode root = TreeUtil.getBinaryTreeNode();
+        TreeOperation.show(root);
     }
 }

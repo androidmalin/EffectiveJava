@@ -27,10 +27,6 @@ public class Solution {
      * `````````/`\`
      * ````````6```7
      * <p>
-     * 视频讲解
-     * https://coding.imooc.com/lesson/82.html#mid=2681
-     * 时间为:10:49~14:20
-     * <p>
      * 官方讲解也很棒,有文字,动画演示,还有视频讲解
      * https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/solution/er-cha-shu-de-zui-da-shen-du-by-leetcode-solution/
      */

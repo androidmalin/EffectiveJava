@@ -15,9 +15,11 @@ public class Solution {
             int low = i + 1, high = numbers.length - 1;
             while (low <= high) {
                 int mid = (high - low) / 2 + low;
-                if (numbers[mid] == target - numbers[i]) {
+                System.out.println("high:" + high + ",low:" + low + ",mid:" + mid);
+                int search = target - numbers[i];
+                if (numbers[mid] == search) {
                     return new int[]{i + 1, mid + 1};
-                } else if (numbers[mid] > target - numbers[i]) {
+                } else if (numbers[mid] > search) {
                     high = mid - 1;
                 } else {
                     low = mid + 1;

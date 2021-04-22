@@ -1,4 +1,4 @@
-package com.example.practice.questiones.tree.lc_0_二叉树遍历.中序.lc_94_二叉树的中序遍历;
+package com.example.practice.questiones.tree.lc_0_二叉树遍历.中序.lc_94_二叉树的中序遍历_递归;
 
 import com.example.practice.common.TreeNode;
 

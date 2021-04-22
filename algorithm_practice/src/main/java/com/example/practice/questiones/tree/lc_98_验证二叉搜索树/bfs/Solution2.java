@@ -18,7 +18,7 @@ public class Solution2 {
         if (root == null) return true;
         Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
-        double pre = -Double.MAX_VALUE;
+        double pre = -Double.MAX_VALUE;//注意📢
         while (!stack.isEmpty() || current != null) {
             while (current != null) {
                 stack.push(current);

@@ -24,10 +24,6 @@ import com.example.practice.common.TreeNode;
  */
 public class Solution {
 
-    /**
-     * 视频讲解
-     * https://coding.imooc.com/lesson/82.html#mid=2682
-     */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         //postorder

@@ -100,27 +100,36 @@ public final class TreeCreateFactory {
 
 
     public static TreeNode init(Integer... integers) {
-        return _init(Arrays.asList(integers));
+        return init(true, integers);
+    }
+
+    public static TreeNode init(boolean showLog, Integer... integers) {
+        return _init(showLog, Arrays.asList(integers));
     }
 
     /**
      * 使用方法  TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6, null));
      */
-    private static TreeNode _init(List<Integer> list) {
+    private static TreeNode _init(boolean showLog, List<Integer> list) {
         Integer[] array = (Integer[]) list.toArray();
-        TreeNode rootNode = TreeCreateFactory.createBinTree(array);
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println("-----------------开始-------------------");
-        System.out.println("二叉树如下所示:");
-        TreeOperation.show(rootNode);
-        System.out.println("\n");
-        System.out.println("二叉树的层次遍历为:");
-        levelOrder(rootNode);
-        System.out.println("-----------------结束-------------------");
-        System.out.println(" ");
-        System.out.println(" ");
-        return rootNode;
+        TreeNode root;
+        if (!showLog) {
+            root = TreeCreateFactory.createBinTree(array);
+        } else {
+            root = TreeCreateFactory.createBinTree(array);
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println("-----------------开始-------------------");
+            System.out.println("二叉树如下所示:");
+            TreeOperation.show(root);
+            System.out.println("\n");
+            System.out.println("二叉树的层次遍历为:");
+            levelOrder(root);
+            System.out.println("-----------------结束-------------------");
+            System.out.println(" ");
+            System.out.println(" ");
+        }
+        return root;
     }
 
     public static void main(String[] args) {

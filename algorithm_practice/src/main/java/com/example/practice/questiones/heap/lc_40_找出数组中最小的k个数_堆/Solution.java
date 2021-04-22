@@ -26,10 +26,6 @@ import java.util.PriorityQueue;
  */
 public class Solution {
 
-    /**
-     * 视频讲解
-     * https://u.geekbang.org/lesson/14?article=239051
-     */
     public int[] getLeastNumbers(int[] arr, int k) {
         PriorityQueue<Integer> queue = new PriorityQueue<>();
         for (int value : arr) {
