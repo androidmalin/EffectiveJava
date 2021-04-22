@@ -1,6 +1,6 @@
 package com.example.practice.common;
 
-public class Java_while {
+public class Java_While {
 
     public static void main(String[] args) {
         returnTest2();

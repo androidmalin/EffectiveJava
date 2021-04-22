@@ -1,4 +1,4 @@
-package com.example.practice.questiones.tree.lc_0_二叉树遍历.lc_110_平衡二叉树;
+package com.example.practice.questiones.tree.lc_110_平衡二叉树;
 
 import com.example.practice.common.TreeNode;
 
