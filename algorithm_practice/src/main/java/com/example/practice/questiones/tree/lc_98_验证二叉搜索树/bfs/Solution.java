@@ -5,6 +5,10 @@ import com.example.practice.common.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 98. 验证二叉搜索树
+ * https://leetcode-cn.com/problems/validate-binary-search-tree/
+ */
 public class Solution {
     public boolean isValidBST(TreeNode root) {
         List<Integer> res = new ArrayList<>();

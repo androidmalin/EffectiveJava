@@ -1,5 +1,6 @@
 package com.example.practice.questiones.tree.lc_236_二叉树的最近公共祖先.dfs2;
 
+import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeOperation;
 import com.example.practice.common.TreeUtil;
@@ -13,7 +14,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
-import java.util.function.Consumer;
+import java.util.Stack;
 
 public class Solution {
 
@@ -37,14 +38,7 @@ public class Solution {
             visited.add(p.val);
             p = parent.get(p.val);
         }
-        visited.forEach(new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) {
-                System.out.println("p parent:" + integer);
-            }
-        });
         while (q != null) {
-            System.out.println("q :" + q.val);
             if (visited.contains(q.val)) {
                 return q;
             }
@@ -79,27 +73,27 @@ public class Solution {
         System.out.println("p:" + p + ",q:" + q + " lowestCommonAncestor=>" + node);
 
         Solution2 solution2 = new Solution2();
-        TreeNode resultNode = solution2.getNode(root, p, q);
+        TreeNode resultNode = solution2.lowestCommonAncestor(root, p, q);
         boolean sameTree1 = TreeUtil.isSameTree(resultNode, root.left);
         Assertions.assertTrue(sameTree1);
 
         Solution3 solution3 = new Solution3();
-        TreeNode node1 = solution3.getNode(root, p, q);
+        TreeNode node1 = solution3.lowestCommonAncestor(root, p, q);
         boolean sameTree2 = TreeUtil.isSameTree(node1, root.left);
         Assertions.assertTrue(sameTree2);
 
         Solution4 solution4 = new Solution4();
-        TreeNode node2 = solution4.getNode(root, p, q);
+        TreeNode node2 = solution4.lowestCommonAncestor(root, p, q);
         boolean sameTree3 = TreeUtil.isSameTree(node2, root.left);
         Assertions.assertTrue(sameTree3);
 
         Solution5 solution5 = new Solution5();
-        TreeNode node3 = solution5.getNode(root, p, q);
+        TreeNode node3 = solution5.lowestCommonAncestor(root, p, q);
         boolean sameTree4 = TreeUtil.isSameTree(node3, root.left);
         Assertions.assertTrue(sameTree4);
 
         Solution6 solution6 = new Solution6();
-        TreeNode node4 = solution6.getNode(root, p, q);
+        TreeNode node4 = solution6.lowestCommonAncestor(root, p, q);
         boolean sameTree5 = TreeUtil.isSameTree(node4, root.left);
         Assertions.assertTrue(sameTree5);
     }
@@ -109,7 +103,7 @@ public class Solution {
         Map<Integer, TreeNode> parent = new HashMap<>();
         Set<Integer> visited = new HashSet<>();
 
-        public TreeNode getNode(TreeNode root, TreeNode p, TreeNode q) {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
             dfs(root);
             while (p != null) {
                 visited.add(p.val);
@@ -136,44 +130,11 @@ public class Solution {
         }
     }
 
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
-    ///////////////////////////
     public static class Solution3 {
         Map<Integer, TreeNode> parent = new HashMap<>();
         Set<Integer> visited = new HashSet<>();
 
-        public TreeNode getNode(TreeNode root, TreeNode p, TreeNode q) {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
             if (root == null) return null;
             dfs(root);
             while (p != null) {
@@ -219,7 +180,7 @@ public class Solution {
             }
         }
 
-        public TreeNode getNode(TreeNode root, TreeNode p, TreeNode q) {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
             if (root == null) return null;
             dfs(root);
             while (p != null) {
@@ -238,11 +199,11 @@ public class Solution {
 
     public static class Solution5 {
 
-        public TreeNode getNode(TreeNode root, TreeNode p, TreeNode q) {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
             if (root == null) return null;
             if (root == q || root == p) return root;
-            TreeNode left = getNode(root.left, p, q);
-            TreeNode right = getNode(root.right, p, q);
+            TreeNode left = lowestCommonAncestor(root.left, p, q);
+            TreeNode right = lowestCommonAncestor(root.right, p, q);
             if (left == null && right == null) return null;
             if (left == null && right != null) return right;
             if (left != null && right == null) return left;
@@ -259,38 +220,6 @@ public class Solution {
             }
             return root;
         }
-
-
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
-        /////////////////
 
     }
 
@@ -309,7 +238,7 @@ public class Solution {
             }
         }
 
-        public TreeNode getNode(TreeNode root, TreeNode p, TreeNode q) {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
             if (root == null) return null;
             dfs(root);
             while (p != null) {
@@ -326,7 +255,42 @@ public class Solution {
         }
     }
 
+
     public static class Solution7 {
+        Map<Integer, TreeNode> parent = new HashMap<>();
+        Set<Integer> visited = new HashSet<>();
+
+        public void dfs(TreeNode root) {
+            if (root.left != null) {
+                parent.put(root.left.val, root);
+                dfs(root.left);
+            }
+            if (root.right != null) {
+                parent.put(root.right.val, root);
+                dfs(root.right);
+            }
+        }
+
+        public TreeNode getLowestNode(TreeNode root, TreeNode p, TreeNode q) {
+            if (root == null) return null;
+            dfs(root);
+            while (p != null) {
+                visited.add(p.val);
+                p = parent.get(p.val);
+            }
+            while (q != null) {
+                if (visited.contains(q.val)) {
+                    return q;
+                }
+                q = parent.get(q.val);
+            }
+            return null;
+        }
+
+
+    }
+
+    public static class Solution8 {
         //1.preOrder,inOrder,postOrder
         //2.bfs
         //3.dfs
@@ -341,12 +305,17 @@ public class Solution {
         //12.lowest parent tree
         //13.binary tree lowest parent tree
         //14.xx
-        public boolean balance(TreeNode root) {
+
+        /**
+         * 110. 平衡二叉树
+         * https://leetcode-cn.com/problems/balanced-binary-tree/submissions/
+         */
+        public boolean isBalanced(TreeNode root) {
             if (root == null) return true;
             boolean abs = Math.abs(height(root.left) - height(root.right)) <= 1;
-            boolean left = balance(root.left);
-            boolean right = balance(root.right);
-            return left && right;
+            boolean left = isBalanced(root.left);
+            boolean right = isBalanced(root.right);
+            return abs && left && right;
         }
 
         public int height(TreeNode root) {
@@ -354,7 +323,13 @@ public class Solution {
             return Math.max(height(root.left), height(root.right)) + 1;
         }
 
-        public boolean complete(TreeNode root) {
+
+        /**
+         * TODO:练习
+         * 958. 二叉树的完全性检验
+         * https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree/
+         */
+        public boolean isCompleteTree(TreeNode root) {
             if (root == null) return true;
             Queue<TreeNode> queue = new LinkedList<>();
             queue.offer(root);
@@ -363,20 +338,21 @@ public class Solution {
                 TreeNode temp = queue.poll();
                 if (temp == null) {
                     reach = true;
-                    continue;
+                } else {
+                    if (reach) return false;
+                    queue.offer(temp.left);
+                    queue.offer(temp.right);
                 }
-                if (reach) {
-                    if (temp != null) {
-                        return false;
-                    }
-                }
-                if (temp.left != null) queue.offer(temp.left);
-                if (temp.right != null) queue.offer(temp.right);
             }
             return true;
         }
 
-        public boolean complete2(TreeNode root) {
+        /**
+         * TODO:练习
+         * 958. 二叉树的完全性检验
+         * https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree/
+         */
+        public boolean isCompleteTree2(TreeNode root) {
             if (root == null) return true;
             int total = countNode(root);
             return com(1, total, root);
@@ -395,22 +371,39 @@ public class Solution {
             return countNode(root.left) + countNode(root.right) + 1;
         }
 
-        public boolean binary(TreeNode root) {
+        @Test
+        public void test1() {
+            TreeNode root = TreeCreateFactory.init(2, 1, 3);
+            Solution8 solution8 = new Solution8();
+            boolean validBST = solution8.isValidBST(root);
+            System.out.println(validBST);
+
+        }
+
+        /**
+         * TODO:练习
+         * 98. 验证二叉搜索树
+         * https://leetcode-cn.com/problems/validate-binary-search-tree/
+         */
+        public boolean isValidBST(TreeNode root) {
             if (root == null) return false;
-            Queue<TreeNode> queue = new LinkedList<>();
-            queue.offer(root);
             double pre = -Double.MAX_VALUE;
-            while (!queue.isEmpty()) {
-                TreeNode temp = queue.poll();
+            Stack<TreeNode> stack = new Stack<>();
+            TreeNode cur = root;
+            while (!stack.isEmpty() || cur != null) {
+                while (cur != null) {
+                    stack.push(cur);
+                    cur = cur.left;
+                }
+                TreeNode temp = stack.pop();
                 if (temp.val <= pre) return false;
                 pre = temp.val;
-                if (temp.left != null) queue.offer(temp.left);
-                if (temp.right != null) queue.offer(temp.right);
+                cur = temp.right;
             }
             return true;
         }
 
-        public boolean binary2(TreeNode root) {
+        public boolean isValidBST2(TreeNode root) {
             if (root == null) return false;
             return binaryChild(null, null, root);
         }
@@ -423,11 +416,19 @@ public class Solution {
         }
 
 
+        /**
+         * 104. 二叉树的最大深度
+         * https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+         */
         public int maxDepth(TreeNode root) {
             if (root == null) return 0;
             return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
         }
 
+        /**
+         * 111. 二叉树的最小深度
+         * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
+         */
         public int minDepth(TreeNode root) {
             if (root == null) return 0;
             if (root.left == null && root.right == null) return 1;
@@ -437,104 +438,36 @@ public class Solution {
             return Math.min(left, right) + 1;
         }
 
-        public TreeNode revert(TreeNode root) {
+        /**
+         * 226. 翻转二叉树
+         * https://leetcode-cn.com/problems/invert-binary-tree/
+         */
+        public TreeNode invertTree(TreeNode root) {
             if (root == null) return null;
-            TreeNode left = revert(root.left);
-            TreeNode right = revert(root.right);
+            TreeNode left = invertTree(root.left);
+            TreeNode right = invertTree(root.right);
             root.left = right;
             root.right = left;
             return root;
         }
 
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        public boolean isSame(TreeNode p, TreeNode q) {
+        /**
+         * 100. 相同的树
+         * https://leetcode-cn.com/problems/same-tree/
+         */
+        public boolean isSameTree(TreeNode p, TreeNode q) {
             if (q == null && p == null) return true;
             if (q == null ^ p == null) return false;
             if (q.val != p.val) return false;
-            return isSame(p.left, q.left) && isSame(p.right, q.right);
+            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
         }
 
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        ////////////////////
-        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        //////////////////// ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        public boolean mirror(TreeNode root) {
+
+        /**
+         * 101. 对称二叉树
+         * https://leetcode-cn.com/problems/symmetric-tree/
+         */
+        public boolean isSymmetric(TreeNode root) {
             if (root == null) return true;
             return mmChild(root.left, root.right);
         }
@@ -546,87 +479,8 @@ public class Solution {
             return mmChild(p.left, q.right) && mmChild(p.right, q.left);
         }
 
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
-        //        ////////////////////
 
-        public static class Solution8 {
-            Map<Integer, TreeNode> parent = new HashMap<>();
-            Set<Integer> visited = new HashSet<>();
-
-            public void dfs(TreeNode root) {
-                if (root.left != null) {
-                    parent.put(root.left.val, root);
-                    dfs(root.left);
-                }
-                if (root.right != null) {
-                    parent.put(root.right.val, root);
-                    dfs(root.right);
-                }
-            }
-
-            public TreeNode getLowestNode(TreeNode root, TreeNode p, TreeNode q) {
-                if (root == null) return null;
-                dfs(root);
-                while (p != null) {
-                    visited.add(p.val);
-                    p = parent.get(p.val);
-                }
-                while (q != null) {
-                    if (visited.contains(q.val)) {
-                        return q;
-                    }
-                    q = parent.get(q.val);
-                }
-                return null;
-            }
-
-
-        }
-
-        public TreeNode getLowestNode2(TreeNode root, TreeNode q, TreeNode p) {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode q, TreeNode p) {
             if (root == null) return root;
             return getChildNode(root, q, p);
         }

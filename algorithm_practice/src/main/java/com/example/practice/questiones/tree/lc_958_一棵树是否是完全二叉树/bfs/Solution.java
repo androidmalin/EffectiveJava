@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree/solution/
  * 给定一个二叉树，确定它是否是一个完全二叉树。
  * <p>
  * 百度百科中对完全二叉树的定义如下：
