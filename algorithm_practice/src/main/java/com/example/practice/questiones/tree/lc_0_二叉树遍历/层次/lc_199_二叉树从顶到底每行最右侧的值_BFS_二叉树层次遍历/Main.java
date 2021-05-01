@@ -1,6 +1,5 @@
 package com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.lc_199_二叉树从顶到底每行最右侧的值_BFS_二叉树层次遍历;
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeOperation;
 import com.example.practice.common.TreeUtil;
@@ -23,16 +22,8 @@ public class Main {
      * ````/```\````
      * ``2```````3``
      * ```\```````\`
-     * ````5```````4
+     * ````5```````7
      */
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, null, 5, null, null);
-        Solution solution = new Solution();
-        List<Integer> list = solution.rightSideView(root);
-        System.out.println(list);
-    }
-
-
     @Test
     public void test() {
         TreeNode root = TreeUtil.getTreeNode();

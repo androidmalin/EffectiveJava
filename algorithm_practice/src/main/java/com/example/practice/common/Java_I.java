@@ -7,7 +7,7 @@ public class Java_I {
      * 9 m 51 s 204 ms
      */
     public static void main(String[] args) {
-        long times = 1_000_000_000_000L;
+        long times = 1_000L;
 
         System.out.println("========== ++i ==========");
         long t1_start = System.nanoTime();

@@ -1,6 +1,8 @@
 package com.example.practice;
 
 import com.example.practice.common.TreeCreateFactory;
+import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 
 /**
  * 1.Tree是一个相互关系.
@@ -10,7 +12,7 @@ import com.example.practice.common.TreeCreateFactory;
 public class Client {
 
     public static void main(String[] args) {
-        System.out.println("xx");
-        TreeCreateFactory.init(1,2,3,4);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4);
+        TreeOperation.show(root);
     }
 }

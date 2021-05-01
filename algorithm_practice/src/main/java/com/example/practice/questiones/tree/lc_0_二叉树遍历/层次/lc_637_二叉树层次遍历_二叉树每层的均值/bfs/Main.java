@@ -17,18 +17,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/submissions/
  */
 public class Main {
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(3, 9, 20, 15, null, 7, null);
-        com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.lc_637_二叉树层次遍历_二叉树每层的均值.bfs.Solution solution = new com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.lc_637_二叉树层次遍历_二叉树每层的均值.bfs.Solution();
-        List<Double> list = solution.averageOfLevels(root);
-        System.out.println(list);
-    }
 
     @Test
     public void test() {
         TreeNode root = TreeCreateFactory.init(3, 9, 20, 15, null, 7, null);
         List<Double> expectedList = Arrays.asList(3.0, 14.5, 11.0);
-        assertEquals(expectedList, new com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.lc_637_二叉树层次遍历_二叉树每层的均值.bfs.Solution().averageOfLevels(root));
+        assertEquals(expectedList, new Solution().averageOfLevels(root));
         Assertions.assertEquals(expectedList, new Solution().averageOfLevels(root));
     }
 }

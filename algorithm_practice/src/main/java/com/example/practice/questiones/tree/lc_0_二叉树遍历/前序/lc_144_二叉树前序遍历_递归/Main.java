@@ -1,13 +1,10 @@
 package com.example.practice.questiones.tree.lc_0_二叉树遍历.前序.lc_144_二叉树前序遍历_递归;
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeUtil;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 /**
  * 144. 二叉树的前序遍历
@@ -15,14 +12,6 @@ import java.util.List;
  * https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
  */
 public class Main {
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
-        List<Integer> list = solution.preorderTraversal(root);
-        System.out.println("递归--二叉树的前序遍历:");
-        System.out.println(list);
-    }
 
     @Test
     public void test() {

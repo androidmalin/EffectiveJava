@@ -95,18 +95,4 @@ public class Solution {
         return res;
     }
 
-    public List<Integer> preorderTraversal_ReView(TreeNode root) {
-        if (root == null) return new ArrayList<>();
-        List<Integer> res = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode currentNode = stack.pop();
-            res.add(currentNode.val);
-            if (currentNode.right != null) stack.push(currentNode.right);
-            if (currentNode.left != null) stack.push(currentNode.left);
-        }
-        return res;
-    }
-
 }

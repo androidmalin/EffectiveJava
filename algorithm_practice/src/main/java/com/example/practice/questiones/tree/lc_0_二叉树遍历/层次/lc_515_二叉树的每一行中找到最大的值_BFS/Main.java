@@ -16,13 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(5, -73, null, -91, -22);
-        Solution solution = new Solution();
-        List<Integer> list = solution.largestValues(root);
-        System.out.println(list);
-    }
-
     @Test
     public void test() {
         TreeNode root = TreeCreateFactory.init(5, -73, null, -91, -22);

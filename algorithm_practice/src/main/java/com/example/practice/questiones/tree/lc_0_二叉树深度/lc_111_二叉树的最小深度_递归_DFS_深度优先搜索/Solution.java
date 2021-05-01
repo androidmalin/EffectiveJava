@@ -28,6 +28,17 @@ public class Solution {
      * 这个讲解很好理解
      * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/solution/111-er-cha-shu-de-zui-xiao-shen-du-di-gu-ztum/
      */
+    /**
+     * 注意,
+     * ①.递归的终止条件有2个,
+     * 1.root==null
+     * 2.root.left==null && root.right ==null 叶子节点
+     * <p>
+     * 最小的循环单元
+     * 注意左子树 和 右子树为空的情况.
+     * <p>
+     * ②.树高度的定义
+     */
     public int minDepth(TreeNode root) {
         if (root == null) return 0;
         //这道题递归条件里分为三种情况
@@ -93,83 +104,4 @@ public class Solution {
         return min + 1;
     }
 
-
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-    ////////////
-
-    /**
-     * 2021.4.6
-     * 17:20
-     */
-    public int minDepth_ReView(TreeNode root) {
-        return min_ReView(root);
-    }
-
-    /**
-     * 注意,
-     * ①.递归的终止条件有2个,
-     * 1.root==null
-     * 2.root.left==null && root.right ==null 叶子节点
-     * <p>
-     * 最小的循环单元
-     * 注意左子树 和 右子树为空的情况.
-     * <p>
-     * ②.树高度的定义
-     */
-    private int min_ReView(TreeNode root) {
-        //left!=null
-        //right!=null
-
-        //1.null
-        if (root == null) return 0;
-
-        //2.leaf node
-        if (root.left == null && root.right == null) return 1;
-
-        int minValue = Integer.MAX_VALUE;
-
-        //3.handle left
-        if (root.left != null) {
-            int leftMin = min_ReView(root.left);
-            minValue = Math.min(leftMin, minValue);
-        }
-        //4.handle right
-        if (root.right != null) {
-            int rightMin = min_ReView(root.right);
-            minValue = Math.min(rightMin, minValue);
-        }
-        return minValue + 1;
-    }
 }

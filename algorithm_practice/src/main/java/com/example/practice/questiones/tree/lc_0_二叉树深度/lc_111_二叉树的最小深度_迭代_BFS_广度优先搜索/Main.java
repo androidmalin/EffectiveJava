@@ -8,22 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Main {
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(1, 2, null, 4, null);
-        Solution solution = new Solution();
-//        int minDepth = solution.minDepth(root);
-//        System.out.println("minDepth:" + minDepth);
-//        System.out.println(" ");
-//
-//        int minDepth_reView = solution.minDepth_ReView(root);
-//        System.out.println("minDepth_reView:" + minDepth_reView);
-//
-//        int minDepth_reView2 = solution.minDepth_ReView2(root);
-//        System.out.println("minDepth_ReView2:" + minDepth_reView2);
-
-        int minDepth_reView3 = solution.minDepth_ReView3(root);
-        System.out.println("minDepth_reView3:"+minDepth_reView3);
-    }
 
     @Test
     public void test() {

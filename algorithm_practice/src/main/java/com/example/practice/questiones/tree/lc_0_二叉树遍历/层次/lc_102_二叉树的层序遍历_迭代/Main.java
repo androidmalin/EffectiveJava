@@ -1,6 +1,5 @@
 package com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.lc_102_二叉树的层序遍历_迭代;
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeOperation;
 import com.example.practice.common.TreeUtil;
@@ -20,14 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
  */
 public class Main {
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6);
-
-        System.out.println("非递归--二叉树的层序遍历:");
-        List<List<Integer>> lists = solution.levelOrder(root);
-        System.out.println(lists);
-    }
 
     @Test
     public void test() {

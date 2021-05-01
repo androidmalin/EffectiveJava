@@ -20,12 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/solution/san-chong-shi-xian-tu-jie-107er-cha-shu-de-ceng-ci/
  */
 public class Main {
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(3, 9, 20, null, null, 15, 7);
-        Solution solution = new Solution();
-        List<List<Integer>> lists = solution.levelOrderBottom(root);
-        System.out.println(lists);
-    }
 
     @Test
     public void test() {

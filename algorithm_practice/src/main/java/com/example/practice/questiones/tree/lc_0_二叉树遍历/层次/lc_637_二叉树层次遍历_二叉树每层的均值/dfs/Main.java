@@ -9,19 +9,11 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 /**
  * 给定一个非空二叉树, 返回一个由每层节点平均值组成的数组。
  * https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/submissions/
  */
 public class Main {
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(3, 9, 20, 15, null, 7, null);
-        Solution solution = new Solution();
-        List<Double> list = solution.averageOfLevels(root);
-        System.out.println(list);
-    }
 
     @Test
     public void test() {

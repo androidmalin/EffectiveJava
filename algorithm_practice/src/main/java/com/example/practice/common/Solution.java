@@ -55,7 +55,7 @@ public class Solution {
         TreeNode root = TreeUtil.getTreeNode();
         List<Integer> list = TreeUtil.preOrder(root);
         List<Integer> list2 = new Solution().preorderTraversal(root);
-        Assertions.assertTrue(ListUtil.<Integer>isSame2(list, list2));
+        Assertions.assertTrue(ListUtil.<Integer>isSame(list, list2));
     }
 
     /**
@@ -66,7 +66,7 @@ public class Solution {
         TreeNode root = TreeUtil.getTreeNode();
         List<Integer> list1 = TreeUtil.inOrder(root);
         List<Integer> list2 = new Solution().inorderTraversal(root);
-        Assertions.assertTrue(ListUtil.isSame2(list1, list2));
+        Assertions.assertTrue(ListUtil.isSame(list1, list2));
     }
 
     /**
@@ -77,7 +77,7 @@ public class Solution {
         TreeNode root = TreeUtil.getTreeNode();
         List<Integer> list1 = TreeUtil.postOrder(root);
         List<Integer> list2 = new Solution().postorderTraversal(root);
-        Assertions.assertTrue(ListUtil.isSame2(list1, list2));
+        Assertions.assertTrue(ListUtil.isSame(list1, list2));
     }
 
     @Test
@@ -85,7 +85,7 @@ public class Solution {
         TreeNode root = TreeUtil.getTreeNode();
         List<Integer> list1 = TreeUtil.preOrder(root);
         List<Integer> list2 = new Solution().color_preOrder(root);
-        Assertions.assertTrue(ListUtil.isSame2(list1, list2));
+        Assertions.assertTrue(ListUtil.isSame(list1, list2));
     }
 
 

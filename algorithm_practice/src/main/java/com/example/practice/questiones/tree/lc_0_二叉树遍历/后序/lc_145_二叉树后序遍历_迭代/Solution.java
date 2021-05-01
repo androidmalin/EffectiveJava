@@ -125,31 +125,4 @@ public class Solution {
         return res;
     }
 
-
-    //```````````````高度    节点个数
-    //``````1`````````1        1
-    //````/```\```````
-    //``2```````3`````2        3
-    //`/`\`````/`\````
-    //4```5```6```7```3        7
-    public List<Integer> postorderTraversal_ReView1(TreeNode root) {
-        if (root == null) return new ArrayList<>();
-        //left->right->root
-        List<Integer> list = new ArrayList<>();
-        Stack<TreeNode> stack2 = new Stack<>();
-        Stack<TreeNode> stack1 = new Stack<>();
-        stack1.push(root);
-        while (!stack1.isEmpty()) {
-            TreeNode temp = stack1.pop();
-            stack2.push(temp);
-            if (temp.left != null) stack1.push(temp.left);
-            if (temp.right != null) stack1.push(temp.right);
-
-        }
-        while (!stack2.isEmpty()) {
-            list.add(stack2.pop().val);
-        }
-        return list;
-    }
-
 }
