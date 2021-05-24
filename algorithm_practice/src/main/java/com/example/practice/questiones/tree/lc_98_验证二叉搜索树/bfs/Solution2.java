@@ -1,6 +1,5 @@
 package com.example.practice.questiones.tree.lc_98_验证二叉搜索树.bfs;
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 
 import java.util.Stack;
@@ -35,15 +34,5 @@ public class Solution2 {
             current = tempNode.right;
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(0);
-        Solution2 solution = new Solution2();
-        boolean validBST = solution.isValidBST(root);
-        System.out.println(validBST);
-
-        System.out.println("Double.MIN_VALUE:" + Double.MIN_VALUE);
-        System.out.println(" ");
     }
 }

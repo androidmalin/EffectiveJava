@@ -19,18 +19,18 @@ public class Main {
         root.left.right = new TreeNode(5);
         root.right.left = new TreeNode(6);
         root.right.right = null;
-
-        TreeNode root1 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
+        TreeOperation.show(root);
+        System.out.println(" ");
+        TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, null);
+        TreeOperation.show(root1);
         Assertions.assertTrue(solution.isSameTree(root, root1));
     }
 
     @Test
     public void test2() {
-        TreeNode root1 = TreeCreateFactory.init(1, 2, 3);
-        TreeNode root2 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
+        TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3);
+        TreeNode root2 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
         Solution solution = new Solution();
-        boolean sameTree2 = solution.isSameTree2(root1, root2);
-        System.out.println(sameTree2);
-        Assertions.assertFalse(sameTree2);
+        Assertions.assertFalse(solution.isSameTree(root1, root2));
     }
 }

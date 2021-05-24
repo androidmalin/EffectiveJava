@@ -2,6 +2,7 @@ package com.example.practice.questiones.tree.lc_958_一棵树是否是完全二�
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,8 @@ public class Main {
      */
     @Test
     public void test0() {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, null, null);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, null, null);
+        TreeOperation.show(root);
         Solution solution = new Solution();
         boolean completeTree = solution.isCompleteTree(root);
         Assertions.assertTrue(completeTree);
@@ -47,10 +49,10 @@ public class Main {
      */
     @Test
     public void test1() {
-        TreeNode root = TreeCreateFactory.init(1, null, 3, null, null, 6, 7);
+        TreeNode root = TreeCreateFactory.init(false, 1, null, 3, 4, 5, 6, 7);
+        TreeOperation.show(root);
         Solution solution = new Solution();
         boolean completeTree = solution.isCompleteTree(root);
-        System.out.println("completeTree:" + completeTree);
         Assertions.assertFalse(completeTree);
     }
 
@@ -64,10 +66,10 @@ public class Main {
      */
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, null, null, 6, 7);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, null, null, 6, 7);
+        TreeOperation.show(root);
         Solution solution = new Solution();
         boolean completeTree = solution.isCompleteTree(root);
-        System.out.println("completeTree:" + completeTree);
         Assertions.assertFalse(completeTree);
     }
 
@@ -82,10 +84,10 @@ public class Main {
      */
     @Test
     public void test3() {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, null);
+        TreeOperation.show(root);
         Solution solution = new Solution();
         boolean completeTree = solution.isCompleteTree(root);
-        System.out.println("completeTree:" + completeTree);
         Assertions.assertTrue(completeTree);
     }
 }

@@ -11,27 +11,24 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class Main {
     @Test
     public void test0() {
-        Solution solution = new Solution();
-        TreeNode root = new TreeNode(-2147483648);
+        Solution2 solution = new Solution2();
+        //Integer.MIN_VALUE = -2147483648
+        TreeNode root = new TreeNode(Integer.MIN_VALUE);
         boolean validBST = solution.isValidBST(root);
         Assertions.assertTrue(validBST);
-        int min = Integer.MIN_VALUE;
-        if (min == -2147483648) {
-            System.out.println("xxx");
-        }
     }
 
     @Test
     public void test() {
         Solution solution = new Solution();
-        TreeNode root = TreeCreateFactory.init(1, 1);
+        TreeNode root = TreeCreateFactory.init(false, 1, 1);
         assertFalse(solution.isValidBST(root));
     }
 
     @Test
     public void test1() {
         Solution solution = new Solution();
-        TreeNode root = TreeCreateFactory.init(2, 1, 3);
+        TreeNode root = TreeCreateFactory.init(false, 2, 1, 3);
         Assertions.assertTrue(solution.isValidBST(root));
     }
 }

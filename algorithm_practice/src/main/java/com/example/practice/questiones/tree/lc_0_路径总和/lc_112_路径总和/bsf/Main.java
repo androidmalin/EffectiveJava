@@ -42,40 +42,4 @@ public class Main {
         boolean b = solution.hasPathSum(root, 10);
         Assertions.assertFalse(b);
     }
-
-    @Test
-    public void test4() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        boolean b = solution.hasPathSum_(root, 7);
-        boolean b1 = solution.hasPathSum_(root, 8);
-        boolean b2 = solution.hasPathSum_(root, 10);
-        boolean b3 = solution.hasPathSum_(root, 11);
-        Assertions.assertTrue(b);
-        Assertions.assertTrue(b1);
-        Assertions.assertTrue(b2);
-        Assertions.assertTrue(b3);
-    }
-
-    @Test
-    public void test5() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        boolean b = solution.hasPathSum_(root, 9);
-        boolean b1 = solution.hasPathSum_(root, 12);
-        boolean b2 = solution.hasPathSum_(root, 13);
-        boolean b3 = solution.hasPathSum_(root, 14);
-        Assertions.assertFalse(b);
-        Assertions.assertFalse(b1);
-        Assertions.assertFalse(b2);
-        Assertions.assertFalse(b3);
-    }
-
-    @Test
-    public void test6() {
-        TreeNode root = null;
-        Solution solution = new Solution();
-        boolean b = solution.hasPathSum_(root, 10);
-        Assertions.assertFalse(b);
-    }
 }

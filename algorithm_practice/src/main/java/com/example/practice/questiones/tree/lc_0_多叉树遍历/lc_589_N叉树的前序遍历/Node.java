@@ -9,12 +9,12 @@ class Node {
     public Node() {
     }
 
-    public Node(int _val) {
-        val = _val;
+    public Node(int val) {
+        this.val = val;
     }
 
-    public Node(int _val, List<Node> _children) {
-        val = _val;
-        children = _children;
+    public Node(int val, List<Node> children) {
+        this.val = val;
+        this.children = children;
     }
 }

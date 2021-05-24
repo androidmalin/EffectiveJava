@@ -10,6 +10,9 @@ import java.util.List;
  * https://leetcode-cn.com/problems/validate-binary-search-tree/
  */
 public class Solution {
+    /**
+     * 利用中序遍历递增的特点
+     */
     public boolean isValidBST(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         inorder(root, res);

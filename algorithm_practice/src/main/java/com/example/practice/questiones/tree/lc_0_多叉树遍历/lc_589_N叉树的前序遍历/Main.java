@@ -11,25 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Node root = getNode();
-        Solution solution = new Solution();
-        List<Integer> resultList = solution.preorder(root);
-        System.out.println(resultList);
-
-        List<Integer> resultList2 = solution.preorder_color(root);
-        System.out.println(" ");
-        System.out.println("preorder2");
-        System.out.println(resultList2);
-
-        List<Integer> resultList3 = solution.preorder_stack(root);
-        System.out.println(" ");
-        System.out.println("preorder3");
-        System.out.println(resultList3);
-        System.out.println(" ");
-
-    }
-
     @Test
     public void test() {
         Node root = getNode();

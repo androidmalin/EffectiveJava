@@ -2,6 +2,7 @@ package com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.jian_32
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,8 @@ public class Main {
         //  [20,9],
         //  [15,7]
         //]
-        TreeNode root = TreeCreateFactory.init(3, 9, 20, null, null, 15, 7);
+        TreeNode root = TreeCreateFactory.init(false,3, 9, 20, null, null, 15, 7);
+        TreeOperation.show(root);
         Solution solution = new Solution();
         List<List<Integer>> lists = solution.levelOrder(root);
         System.out.println(lists);

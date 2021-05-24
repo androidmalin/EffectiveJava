@@ -1,5 +1,6 @@
 package com.example.practice.common;
 
+@SuppressWarnings("StatementWithEmptyBody")
 public class Java_I {
 
     /**

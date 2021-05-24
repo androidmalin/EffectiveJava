@@ -41,18 +41,4 @@ public class Solution {
         }
         return false;
     }
-
-
-    public boolean hasPathSum_(TreeNode root, int targetSum) {
-        if (root == null) return false;
-        if (root.left == null && root.right == null) {
-            if (root.val == targetSum) {
-                return true;
-            }
-        }
-        return hasPathSum_(root.left, targetSum - root.val) ||
-                hasPathSum_(root.right, targetSum - root.val);
-    }
-
-
 }

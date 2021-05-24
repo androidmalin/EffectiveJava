@@ -2,6 +2,7 @@ package com.example.practice.questiones.tree.lc_0_二叉树遍历.层次.lc_515_
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,8 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(5, -73, null, -91, -22);
+        TreeNode root = TreeCreateFactory.init(false, 5, -73, null, -91, -22);
+        TreeOperation.show(root);
         List<Integer> actualList = new Solution().largestValues(root);
         List<Integer> expectedList = Arrays.asList(5, -73, -22);
         assertEquals(expectedList, actualList);

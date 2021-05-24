@@ -9,20 +9,14 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Main {
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(1, 2, 2, 3, 4, 4, 3);
-        boolean mirror = new Solution().isSymmetric(root);
-        System.out.println("isSymmetric:" + mirror);
-        System.out.println(" ");
-    }
 
     @Test
     public void test() {
         Solution solution = new Solution();
-        TreeNode root = TreeCreateFactory.init(1, 2, 2, 3, 4, 4, 3);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 2, 3, 4, 4, 3);
         assertTrue(solution.isSymmetric(root));
 
-        TreeNode root2 = TreeCreateFactory.init(1, 2, 3);
+        TreeNode root2 = TreeCreateFactory.init(false, 1, 2, 3);
         assertFalse(solution.isSymmetric(root2));
     }
 }

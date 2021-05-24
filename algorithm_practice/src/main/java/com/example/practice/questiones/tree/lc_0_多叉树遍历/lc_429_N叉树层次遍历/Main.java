@@ -9,15 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 public class Main {
-
-    public static void main(String[] args) {
-        Node root = getNode();
-        Solution solution = new Solution();
-        List<List<Integer>> resultList = solution.levelOrder(root);
-        System.out.println(resultList);
-    }
 
     @Test
     public void test() {

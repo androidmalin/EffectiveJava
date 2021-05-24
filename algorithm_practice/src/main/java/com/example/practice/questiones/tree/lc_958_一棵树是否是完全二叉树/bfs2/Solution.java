@@ -26,15 +26,15 @@ public class Solution {
         TreeNode prev = root;
         queue.add(root);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.remove();
-            if (prev == null && node != null) {
+            TreeNode current = queue.poll();
+            if (prev == null && current != null) {
                 return false;
             }
-            if (node != null) {
-                queue.add(node.left);
-                queue.add(node.right);
+            if (current != null) {
+                queue.add(current.left);
+                queue.add(current.right);
             }
-            prev = node;
+            prev = current;
         }
         return true;
     }

@@ -10,19 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Node root = getNode();
-        Solution solution = new Solution();
-        List<Integer> postorder = solution.postorder(root);
-        System.out.println(postorder);
-
-        List<Integer> postorder2 = solution.postorder_color(root);
-        System.out.println(postorder2);
-
-        List<Integer> postorder3 = solution.postorder_two_stack(root);
-        System.out.println(postorder3);
-
-    }
 
     @Test
     public void test() {
