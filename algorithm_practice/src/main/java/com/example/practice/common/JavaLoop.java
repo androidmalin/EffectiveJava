@@ -57,7 +57,7 @@ public class JavaLoop {
         while (true) {
             i++;
             j--;
-            if (!(i < j)) break;
+            if (i >= j) break;
         }
         System.out.println("function2 i:" + i);
         System.out.println("function2 j:" + j);

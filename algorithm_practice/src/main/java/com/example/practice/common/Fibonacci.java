@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class Fibonacci {
+
     public int fibonacci(int n) {
         if (n < 0) return -1;
         if (n == 0) return 0;
@@ -32,31 +33,32 @@ public class Fibonacci {
     @Test
     public void test() {
         Fibonacci fibonacci = new Fibonacci();
-        for (int i = 0; i < 100; i++) {
-            Assertions.assertEquals(fibonacci.fibonacci(i), fibonacci.fibonacci2(i));
+        for (int i = 0; i < 30; i++) {
+            boolean same = fibonacci.fibonacci(i) - fibonacci.fibonacci2(i) == 0;
+            Assertions.assertTrue(same);
         }
     }
 
     public static void main(String[] args) {
         Fibonacci fibonacci = new Fibonacci();
-        fibonacci.fibonacci2(3);
+        fibonacci.fibonacci2(5);
+        test1();
     }
 
+    // int j = i++;//先将i的原始值（1）赋值给变量j（1），然后i变量的值加1
     private static void test1() {
         int n = 3;
-        while (n-- > 2) {
-            System.out.println("n:" + n);
-            System.out.println("++");
+        while ((n--) > 2) {
+            System.out.println("n1:" + n);
         }
-        System.out.println("n:" + n);
+        System.out.println("n2:" + n);
     }
 
     private static void test2() {
         int n = 3;
-        while (--n > 2) {
-            System.out.println("n:" + n);
-            System.out.println("++");
+        while ((--n) > 2) {
+            System.out.println("n1:" + n);
         }
-        System.out.println("n:" + n);
+        System.out.println("n2:" + n);
     }
 }

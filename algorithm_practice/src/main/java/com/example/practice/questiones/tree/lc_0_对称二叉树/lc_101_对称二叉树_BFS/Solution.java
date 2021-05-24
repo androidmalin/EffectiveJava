@@ -21,10 +21,10 @@ import java.util.Queue;
  */
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
-        if (root == null) return false;
+        if (root == null) return true;
         if (root.left == null && root.right == null) return true;
-        if (root.left == null && root.right != null) return false;
-        if (root.left != null && root.right == null) return false;
+        if (root.left == null) return false;
+        if (root.right == null) return false;
         //root.left!=null && root.right !=null;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root.left);
@@ -55,6 +55,12 @@ public class Solution {
             //```\`````/`\`
             //````4```4```3
             if (left == null && right != null) return false;
+
+
+            //``````1``````
+            //````/```\````
+            //``2```````3``
+            if (left.val != right.val) return false;
 
 
             //``````1``````

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public class ListUtil {
@@ -21,16 +20,6 @@ public class ListUtil {
             if (t1 == null && t2 == null) continue;
             if (t1 == null ^ t2 == null) return false;
             if (t1.compareTo(t2) != 0) return false;
-        }
-        return true;
-    }
-
-    public static boolean isSame3(List<Integer> list1, List<Integer> list2) {
-        if (list1 == null && list2 == null) return true;
-        if (list1 == null ^ list2 == null) return false;
-        if (list1.size() != list2.size()) return false;
-        for (int i = 0; i < list1.size(); i++) {
-            if (list1.get(i).intValue() != list2.get(i).intValue()) return false;
         }
         return true;
     }
@@ -96,6 +85,13 @@ public class ListUtil {
     public void test9() {
         List<Integer> list1 = Arrays.asList(null, null, null, null);
         List<Integer> list2 = Arrays.asList(null, null, null, null);
+        Assertions.assertTrue(ListUtil.isSame(list1, list2));
+    }
+
+    @Test
+    public void test10() {
+        List<Float> list1 = Arrays.asList(1.0f, null, null, null);
+        List<Float> list2 = Arrays.asList(1.0f, null, null, null);
         Assertions.assertTrue(ListUtil.isSame(list1, list2));
     }
 }

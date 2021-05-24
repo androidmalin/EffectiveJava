@@ -75,6 +75,7 @@ public class TreeUtil {
      * 得到一个颗二叉树的层次遍历结果
      * test pass
      */
+    @SuppressWarnings("all")
     public static List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) return new ArrayList<>();
 

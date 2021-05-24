@@ -10,12 +10,10 @@ public class JavaList {
 
     public static void main(String[] args) {
 
-
         System.out.println("  ");
         System.out.println("reverse list  ");
         reverse();
         System.out.println("  ");
-
 
         System.out.println("  ");
         System.out.println("listToArray  ");
@@ -35,26 +33,7 @@ public class JavaList {
         addFirstAndLast();
     }
 
-    private static void addFirstAndLast() {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.addLast(1);
-        list.addLast(2);
-        list.addLast(3);
-        list.addLast(4);
-        list.addLast(5);
-        System.out.println("LinkedList addLast 1,2,3,4,5 ");
-        System.out.println(list);
-        System.out.println(" ");
 
-        LinkedList<Integer> list1 = new LinkedList<>();
-        list1.addFirst(1);
-        list1.addFirst(2);
-        list1.addFirst(3);
-        list1.addFirst(4);
-        list1.addFirst(5);
-        System.out.println("LinkedList addFirst 1,2,3,4,5 ");
-        System.out.println(list1);
-    }
 
     /**
      * Collections.reverse
@@ -89,8 +68,22 @@ public class JavaList {
         System.out.println(Arrays.toString(array));
     }
 
-    private static void arrayToList() {
+    private static void arrayToList2() {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+        System.out.println(list);
+    }
+
+    private static void arrayToList() {
+        int[] array = new int[5];
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 3;
+        array[3] = 4;
+        array[4] = 5;
+        List<Integer> list = new ArrayList<>();
+        for (int i : array) {
+            list.add(i);
+        }
         System.out.println(list);
     }
 
@@ -100,5 +93,36 @@ public class JavaList {
         lists.add(Arrays.asList(2, 3));
         lists.add(Arrays.asList(4, 5, 6, 7));
         System.out.println(lists);
+    }
+
+    private static void addFirstAndLast() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+        list.addLast(5);
+        System.out.println("LinkedList addLast 1,2,3,4,5 ");
+        System.out.println(list);
+        System.out.println(" ");
+
+        LinkedList<Integer> list1 = new LinkedList<>();
+        list1.addFirst(1);
+        list1.addFirst(2);
+        list1.addFirst(3);
+        list1.addFirst(4);
+        list1.addFirst(5);
+        System.out.println("LinkedList addFirst 1,2,3,4,5 ");
+        System.out.println(list1);
+
+        System.out.println(" ");
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.addLast(1);
+        list2.addLast(2);
+        list2.addLast(3);
+        list2.addLast(4);
+        list2.addLast(5);
+        System.out.println("LinkedList addLast 1,2,3,4,5 ");
+        System.out.println(list2);
     }
 }

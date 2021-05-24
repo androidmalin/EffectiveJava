@@ -5,8 +5,7 @@ import com.example.practice.common.TreeNode;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Main {
@@ -22,5 +21,8 @@ public class Main {
         Solution solution = new Solution();
         TreeNode root = TreeCreateFactory.init(1, 2, 2, 3, 4, 4, 3);
         assertTrue(solution.isSymmetric(root));
+
+        TreeNode root2 = TreeCreateFactory.init(1, 2, 3);
+        assertFalse(solution.isSymmetric(root2));
     }
 }

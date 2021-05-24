@@ -18,7 +18,7 @@ public class HeapUtil {
 
 
     /**
-     * 输入结果为: 5 7 6 10 8 9
+     * 输出结果为: 5 7 6 10 8 9
      * 小顶堆只是保证根节点不大于左右子节点。但是左右子节点谁大谁小并不能保证。
      * <p>
      * ``````5``````
@@ -28,7 +28,7 @@ public class HeapUtil {
      * 10``8```9`````
      */
     private static void printQueueDisorder() {
-        System.out.println("小顶堆默认输入,是无序的");
+        System.out.println("小顶堆默认输出,是无序的");
         //设置队列的初始长度为10
         PriorityQueue<Integer> queue = new PriorityQueue<>(10);
         //入队
@@ -45,7 +45,7 @@ public class HeapUtil {
      * 9221 => 6982 => 6731 => 5426 => 5256 => 3609 => 5203 => 763 => 1130 => 2108
      */
     public static void printQueueDisorder2() {
-        System.out.println("大顶堆默认输入,是无序的");
+        System.out.println("大顶堆默认输出,是无序的");
         PriorityQueue<Integer> queue = new PriorityQueue<>(10_000, (o1, o2) -> o2 - o1);
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
@@ -64,12 +64,12 @@ public class HeapUtil {
      */
     public static void printQueueOrder() {
         System.out.println(" ");
-        System.out.println("小顶堆有序输入,从小到大");
+        System.out.println("小顶堆有序输出,从小到大");
         PriorityQueue<Integer> queue = new PriorityQueue<>(10);
         for (int i = 10; i >= 5; i--) {
             queue.offer(i);
         }
-        //（此代码根上面代码的区别）通过出列的方式来遍历，而不是直接遍历
+        //（此代码跟上面代码的区别）通过出列的方式来遍历，而不是直接遍历
         while (queue.peek() != null) {
             System.out.print(queue.poll() + " ");
         }
@@ -79,12 +79,12 @@ public class HeapUtil {
 
     public static void printQueueOrder2() {
         System.out.println(" ");
-        System.out.println("大顶堆有序输入,从大到小");
+        System.out.println("大顶堆有序输出,从大到小");
         PriorityQueue<Integer> queue = new PriorityQueue<>(10, (o1, o2) -> o2 - o1);
         for (int i = 10; i >= 5; i--) {
             queue.offer(i);
         }
-        //（此代码根上面代码的区别）通过出列的方式来遍历，而不是直接遍历
+        //（此代码跟上面代码的区别）通过出列的方式来遍历，而不是直接遍历
         while (queue.peek() != null) {
             System.out.print(queue.poll() + " ");
         }

@@ -9,7 +9,7 @@ public class BinaryHeap {
     private int heapSize;
 
     /**
-     * This will initialize our heap with default size.  
+     * This will initialize our heap with default size. 
      */
     public BinaryHeap(int capacity) {
         heapSize = 0;
@@ -35,7 +35,7 @@ public class BinaryHeap {
     }
 
     /**
-     * Inserts new element in to heap  * Complexity: O(log N)  * As worst case scenario, we need to traverse till the root  
+     * Inserts new element in to heap * Complexity: O(log N) * As worst case scenario, we need to traverse till the root 
      */
     public void insert(int x) {
         if (isFull()) {
@@ -47,7 +47,7 @@ public class BinaryHeap {
     }
 
     /**
-     * Deletes element at index x  * Complexity: O(log N)  
+     * Deletes element at index x * Complexity: O(log N) 
      */
     public int delete(int x) {
         if (isEmpty()) {
@@ -61,7 +61,7 @@ public class BinaryHeap {
     }
 
     /**
-     * Maintains the heap property while inserting an element.  
+     * Maintains the heap property while inserting an element. 
      */
     private void heapifyUp(int i) {
         int insertValue = heap[i];
@@ -73,7 +73,7 @@ public class BinaryHeap {
     }
 
     /**
-     * Maintains the heap property while deleting an element.  
+     * Maintains the heap property while deleting an element. 
      */
     private void heapifyDown(int i) {
         int child;
@@ -96,7 +96,7 @@ public class BinaryHeap {
     }
 
     /**
-     * Prints all elements of the heap  
+     * Prints all elements of the heap 
      */
     public void printHeap() {
         System.out.print("nHeap = ");
@@ -105,7 +105,7 @@ public class BinaryHeap {
     }
 
     /**
-     * This method returns the max element of the heap.  * complexity: O(1)  
+     * This method returns the max element of the heap. * complexity: O(1) 
      */
     public int findMax() {
         if (isEmpty()) throw new NoSuchElementException("Heap is empty.");
