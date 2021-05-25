@@ -15,6 +15,8 @@ public class Solution2 {
      * ```2```
      * ``/`\``
      * `1```3`
+     * <p>
+     * website test pass ✅
      */
     public boolean isValidBST(TreeNode root) {
         //1.Boundary conditions

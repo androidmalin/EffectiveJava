@@ -36,6 +36,8 @@ public class Solution {
      * 判断其右子树是否为空，不为空就放入队列中
      * <p>
      * https://leetcode-cn.com/problems/invert-binary-tree/solution/dong-hua-yan-shi-liang-chong-shi-xian-226-fan-zhua/
+     * <p>
+     * website test pass ✅
      */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;

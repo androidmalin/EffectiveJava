@@ -13,6 +13,8 @@ public class Solution {
      * ``8```````11`
      * `/`\`````````
      * 4```9````````
+     * <p>
+     * website test pass ✅
      */
     public boolean isValidBST(TreeNode root) {
         //1.left => (-∞, 最大值(上界))

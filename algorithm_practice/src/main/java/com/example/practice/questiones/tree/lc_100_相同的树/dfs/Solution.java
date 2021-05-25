@@ -22,6 +22,8 @@ public class Solution {
      * 这是一个递归的过程，因此可以使用深度优先搜索，递归地判断两个二叉树是否相同。
      * <p>
      * https://leetcode-cn.com/problems/same-tree/solution/xiang-tong-de-shu-by-leetcode-solution/
+     * <p>
+     * website test pass ✅
      */
     public boolean isSameTree(TreeNode p, TreeNode q) {
         //1.递归终止条件.

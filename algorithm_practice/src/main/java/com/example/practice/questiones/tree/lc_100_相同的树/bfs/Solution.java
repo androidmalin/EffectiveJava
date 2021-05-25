@@ -12,6 +12,9 @@ import java.util.Queue;
  */
 public class Solution {
 
+    /**
+     * website test pass ✅
+     */
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) return true;
         if (p == null) return false;

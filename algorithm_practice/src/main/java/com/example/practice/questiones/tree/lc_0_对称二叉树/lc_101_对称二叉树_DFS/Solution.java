@@ -34,6 +34,8 @@ public class Solution {
      * 1.node1.value = node2.value
      * 2.node1.left = node2.right
      * 3.node1.right = node2.left
+     * <p>
+     * website test pass ✅
      */
     public boolean isSymmetric(TreeNode root) {
         if (root == null) return true;

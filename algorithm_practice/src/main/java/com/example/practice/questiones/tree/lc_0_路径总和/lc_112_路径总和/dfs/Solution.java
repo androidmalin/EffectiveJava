@@ -11,6 +11,9 @@ import com.example.practice.common.TreeNode;
  */
 public class Solution {
 
+    /**
+     * website test pass ✅
+     */
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
         if (root.left == null && root.right == null) {

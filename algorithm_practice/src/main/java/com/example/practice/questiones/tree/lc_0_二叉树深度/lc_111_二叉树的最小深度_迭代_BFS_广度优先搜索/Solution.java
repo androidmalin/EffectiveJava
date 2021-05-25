@@ -15,6 +15,7 @@ import java.util.Queue;
  * <p>
  * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
  */
+@SuppressWarnings("all")
 public class Solution {
 
     /**
@@ -30,6 +31,7 @@ public class Solution {
      * <p>
      * 空间复杂度： O(N)，其中 N 是树的节点数。
      * 空间复杂度主要取决于队列的开销，队列中的元素个数不会超过树的节点数。
+     * plugin test pass ✅
      */
     public int minDepth(TreeNode root) {
         if (root == null) return 0;

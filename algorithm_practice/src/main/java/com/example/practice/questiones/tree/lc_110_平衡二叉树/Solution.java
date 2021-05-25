@@ -24,6 +24,10 @@ import com.example.practice.common.TreeNode;
  * https://leetcode-cn.com/problems/balanced-binary-tree/
  */
 public class Solution {
+
+    /**
+     * website test pass ✅
+     */
     public boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         boolean ads = Math.abs(height(root.left) - height(root.right)) <= 1;

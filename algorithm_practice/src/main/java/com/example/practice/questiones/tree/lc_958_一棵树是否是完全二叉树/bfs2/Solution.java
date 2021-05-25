@@ -20,6 +20,7 @@ public class Solution {
 
     /**
      * 利用完全二叉树层序遍历时节点连续出现的性质，遍历到null之后再遍历到非null则说明不连续，记录prev很巧妙
+     * website test pass ✅
      */
     public boolean isCompleteTree(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();

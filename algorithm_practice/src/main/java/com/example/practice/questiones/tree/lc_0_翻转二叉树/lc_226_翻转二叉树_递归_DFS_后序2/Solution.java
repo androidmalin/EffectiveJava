@@ -24,6 +24,9 @@ import com.example.practice.common.TreeNode;
  */
 public class Solution {
 
+    /**
+     * website test pass ✅
+     */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         //postorder

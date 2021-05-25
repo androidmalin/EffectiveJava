@@ -7,19 +7,21 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class Solution {
+public class Solution2 {
 
-    private final Map<Integer, TreeNode> parent = new HashMap<>();
+
+    private final Map<Integer, TreeNode> map = new HashMap<>();
     private final Set<Integer> visited = new HashSet<>();
 
-    public void dfs(TreeNode root) {
+    private void makeParent(TreeNode root) {
+        if (root == null) return;
         if (root.left != null) {
-            parent.put(root.left.val, root);
-            dfs(root.left);
+            map.put(root.left.val, root);
+            makeParent(root.left);
         }
         if (root.right != null) {
-            parent.put(root.right.val, root);
-            dfs(root.right);
+            map.put(root.right.val, root);
+            makeParent(root.right);
         }
     }
 
@@ -27,17 +29,19 @@ public class Solution {
      * website test pass ✅
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        dfs(root);
+        if (root == null) return null;
+        if (root == q || root == p) return root;
+        makeParent(root);
         while (p != null) {
             visited.add(p.val);
-            p = parent.get(p.val);
+            p = map.get(p.val);
         }
         while (q != null) {
             if (visited.contains(q.val)) {
                 return q;
             }
-            q = parent.get(q.val);
+            q = map.get(q.val);
         }
-        return null;
+        return root;
     }
 }

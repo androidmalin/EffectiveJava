@@ -49,19 +49,27 @@ public class Solution2 {
     ////////////////////////
     ////////////////////////
     ////////////////////////
+
+    /**
+     * plugin test pass ✅
+     */
     public int minDepth(TreeNode root) {
         if (root == null) return 0;
         if (root.left == null && root.right == null) return 1;
+
         int left = minDepth(root.left);
         int right = minDepth(root.right);
+
         if (root.left != null && root.right == null) return 1 + left;
         if (root.right != null && root.left == null) return 1 + right;
+
         return Math.min(left, right) + 1;
     }
 
     public int minDepth2(TreeNode root) {
         if (root == null) return 0;
         if (root.left == null && root.right == null) return 1;
+
         int min = Integer.MAX_VALUE;
 
         if (root.left != null) {

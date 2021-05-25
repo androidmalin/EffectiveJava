@@ -14,7 +14,8 @@ public class Main {
     public void test() {
         TreeNode root = TreeCreateFactory.init(false, 1, null, 2, null, null, null, 3);
         TreeOperation.show(root);
-        int depth = new Solution().minDepth(root);
-        assertEquals(3, depth);
+        assertEquals(3, new Solution().minDepth(root));
+        assertEquals(3, new Solution2().minDepth(root));
+        assertEquals(3, new Solution_M2().minDepth(root));
     }
 }

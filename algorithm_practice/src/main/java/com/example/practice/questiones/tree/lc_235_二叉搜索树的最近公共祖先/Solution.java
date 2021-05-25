@@ -35,6 +35,8 @@ public class Solution {
      * <p>
      * 所有节点的值都是唯一的。
      * p、q 为不同节点且均存在于给定的二叉搜索树中。
+     * <p>
+     * website test pass ✅
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) return root;

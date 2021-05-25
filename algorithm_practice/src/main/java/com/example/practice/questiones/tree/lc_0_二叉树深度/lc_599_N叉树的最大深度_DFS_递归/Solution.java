@@ -7,6 +7,8 @@ public class Solution {
 
     /**
      * https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/solution/chao-100-java-di-gui-xie-fa-jiang-jie-ji-huwe/
+     * <p>
+     * website test pass ✅
      */
     public int maxDepth(Node root) {
         if (root == null) return 0;

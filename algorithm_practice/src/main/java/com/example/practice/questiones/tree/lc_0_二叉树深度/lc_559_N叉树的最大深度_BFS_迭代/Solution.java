@@ -7,6 +7,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Solution {
+
+    /**
+     * website test pass ✅
+     */
     public int maxDepth(Node root) {
         if (root == null) return 0;
         Queue<Node> queue = new LinkedList<>();

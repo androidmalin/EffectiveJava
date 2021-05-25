@@ -12,7 +12,7 @@ import java.util.Queue;
  * 百度百科中对完全二叉树的定义如下：
  * <p>
  * 若设二叉树的深度为 h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，
- * 第 h 层所有的结点都连续集中在最左边，这就是完全二叉树。（注：第 h 层可能包含 1~ 2h 个节点。）
+ * 第 h 层所有的结点都连续集中在最左边，这就是完全二叉树。（注：第 h 层可能包含 1~2h个节点。）
  * <p>
  * <p>
  * 示例 1：
@@ -36,6 +36,8 @@ public class Solution {
      * 完全二叉树 进行层序遍历时，在最后一个节点之后，队列中的所有节点都应为空。
      * 完全二叉树，层序遍历的过程中遇到第一个空节点之后不应该再出现非空节点
      * https://leetcode.com/problems/check-completeness-of-a-binary-tree/discuss/205768/Java-easy-Level-Order-Traversal-one-while-loop
+     * <p>
+     * website test pass ✅
      */
     public boolean isCompleteTree(TreeNode root) {
         boolean reachedEnd = false;

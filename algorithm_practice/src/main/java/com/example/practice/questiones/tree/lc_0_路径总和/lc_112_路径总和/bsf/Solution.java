@@ -16,6 +16,9 @@ import java.util.Queue;
 public class Solution {
 
 
+    /**
+     * website test pass ✅
+     */
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
         Queue<TreeNode> queueNode = new LinkedList<>();

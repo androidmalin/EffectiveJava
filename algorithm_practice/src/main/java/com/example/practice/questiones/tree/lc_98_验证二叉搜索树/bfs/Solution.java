@@ -12,6 +12,7 @@ import java.util.List;
 public class Solution {
     /**
      * 利用中序遍历递增的特点
+     * website test pass ✅
      */
     public boolean isValidBST(TreeNode root) {
         List<Integer> res = new ArrayList<>();

@@ -20,6 +20,9 @@ import java.util.Queue;
  * 3```4`\``4```3
  */
 public class Solution {
+    /**
+     * website test pass ✅
+     */
     public boolean isSymmetric(TreeNode root) {
         if (root == null) return true;
         if (root.left == null && root.right == null) return true;

@@ -57,6 +57,8 @@ public class Solution {
      * <p>
      * 空间复杂度：O(N)。使用的空间由递归栈的深度决定，它等于当前节点在二叉树中的高度。
      * 在平均情况下，二叉树的高度与节点个数为对数关系，即 O(logN)。而在最坏情况下，树形成链状，空间复杂度为O(N)。
+     * <p>
+     * website test pass ✅
      */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;

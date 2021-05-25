@@ -23,6 +23,10 @@ import com.example.practice.common.TreeNode;
  * https://leetcode-cn.com/problems/invert-binary-tree/
  */
 public class Solution {
+
+    /**
+     * website test pass ✅
+     */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         //preorder

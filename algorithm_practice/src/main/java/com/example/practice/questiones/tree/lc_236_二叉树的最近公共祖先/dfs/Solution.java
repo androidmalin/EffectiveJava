@@ -27,6 +27,8 @@ public class Solution {
      * 如果左右子树其中一个不为空，则返回非空节点。
      * <p>
      * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/236-er-cha-shu-de-zui-jin-gong-gong-zu-xian-jian-j/
+     * <p>
+     * website test pass ✅
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {

@@ -7,9 +7,11 @@ import com.example.practice.common.TreeNode;
  */
 public class Solution {
 
+    /**
+     * website test pass ✅
+     */
     public boolean isCompleteTree(TreeNode root) {
         int total = countNodes(root);
-        System.out.println("total:" + total);
         return helper(root, 1, total);
     }
 
@@ -23,7 +25,6 @@ public class Solution {
         if (idx > total) return false;
         boolean left = helper(root.left, idx * 2, total);
         boolean right = helper(root.right, idx * 2 + 1, total);
-        System.out.println("root" + root + "," + "left:" + left + ",right:" + right);
         return left && right;
     }
 }
