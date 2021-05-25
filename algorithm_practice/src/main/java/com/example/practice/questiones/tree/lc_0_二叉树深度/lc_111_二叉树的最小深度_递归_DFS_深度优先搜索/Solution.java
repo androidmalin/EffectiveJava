@@ -45,14 +45,14 @@ public class Solution {
         //1.左孩子和有孩子都为空的情况，说明到达了叶子节点，直接返回1即可
         if (root.left == null && root.right == null) return 1;
 
-        //2.如果左孩子和由孩子其中一个为空，那么需要返回比较大的那个孩子的深度
+        //2.如果左孩子和右孩子其中一个为空，那么需要返回比较大的那个孩子的深度
         int leftMin = minDepth(root.left);
         int rightMin = minDepth(root.right);
 
         if (root.left == null && root.right != null) return rightMin + 1;
         if (root.left != null && root.right == null) return leftMin + 1;
 
-        //上门的2个if语句可以被简化为如下的一行
+        //上面的2个if语句可以被简化为如下的一行
         //if (root.left == null || root.right == null)return leftMin + rightMin + 1;
 
         //3.最后一种情况，也就是左右孩子都不为空，返回最小深度+1即可

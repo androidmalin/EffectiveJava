@@ -26,7 +26,7 @@ public class Solution {
         root.right = new TreeNode(3);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
-        Solution solution = new Solution();
+        Solution2 solution = new Solution2();
         TreeOperation.show(root);
 
         //5,4=>2

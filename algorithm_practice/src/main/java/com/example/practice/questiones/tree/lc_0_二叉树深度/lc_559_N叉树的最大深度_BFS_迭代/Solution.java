@@ -1,6 +1,8 @@
 package com.example.practice.questiones.tree.lc_0_二叉树深度.lc_559_N叉树的最大深度_BFS_迭代;
 
 
+import com.example.practice.common.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 

@@ -13,7 +13,7 @@ public class Main {
     public void test() {
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
         TreeOperation.show(root);
-        int depth = new Solution().maxDepth(root);
-        assertEquals(3, depth);
+        assertEquals(3, new Solution().maxDepth(root));
+        assertEquals(3, new Solution2().maxDepth(root));
     }
 }

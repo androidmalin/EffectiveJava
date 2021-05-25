@@ -1,15 +1,21 @@
 package com.example.practice.questiones;
 
+import com.example.practice.common.Node;
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeOperation;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Solution {
 
@@ -80,4 +86,139 @@ public class Solution {
         }
     }
 
+    //dfs
+    public int minDepth(TreeNode root) {
+        if (root == null) return 0;
+        if (root.left == null && root.right == null) return 1;
+        int min = Integer.MAX_VALUE;
+        if (root.left != null) {
+            min = Math.min(minDepth(root.left), min);
+        }
+        if (root.right != null) {
+            min = Math.min(minDepth(root.right), min);
+        }
+        return min + 1;
+    }
+
+
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    ////////////////////////////////
+    public int maxDepth2(TreeNode root) {
+        if (root == null) return 0;
+        int left = maxDepth2(root.left);
+        int right = maxDepth2(root.right);
+        return Math.max(left, right) + 1;
+    }
+
+    public int maxDepth(Node root) {
+        if (root == null) return 0;
+        if (root.children == null) return 1;
+        if (root.children.isEmpty()) return 1;
+
+        int max = 0;
+        for (Node node : root.children) {
+            int depth = maxDepth(node);
+            max = Math.max(depth, max);
+        }
+        return max + 1;
+    }
+
+    public int maxDepth2(Node root) {
+        if (root == null) return 0;
+        if (root.children == null) return 1;
+        if (root.children.isEmpty()) return 1;
+
+        int max = 0;
+        for (Node node : root.children) {
+            int depth = maxDepth2(node);
+            max = Math.max(depth, max);
+        }
+        return max + 1;
+    }
+
+
+    public int maxDepth3(Node root) {
+        if (root == null) return 0;
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        int depth = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                Node node = queue.poll();
+                for (int j = 0; node.children != null && j < node.children.size(); j++) {
+                    if (node.children.get(j) != null) {
+                        queue.offer(node.children.get(j));
+                    }
+                }
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+    public int maxDepth4(Node root) {
+        if (root == null) return 0;
+        if (root.children == null) return 1;
+        if (root.children.isEmpty()) return 1;
+        int depth = 0;
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size > 0) {
+                Node temp = queue.poll();
+                if (temp.children != null && !temp.children.isEmpty()) {
+                    for (Node node : temp.children) {
+                        if (node != null) {
+                            queue.offer(node);
+                        }
+                    }
+                }
+                size--;
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+    @Test
+    public void test() {
+        Node node = new Node(1);
+        node.children = new ArrayList<>(3);
+        node.children.add(0, new Node(2, new ArrayList<>()));
+        node.children.add(1, new Node(3, new ArrayList<>()));
+        node.children.add(2, new Node(4, new ArrayList<>()));
+
+
+        Solution solution = new Solution();
+        assertEquals(2, solution.maxDepth(node));
+        assertEquals(2, solution.maxDepth2(node));
+        assertEquals(2, solution.maxDepth3(node));
+        assertEquals(2, solution.maxDepth4(node));
+    }
 }

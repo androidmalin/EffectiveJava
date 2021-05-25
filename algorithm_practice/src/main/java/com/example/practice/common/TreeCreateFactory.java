@@ -13,6 +13,14 @@ import java.util.Queue;
  */
 public final class TreeCreateFactory {
 
+    public static TreeNode init(Integer... integers) {
+        return init(true, integers);
+    }
+
+    public static TreeNode init(boolean showLog, Integer... integers) {
+        return _init(showLog, Arrays.asList(integers));
+    }
+
     public static TreeNode createBinTree(Integer[] array_integer) {
         List<TreeNode> nodeList = new LinkedList<>();
         // 将一个数组的值依次转换为Node节点
@@ -23,7 +31,7 @@ public final class TreeCreateFactory {
                 nodeList.add(new TreeNode(num_integer));
             }
         }
-        // 对前lastParentIndex-1个父节点按照父节点与孩子节点的数字关系建立二叉树  
+        // 对前lastParentIndex-1个父节点按照父节点与孩子节点的数字关系建立二叉树
         for (int parentIndex = 0; parentIndex < array_integer.length / 2 - 1; parentIndex++) {
             if (nodeList.get(parentIndex) != null) {
                 // 左孩子
@@ -65,7 +73,7 @@ public final class TreeCreateFactory {
      * 参考链接:
      * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/solution/die-dai-di-gui-duo-tu-yan-shi-102er-cha-shu-de-cen/
      */
-    public static ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+    private static ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         if (root == null) return result;
         //1.使用队列的特性,先进先出.
@@ -98,14 +106,6 @@ public final class TreeCreateFactory {
         return result;
     }
 
-
-    public static TreeNode init(Integer... integers) {
-        return init(true, integers);
-    }
-
-    public static TreeNode init(boolean showLog, Integer... integers) {
-        return _init(showLog, Arrays.asList(integers));
-    }
 
     /**
      * 使用方法  TreeCreateFactory.init(Arrays.asList(1, 2, 3, 4, 5, 6, null));

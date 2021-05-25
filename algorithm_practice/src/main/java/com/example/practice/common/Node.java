@@ -1,8 +1,8 @@
-package com.example.practice.questiones.tree.lc_0_二叉树深度.lc_559_N叉树的最大深度_BFS_迭代;
+package com.example.practice.common;
 
 import java.util.List;
 
-class Node {
+public class Node {
     public int val;
     public List<Node> children;
 

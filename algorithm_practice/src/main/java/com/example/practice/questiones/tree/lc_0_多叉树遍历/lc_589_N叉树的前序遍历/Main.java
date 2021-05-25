@@ -1,6 +1,8 @@
 package com.example.practice.questiones.tree.lc_0_多叉树遍历.lc_589_N叉树的前序遍历;
 
 
+import com.example.practice.common.Node;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -1,6 +1,8 @@
 package com.example.practice.questiones.tree.lc_0_二叉树深度.lc_599_N叉树的最大深度_DFS_递归;
 
 
+import com.example.practice.common.Node;
+
 public class Solution {
 
     /**
