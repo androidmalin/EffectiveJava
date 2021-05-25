@@ -2,6 +2,7 @@ package com.example.practice.questiones.map.数字之和.lc_1_两数之和.loop;
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 import com.example.practice.common.TreeUtil;
 
 import org.junit.jupiter.api.Assertions;
@@ -99,8 +100,9 @@ public class Solution3 {
         int[] ints = solution3.twoSum(array, target);
         System.out.println(Arrays.toString(ints));
     }
+
     @Test
-    public void test11(){
+    public void test11() {
         Solution3 solution3 = new Solution3();
         TreeUtil.isBalancedTree(null);
     }
@@ -330,7 +332,8 @@ public class Solution3 {
 
     @Test
     public void test_min() {
-        TreeNode root = TreeCreateFactory.init(1, null, 3);
+        TreeNode root = TreeCreateFactory.init(false, 1, null, 3);
+        TreeOperation.show(root);
         Solution3 solution3 = new Solution3();
         int min = solution3.min(root);
         System.out.println(min);

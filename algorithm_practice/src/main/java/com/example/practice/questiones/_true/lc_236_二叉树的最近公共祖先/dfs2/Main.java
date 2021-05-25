@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class Main {
 
     @Test
-    public void test(){
+    public void test() {
         TreeNode root = new TreeNode(3);
         root.left = new TreeNode(5);
         root.right = new TreeNode(1);

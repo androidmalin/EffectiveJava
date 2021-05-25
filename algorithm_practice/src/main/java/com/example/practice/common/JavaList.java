@@ -34,7 +34,6 @@ public class JavaList {
     }
 
 
-
     /**
      * Collections.reverse
      */

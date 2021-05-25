@@ -2,6 +2,7 @@ package com.example.practice.review;
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 
 import org.junit.jupiter.api.Test;
 
@@ -128,7 +129,8 @@ public class Solution {
 
         @Test
         public void test1() {
-            TreeNode root = TreeCreateFactory.init(2, 1, 3);
+            TreeNode root = TreeCreateFactory.init(false, 2, 1, 3);
+            TreeOperation.show(root);
             Solution8 solution8 = new Solution8();
             boolean validBST = solution8.isValidBST(root);
             System.out.println(validBST);

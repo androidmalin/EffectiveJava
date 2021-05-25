@@ -36,10 +36,10 @@ public class Solution2 {
     ///////////////////////
     ///////////////////////
     public List<List<Integer>> threeSum(int[] nums) {
-        if (nums==null)return new ArrayList<>();
-        List<List<Integer>> lists  = new ArrayList<>();
+        if (nums == null) return new ArrayList<>();
+        List<List<Integer>> lists = new ArrayList<>();
         int size = nums.length;
-        for (int i =0;i<size;i++){
+        for (int i = 0; i < size; i++) {
 
         }
         return null;

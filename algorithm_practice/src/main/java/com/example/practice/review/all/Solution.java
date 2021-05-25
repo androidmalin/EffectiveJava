@@ -3,6 +3,7 @@ package com.example.practice.review.all;
 import com.example.practice.common.ListUtil;
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 import com.example.practice.common.TreeUtil;
 
 import org.junit.jupiter.api.Assertions;
@@ -303,7 +304,8 @@ public class Solution {
         TreeNode root = TreeUtil.getTreeNode();
         boolean binary = solution.isValidBST(root);
         System.out.println(binary);
-        TreeNode root1 = TreeCreateFactory.init(2, 1, 3);
+        TreeNode root1 = TreeCreateFactory.init(false, 2, 1, 3);
+        TreeOperation.show(root1);
         boolean binary1 = solution.isValidBST(root1);
         System.out.println(binary1);
         boolean binary2 = solution.isValidBST2(root1);
@@ -392,7 +394,8 @@ public class Solution {
     @Test
     public void test_is_completeTree() {
         Solution solution = new Solution();
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, null, 6, 7);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, null, 6, 7);
+        TreeOperation.show(root);
         boolean completeTree = solution.isCompleteTree(root);
         Assertions.assertFalse(completeTree);
 
@@ -533,15 +536,17 @@ public class Solution {
         int i = solution.minDepth(root0);
         Assertions.assertEquals(0, i);
 
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        TreeOperation.show(root);
         Assertions.assertEquals(3, solution.minDepth(root));
 
-        TreeNode root1 = TreeCreateFactory.init(1, null, 3, 4, 5, 6, 7);
-
+        TreeNode root1 = TreeCreateFactory.init(false, 1, null, 3, 4, 5, 6, 7);
+        TreeOperation.show(root1);
         Assertions.assertEquals(3, solution.minDepth(root1));
 
 
-        TreeNode root2 = TreeCreateFactory.init(1, 2, null, 4, 5, 6, 7);
+        TreeNode root2 = TreeCreateFactory.init(false, 1, 2, null, 4, 5, 6, 7);
+        TreeOperation.show(root2);
         Assertions.assertEquals(3, solution.minDepth(root2));
     }
 
@@ -553,16 +558,19 @@ public class Solution {
         int i = solution.minDepth2(root0);
         Assertions.assertEquals(0, i);
 
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        TreeOperation.show(root);
         Assertions.assertEquals(3, solution.minDepth2(root));
 
-        TreeNode root1 = TreeCreateFactory.init(1, null, 3, 4, 5, 6, 7);
+        TreeNode root1 = TreeCreateFactory.init(false, 1, null, 3, 4, 5, 6, 7);
+        TreeOperation.show(root1);
         System.out.println(solution.minDepth2(root1));
 
         Assertions.assertEquals(3, solution.minDepth2(root1));
 
 
-        TreeNode root2 = TreeCreateFactory.init(1, 2, null, 4, 5, 6, 7);
+        TreeNode root2 = TreeCreateFactory.init(false, 1, 2, null, 4, 5, 6, 7);
+        TreeOperation.show(root2);
         Assertions.assertEquals(3, solution.minDepth2(root2));
     }
 
@@ -580,7 +588,8 @@ public class Solution {
 
     @Test
     public void test_count() {
-        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        TreeOperation.show(root);
         Solution solution = new Solution();
         int i = solution.countNumber(root);
         Assertions.assertEquals(7, i);

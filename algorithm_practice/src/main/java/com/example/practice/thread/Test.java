@@ -8,27 +8,13 @@ import java.util.concurrent.FutureTask;
 
 public class Test {
 
-    @org.junit.jupiter.api.Test
-    public void main() {
-        test(new Object() {
-            public void child() {
-                System.out.println("child");
-            }
-
-            public void child2() {
-                System.out.println("child2");
-            }
-        });
-    }
-
-    public void test(Object object) {
-    }
-
     public static void main(String[] args) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Task task = new Task();
         FutureTask<Integer> futureTask = new FutureTask<>(task);
-        executor.submit(futureTask);//FutureTask被提交给Executor执行以得到返回值
+
+        //FutureTask被提交给Executor执行以得到返回值
+        executor.submit(futureTask);
         executor.shutdown();
 
         try {
@@ -45,16 +31,18 @@ public class Test {
             e.printStackTrace();
         }
         System.out.println("所有任务执行完毕");
+        System.out.println();
+    }
+
+    private static class Task implements Callable<Integer> {
+        @Override
+        public Integer call() throws Exception {
+            Thread.sleep(3 * 1000);
+            int sum = 0;
+            for (int i = 1; i <= 100; i++)
+                sum += i;
+            return sum;
+        }
     }
 }
 
-class Task implements Callable<Integer> {
-    @Override
-    public Integer call() throws Exception {
-        Thread.sleep(3 * 1000);
-        int sum = 0;
-        for (int i = 1; i <= 100; i++)
-            sum += i;
-        return sum;
-    }
-}

@@ -3,7 +3,6 @@ package com.example.practice.questiones.tree.lc_110_平衡二叉树;
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeOperation;
-import com.example.practice.common.TreeUtil;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

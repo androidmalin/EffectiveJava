@@ -42,7 +42,7 @@ public class Solution {
         boolean same = ListUtil.isSame(list, list1);
         Assertions.assertTrue(same);
     }
-    
+
     public List<Integer> pre(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         preOrderTree(root, result);

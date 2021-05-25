@@ -373,7 +373,8 @@ public class Solution {
 
         @Test
         public void test1() {
-            TreeNode root = TreeCreateFactory.init(2, 1, 3);
+            TreeNode root = TreeCreateFactory.init(false, 2, 1, 3);
+            TreeOperation.show(root);
             Solution8 solution8 = new Solution8();
             boolean validBST = solution8.isValidBST(root);
             System.out.println(validBST);

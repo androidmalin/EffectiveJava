@@ -14,7 +14,7 @@ import java.util.Set;
 public class Solution {
 
     @Test
-    public  void main() {
+    public void main() {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.left.left = new TreeNode(4);
@@ -27,25 +27,26 @@ public class Solution {
 
         //5,4=>2
         TreeNode lowestParentNode = solution.getLowestParentNode(root, root.left.right, root.left.left);
-        Assertions.assertEquals(2,lowestParentNode.val);
+        Assertions.assertEquals(2, lowestParentNode.val);
 
         //5,6=>2
         TreeNode lowestParentNode1 = solution.getLowestParentNode(root, root.left.right, root.right.left);
-        Assertions.assertEquals(1,lowestParentNode1.val);
+        Assertions.assertEquals(1, lowestParentNode1.val);
 
 
         //4,7=>2
         TreeNode lowestParentNode2 = solution.getLowestParentNode(root, root.left.right, root.right.left);
-        Assertions.assertEquals(1,lowestParentNode2.val);
+        Assertions.assertEquals(1, lowestParentNode2.val);
 
 
         //5,2=>2
         TreeNode lowestParentNode3 = solution.getLowestParentNode(root, root.left.right, root.left);
-        Assertions.assertEquals(2,lowestParentNode3.val);
+        Assertions.assertEquals(2, lowestParentNode3.val);
     }
 
     private final Map<Integer, TreeNode> parentNode = new HashMap<>();
     private final Set<TreeNode> visited = new HashSet<>();
+
     public TreeNode getLowestParentNode(TreeNode root, TreeNode p, TreeNode q) {
         //1.边界条件判断
         if (root == null) return null;

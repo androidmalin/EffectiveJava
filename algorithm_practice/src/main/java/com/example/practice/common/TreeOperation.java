@@ -77,6 +77,7 @@ public class TreeOperation {
             }
             System.out.println(sb.toString());
         }
+        System.out.println(" ");
     }
 
     public static void main(String[] args) {

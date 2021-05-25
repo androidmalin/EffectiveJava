@@ -133,6 +133,6 @@ public final class TreeCreateFactory {
     }
 
     public static void main(String[] args) {
-        TreeCreateFactory.init(1, 2, 3);
+        TreeCreateFactory.init(false, 1, 2, 3);
     }
 }
