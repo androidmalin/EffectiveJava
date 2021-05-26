@@ -12,9 +12,8 @@ public class Main {
     public void test() {
         TreeNode root = TreeCreateFactory.init(false, 3, 9, 10, null, null, 15, 7);
         TreeOperation.show(root);
-        Solution solution = new Solution();
-        boolean balancedTree = solution.isBalanced(root);
-        Assertions.assertTrue(balancedTree);
+        Assertions.assertTrue(new Solution().isBalanced(root));
+        Assertions.assertTrue(new Solution2().isBalanced(root));
     }
 
 }

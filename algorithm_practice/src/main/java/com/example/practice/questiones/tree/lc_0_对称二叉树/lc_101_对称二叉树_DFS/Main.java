@@ -12,9 +12,9 @@ public class Main {
 
     @Test
     public void test() {
-        Solution solution = new Solution();
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 2, 3, 4, 4, 3);
         TreeOperation.show(root);
-        assertTrue(solution.isSymmetric(root));
+        assertTrue(new Solution().isSymmetric(root));
+        assertTrue(new Solution2().isSymmetric(root));
     }
 }

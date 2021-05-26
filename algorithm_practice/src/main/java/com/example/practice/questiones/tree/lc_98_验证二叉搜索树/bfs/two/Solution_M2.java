@@ -1,4 +1,4 @@
-package com.example.practice.questiones.tree.lc_98_验证二叉搜索树.bfs;
+package com.example.practice.questiones.tree.lc_98_验证二叉搜索树.bfs.two;
 
 import com.example.practice.common.TreeNode;
 
@@ -8,7 +8,7 @@ import java.util.Stack;
  * 98. 验证二叉搜索树
  * https://leetcode-cn.com/problems/validate-binary-search-tree/
  */
-public class Solution2 {
+public class Solution_M2 {
 
     /**
      * 二叉树的中序遍历非递归写法

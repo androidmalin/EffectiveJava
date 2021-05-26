@@ -13,17 +13,17 @@ public class Main {
 
     @Test
     public void test() {
-        Solution solution = new Solution();
         TreeNode root = TreeCreateFactory.init(false, 1, 1);
         TreeOperation.show(root);
-        assertFalse(solution.isValidBST(root));
+        assertFalse(new Solution().isValidBST(root));
+        assertFalse(new Solution2().isValidBST(root));
     }
 
     @Test
     public void test1() {
-        Solution solution = new Solution();
         TreeNode root = TreeCreateFactory.init(false, 2, 1, 3);
         TreeOperation.show(root);
-        Assertions.assertTrue(solution.isValidBST(root));
+        Assertions.assertTrue(new Solution().isValidBST(root));
+        Assertions.assertTrue(new Solution2().isValidBST(root));
     }
 }
