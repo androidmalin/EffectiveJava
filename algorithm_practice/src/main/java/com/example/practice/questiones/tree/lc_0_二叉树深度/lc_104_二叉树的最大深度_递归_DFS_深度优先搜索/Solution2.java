@@ -4,6 +4,9 @@ import com.example.practice.common.TreeNode;
 
 public class Solution2 {
 
+    /**
+     * website test pass ✅
+     */
     public int maxDepth(TreeNode root) {
         //1.终止条件
         if (root == null) return 0;

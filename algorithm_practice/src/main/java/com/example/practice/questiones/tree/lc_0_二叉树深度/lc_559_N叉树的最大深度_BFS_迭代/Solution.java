@@ -6,6 +6,9 @@ import com.example.practice.common.Node;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/
+ */
 public class Solution {
 
     /**
