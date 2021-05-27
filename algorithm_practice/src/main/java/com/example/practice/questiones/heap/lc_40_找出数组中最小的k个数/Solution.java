@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 
+@SuppressWarnings("ConstantConditions")
 class Solution {
 
     /**
@@ -23,28 +24,12 @@ class Solution {
         Queue<Integer> pq = new PriorityQueue<>((v1, v2) -> v2 - v1);
         for (int num : arr) {
             if (pq.size() < k) {
-                System.out.println("pq.offer(num) " + num);
                 pq.offer(num);
             } else if (num < pq.peek()) {
-                for (int e : pq) {
-                    System.out.print(e + "====>");
-                }
-                System.out.println("=============");
-                Integer poll = pq.poll();
+                pq.poll();
                 pq.offer(num);
-                System.out.println("num < pq.peek(): poll=" + poll + ",offer=" + num);
-                for (int e : pq) {
-                    System.out.print(e + "=>");
-                }
-                System.out.println("  ");
             }
         }
-
-
-        for (int e : pq) {
-            System.out.print(e + "====>");
-        }
-
         // 返回堆中的元素
         int[] res = new int[pq.size()];
         int idx = 0;

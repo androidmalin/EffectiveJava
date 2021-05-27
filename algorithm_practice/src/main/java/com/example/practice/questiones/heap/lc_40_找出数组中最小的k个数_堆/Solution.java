@@ -1,6 +1,7 @@
 package com.example.practice.questiones.heap.lc_40_找出数组中最小的k个数_堆;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * 输入整数数组 arr ，
@@ -24,10 +25,11 @@ import java.util.PriorityQueue;
  * <p>
  * https://www.cnblogs.com/CarpenterLee/p/5488070.html
  */
+@SuppressWarnings("ConstantConditions")
 public class Solution {
 
     public int[] getLeastNumbers(int[] arr, int k) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        Queue<Integer> queue = new PriorityQueue<>();
         for (int value : arr) {
             queue.add(value);
         }

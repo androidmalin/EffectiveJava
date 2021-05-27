@@ -21,11 +21,9 @@ public class Main {
 
     @Test
     public void test() {
-        int[] array = {3, 2, 1, 0};
-        Solution solution = new Solution();
-        int[] leastNumbers = solution.getLeastNumbers(array, 3);
-
+        int[] array = {3, 90, 20, 1, 2, 0};
         int[] expectedArray = {2, 1, 0};
-        Assertions.assertEquals(Arrays.toString(expectedArray), Arrays.toString(leastNumbers));
+        Assertions.assertArrayEquals(expectedArray, new Solution().getLeastNumbers(array, 3));
+        Assertions.assertArrayEquals(expectedArray, new Solution2().getLeastNumbers(array, 3));
     }
 }

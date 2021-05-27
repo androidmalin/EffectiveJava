@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 给定一个已按照升序排列的整数数组numbers，请你从数组中找出两个数满足相加之和等于目标数 target 。
+ * 给定一个已按照升序排列的整数数组numbers，请你从数组中找出两个数满足相加之和等于目标数target 。
  * <p>
  * 函数应该以长度为2的整数数组的形式返回这两个数的下标值。
  * numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 <= answer[0] < answer[1] <= numbers.length 。

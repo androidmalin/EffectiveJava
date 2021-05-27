@@ -1,6 +1,7 @@
 package com.example.practice.questiones.heap.lc_40_找出数组中最小的k个数_堆_2;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * 输入整数数组 arr ，
@@ -21,6 +22,7 @@ import java.util.PriorityQueue;
  * <p>
  * https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
  */
+@SuppressWarnings("ConstantConditions")
 public class Solution {
     /**
      * 题目中已经给出了参数限制, 所以这里不再给出参数判断了
@@ -31,21 +33,17 @@ public class Solution {
     public int[] getLeastNumbers(int[] arr, int k) {
         int[] vec = new int[k];
         if (k == 0) return vec;// 排除 0 的情况
-        PriorityQueue<Integer> queue = new PriorityQueue<>((num1, num2) -> num2 - num1);
+        Queue<Integer> queue = new PriorityQueue<>((num1, num2) -> num2 - num1);
         for (int i = 0; i < k; i++) {
             queue.offer(arr[i]);
         }
-        System.out.println(queue);
         //此时queue中的数据是: 从大到小排序的
-        //queue poll  操作队首(👈最左边)
-        //queue offer 操作队尾(最右边👉)
         for (int i = k; i < arr.length; i++) {
             if (queue.peek() > arr[i]) {
                 queue.poll();
                 queue.offer(arr[i]);
             }
         }
-        System.out.println(queue);
         for (int i = 0; i < k; i++) {
             vec[i] = queue.poll();
         }
