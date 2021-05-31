@@ -18,9 +18,8 @@ public class Main {
         node.children.add(1, new Node(3));
         node.children.add(2, new Node(4));
 
-        Solution solution = new Solution();
-        int depth = solution.maxDepth(node);
-        assertEquals(2, depth);
+        assertEquals(2, new Solution().maxDepth(node));
+        assertEquals(2, new Solution2().maxDepth(node));
     }
 
 }

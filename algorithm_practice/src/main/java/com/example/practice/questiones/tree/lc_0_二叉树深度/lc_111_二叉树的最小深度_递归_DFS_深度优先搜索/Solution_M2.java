@@ -21,6 +21,8 @@ public class Solution_M2 {
      * ``2```````3``
      * `````````/`\`
      * ````````6```7
+     * <p>
+     * website test pass ✅
      */
     public int minDepth(TreeNode root) {
         //DFS 深度优先遍历,一杆子插到底

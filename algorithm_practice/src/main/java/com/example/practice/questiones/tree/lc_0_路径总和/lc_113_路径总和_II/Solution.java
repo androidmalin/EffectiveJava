@@ -1,4 +1,4 @@
-package com.example.practice.questiones.huisu.lc_113._路径总和_II;
+package com.example.practice.questiones.tree.lc_0_路径总和.lc_113_路径总和_II;
 
 import com.example.practice.common.TreeNode;
 
@@ -25,10 +25,11 @@ public class Solution {
             if (root.val == sum) {
                 res.add(new ArrayList<>(path));
             }
+        } else {
+            int target = sum - root.val;
+            traverse(root.left, target, path, res);
+            traverse(root.right, target, path, res);
         }
-        int target = sum - root.val;
-        traverse(root.left, target, path, res);
-        traverse(root.right, target, path, res);
         path.pollLast();
     }
 }

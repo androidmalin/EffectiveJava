@@ -5,8 +5,12 @@ import com.example.practice.common.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
+@SuppressWarnings("all")
 public class Solution2 {
-    //bfs
+
+    /**
+     * website test pass ✅
+     */
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
         Queue<TreeNode> queue = new LinkedList<>();

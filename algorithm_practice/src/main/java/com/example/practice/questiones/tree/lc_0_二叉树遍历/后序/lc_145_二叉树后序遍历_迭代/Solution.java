@@ -33,6 +33,8 @@ public class Solution {
      * 4.不断重复步骤 2 和步骤 3，直到 s1 为空，过程停止。
      * 5.从 s2 中依次弹出节点并打印，打印的顺序就是后序遍历的顺序。
      * https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
+     * <p>
+     * website test pass ✅
      */
     public List<Integer> postorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
@@ -103,6 +105,8 @@ public class Solution {
      * <p>
      * 3 如果条件1和条件2都不成立，说明 c 的左子树和右子树都已经打印完毕，那么从 stack 中弹出 c 并打印，然后令 h=c。
      * 3.一直重复步骤 2，直到 stack 为空，过程停止。
+     * <p>
+     * website test pass ✅
      */
     public List<Integer> postorderTraversal2(TreeNode root) {
         if (root == null) return new ArrayList<>();

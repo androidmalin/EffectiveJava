@@ -16,10 +16,10 @@ public class Main {
         System.out.println(getListNode(head));
         ListNode listNode = solution.sortList(head);
 
-//        System.out.println(listNode.val);
-//
-//        System.out.println(getListNode(listNode));
-//        System.out.println(" ");
+        System.out.println(listNode.val);
+
+        System.out.println(getListNode(listNode));
+        System.out.println(" ");
     }
 
     private static String getListNode(ListNode head) {

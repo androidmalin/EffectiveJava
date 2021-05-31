@@ -25,22 +25,10 @@ import java.util.Set;
  */
 public class Solution {
 
+    /**
+     * website test pass ✅
+     */
     public ListNode detectCycle(ListNode head) {
-        ListNode pos = head;
-        Set<ListNode> visited = new HashSet<>();
-        while (pos != null) {
-            if (visited.contains(pos)) {
-                return pos;
-            } else {
-                visited.add(pos);
-            }
-            pos = pos.next;
-        }
-        return null;
-    }
-
-
-    public ListNode detectCycle2(ListNode head) {
         ListNode current = head;
         Set<ListNode> visited = new HashSet<>();
         while (current != null) {

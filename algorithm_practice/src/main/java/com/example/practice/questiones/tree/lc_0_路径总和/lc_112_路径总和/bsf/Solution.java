@@ -13,6 +13,7 @@ import java.util.Queue;
  * <p>
  * https://leetcode-cn.com/problems/path-sum/solution/leetcode-112-lu-jing-zong-he-ti-jie-by-cengsin/
  */
+@SuppressWarnings("all")
 public class Solution {
 
 

@@ -28,7 +28,7 @@ import java.util.Stack;
  * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/525555
  */
 public class Solution {
-    public List<Integer> preOrderTraverse(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> resultList = new ArrayList<>();
         Stack<Object> stack = new Stack<>();
         stack.push(root);
@@ -69,7 +69,10 @@ public class Solution {
         return resultList;
     }
 
-    public List<Integer> postOrderTraverse(TreeNode root) {
+    /**
+     * website test pass ✅
+     */
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> resultList = new ArrayList<>();
         if (root == null) return resultList;
         Stack<Object> stack = new Stack<>();

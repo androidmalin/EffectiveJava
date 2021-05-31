@@ -14,9 +14,9 @@ public class Main {
         TreeNode root = TreeUtil.getTreeNode();
         TreeOperation.show(root);
         Solution solution = new Solution();
-        assertEquals(TreeUtil.preOrder(root), solution.preOrderTraverse(root));
+        assertEquals(TreeUtil.preOrder(root), solution.preorderTraversal(root));
         assertEquals(TreeUtil.inOrder(root), solution.inorderTraversal(root));
-        assertEquals(TreeUtil.postOrder(root), solution.postOrderTraverse(root));
+        assertEquals(TreeUtil.postOrder(root), solution.postorderTraversal(root));
     }
 
 }

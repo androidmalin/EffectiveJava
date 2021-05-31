@@ -69,6 +69,8 @@ public class Solution {
      * 反复练习直接理解了. 同时要注意和层次遍历使用的Queue的区别.(层次遍历一上来,就queue.offer(root)) 这里要区别理解.
      * <p>
      * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+     * <p>
+     * website test pass ✅
      */
     public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();

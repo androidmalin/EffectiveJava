@@ -5,6 +5,7 @@ import com.example.practice.common.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
+@SuppressWarnings("all")
 public class Solution2 {
 
     /**

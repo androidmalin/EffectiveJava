@@ -41,7 +41,7 @@ public class Solution {
         return res;
     }
 
-    static class ColorNode {
+    private static class ColorNode {
         TreeNode node;
         String color;
 

@@ -15,21 +15,4 @@ public class Main {
         ListNode listNode = solution.detectCycle(head);
         System.out.println(listNode.val);
     }
-
-
-    private void print(ListNode head) {
-        boolean reached = false;
-        int num = 0;
-        while (head != null && !reached) {
-            System.out.println(head);
-            if (head.val == 2) {
-                num++;
-            }
-            if (num == 2) {
-                reached = true;
-            }
-            head = head.next;
-        }
-    }
-
 }

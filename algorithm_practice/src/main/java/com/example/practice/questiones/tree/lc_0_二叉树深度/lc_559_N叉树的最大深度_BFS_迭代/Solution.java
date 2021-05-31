@@ -9,6 +9,7 @@ import java.util.Queue;
 /**
  * https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/
  */
+@SuppressWarnings("all")
 public class Solution {
 
     /**

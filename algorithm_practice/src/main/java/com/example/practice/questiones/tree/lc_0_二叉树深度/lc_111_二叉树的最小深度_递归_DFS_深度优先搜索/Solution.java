@@ -27,8 +27,8 @@ public class Solution {
      * <p>
      * 这个讲解很好理解
      * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/solution/111-er-cha-shu-de-zui-xiao-shen-du-di-gu-ztum/
-     */
-    /**
+     * <p>
+     * <p>
      * 注意,
      * ①.递归的终止条件有2个,
      * 1.root==null

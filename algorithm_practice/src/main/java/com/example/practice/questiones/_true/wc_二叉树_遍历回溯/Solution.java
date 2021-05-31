@@ -1,4 +1,4 @@
-package com.example.practice.questiones._true.wc;
+package com.example.practice.questiones._true.wc_二叉树_遍历回溯;
 
 import com.example.practice.common.ListUtil;
 import com.example.practice.common.TreeNode;
@@ -43,6 +43,10 @@ public class Solution {
         Assertions.assertTrue(same);
     }
 
+    /**
+     * 彻底理解二叉树的遍历
+     * https://blog.csdn.net/github_37382319/article/details/99656769
+     */
     public List<Integer> pre(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         preOrderTree(root, result);
@@ -62,24 +66,6 @@ public class Solution {
             preOrderTree(root.right, list);
             if (root.left != null || root.right != null) {
                 list.add(root.val);
-            }
-        }
-    }
-
-    private void preOrderTree2(TreeNode root, TreeNode lastNode, List<Integer> list) {
-        if (root == null) return;
-        list.add(root.val);
-        lastNode = root;
-        if (root.left != null) {
-            preOrderTree2(root.left, lastNode, list);
-            if (lastNode.left != null || lastNode.right != null) {
-                list.add(lastNode.val);
-            }
-        }
-        if (root.right != null) {
-            preOrderTree2(root.right, lastNode, list);
-            if (lastNode.left != null || lastNode.right != null) {
-                list.add(lastNode.val);
             }
         }
     }

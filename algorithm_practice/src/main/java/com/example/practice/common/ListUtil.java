@@ -26,23 +26,19 @@ public class ListUtil {
 
     @Test
     public void test1() {
-        List<Integer> list1 = null;
-        List<Integer> list2 = null;
-        Assertions.assertTrue(ListUtil.isSame(list1, list2));
+        Assertions.assertTrue(ListUtil.isSame(null, null));
     }
 
     @Test
     public void test2() {
         List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = null;
-        Assertions.assertFalse(ListUtil.isSame(list1, list2));
+        Assertions.assertFalse(ListUtil.isSame(list1, null));
     }
 
     @Test
     public void test3() {
-        List<Integer> list1 = null;
         List<Integer> list2 = new ArrayList<>();
-        Assertions.assertFalse(ListUtil.isSame(list1, list2));
+        Assertions.assertFalse(ListUtil.isSame(null, list2));
     }
 
     @Test

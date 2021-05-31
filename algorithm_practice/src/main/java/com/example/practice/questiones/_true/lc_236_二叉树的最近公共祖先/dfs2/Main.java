@@ -27,8 +27,7 @@ public class Main {
         TreeNode q = root.left.right.right;
         TreeNode node = solution.lowestCommonAncestor(root, p, q);
 
-        System.out.println(" ");
-        System.out.println("p:" + p + ",q:" + q + " lowestCommonAncestor=>" + node);
+        System.out.println( p + "," + q + " ==> " + node);
 
         Assertions.assertEquals(root.left, node);
 
