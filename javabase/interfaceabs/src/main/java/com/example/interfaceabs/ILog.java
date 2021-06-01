@@ -1,5 +1,7 @@
 package com.example.interfaceabs;
 
+import java.util.Optional;
+
 /**
  * Java接口中可以定义静态方法、default方法，枚举类型，接口中还可以定义接口（嵌套）。
  */
@@ -36,5 +38,6 @@ class ConsoleLog implements ILog {
         ILog log = new ConsoleLog();
         log.init();
         log.log("xx");
+        ILog.OS();
     }
 }

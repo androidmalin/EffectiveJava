@@ -3,9 +3,9 @@ package com.malin.proxy.test.interface_test;
 public class Client {
 
     public static void main(String[] args) {
-        objInterfaceTest();
+//        objInterfaceTest();
         interfaceInterfaceTest();
-        arrayInterfaceTest();
+//        arrayInterfaceTest();
     }
 
     private static void arrayInterfaceTest() {
