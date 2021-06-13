@@ -14,7 +14,7 @@ import java.util.Queue;
 public final class TreeCreateFactory {
 
     public static TreeNode init(Integer... integers) {
-        return init(true, integers);
+        return init(false, integers);
     }
 
     public static TreeNode init(boolean showLog, Integer... integers) {

@@ -9,6 +9,8 @@ import java.util.Map;
  * 有效字符串需满足：
  * 左括号必须用相同类型的右括号闭合。
  * 左括号必须以正确的顺序闭合。
+ * <p>
+ * https://leetcode-cn.com/problems/valid-parentheses/
  */
 public class Solution {
     private static final Map<Character, Character> map = new HashMap<Character, Character>() {{
@@ -20,8 +22,12 @@ public class Solution {
 
     /**
      * addLast 然后 removeLast 是栈实现
+     * <p>
+     * "([])"
+     * stack ( [
      */
     public boolean isValid(String s) {
+        if (s.length() % 2 == 1) return false;
         if (s.length() > 0 && !map.containsKey(s.charAt(0))) {
             return false;
         }
@@ -31,17 +37,12 @@ public class Solution {
         for (Character c : s.toCharArray()) {
             if (map.containsKey(c)) {
                 stack.addLast(c);
-            } else if (map.get(stack.removeLast()) != c) {
-                return false;
+            } else {
+                if (map.get(stack.removeLast()) != c) {
+                    return false;
+                }
             }
         }
-        return stack.size() == 1;
+        return stack.size() == 1 && stack.peek().equals('?');
     }
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        boolean valid3 = solution.isValid("([])");
-        System.out.println(valid3);
-    }
-
 }

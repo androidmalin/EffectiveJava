@@ -430,7 +430,7 @@ public class Solution {
 
     @Test
     public void test_is_completeTree2() {
-        TreeNode root = TreeCreateFactory.init(true, 1, 2, 3, 4);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4);
         Solution solution = new Solution();
         boolean complete = solution.isCompleteTree2(root);
         Assertions.assertTrue(complete);

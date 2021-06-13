@@ -44,10 +44,10 @@ public class Main {
         );
         TreeOperation.show(root);
         List<Integer> list1 = Arrays.asList(1, 2, 4, 8, 4, 9, 4, 2, 5, 10, 5, 11, 5, 2, 1, 3, 6, 12, 6, 13, 6, 3, 7, 14, 7, 15, 7, 3, 1);
-        System.out.println(list1);
         Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), list1));
         Assertions.assertTrue(ListUtil.isSame(new Solution2().pre(root), list1));
         Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), new Solution2().pre(root)));
+
     }
 
     /**
@@ -73,5 +73,13 @@ public class Main {
         Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), list1));
         Assertions.assertTrue(ListUtil.isSame(new Solution2().pre(root), list1));
         Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), new Solution2().pre(root)));
+    }
+
+    @Test
+    public void test4() {
+        TreeNode root = TreeCreateFactory.init(false,
+                1, 2, 3
+        );
+        TreeOperation.show(root);
     }
 }

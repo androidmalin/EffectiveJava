@@ -10,15 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Main {
-    public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6);
-        TreeOperation.show(root);
-    }
 
     @Test
     public void test() {
         Solution solution = new Solution();
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6);
+        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
         TreeOperation.show(root);
         assertFalse(false);
         assertTrue(true);

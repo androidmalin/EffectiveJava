@@ -1,4 +1,4 @@
-package com.example.practice.questiones._true.lc_142_环形链表_II;
+package com.example.practice.questiones._true.lc_142_环形链表_入环的第一个节点;
 
 import com.example.practice.common.ListNode;
 
