@@ -1,17 +1,23 @@
 package com.example.practice.common;
 
-public class Java_While {
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-    public static void main(String[] args) {
-        testI();
-    }
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Java_While {
 
 
     /**
      * output
      * 1 0
      */
-    private static void testI() {
+    @Test
+    public void testI() {
+        List<Integer> result = new ArrayList<>();
         int T = 2;
         //1. T=2,
         //2. 2>0
@@ -26,16 +32,18 @@ public class Java_While {
         //1.T=0
         //2.0>0 false 结束
         while (T-- > 0) {
-            System.out.print(T + " ");
+            result.add(T);
         }
-        System.out.println();
+        Assertions.assertTrue(ListUtil.isSame(Arrays.asList(1, 0), result));
     }
 
     /**
      * output
      * 1
      */
-    private static void testI2() {
+    @Test
+    public void testI2() {
+        List<Integer> result = new ArrayList<>();
         //1. T=2,
         //2. T=T-1 = 2-1=1
         //3. 1>0 true
@@ -46,40 +54,45 @@ public class Java_While {
         //3. 0>0 false 结束
         int T = 2;
         while (--T > 0) {
-            System.out.print(T + " ");
+            result.add(T);
         }
-        System.out.println();
+        Assertions.assertTrue(ListUtil.isSame(Collections.singletonList(1), result));
     }
 
     /**
      * continue:结束本层的本次循环
      * output: 4 2 1 0
      */
-    private static void test() {
+    @Test
+    public void test() {
+        List<Integer> result = new ArrayList<>();
         int i = 5;
         while (i-- > 0) {
             if (i == 3) {
                 continue;
             }
-            System.out.print(i + " ");
+            result.add(i);
         }
-        System.out.println(" ");
+        Assertions.assertTrue(ListUtil.isSame(Arrays.asList(4, 2, 1, 0), result));
     }
 
     /**
      * 用于循环中
      * break:结束本层循环。
      * <p>
-     * output: 4 2 1 0
+     * output: 4
      */
-    private static void test2() {
+    @Test
+    public void test2() {
+        List<Integer> result = new ArrayList<>();
         int i = 5;
         while (i-- > 0) {
             if (i == 3) {
                 break;
             }
-            System.out.println(i);
+            result.add(i);
         }
+        Assertions.assertTrue(ListUtil.isSame(Collections.singletonList(4), result));
     }
 
 
@@ -89,14 +102,17 @@ public class Java_While {
      * <p>
      * output: 4
      */
-    private static void test3() {
+    @Test
+    public void test3() {
+        List<Integer> result = new ArrayList<>();
         int i = 5;
         while (i-- > 0) {
             if (i == 3) {
                 return;
             }
-            System.out.println(i);
+            result.add(i);
         }
+        Assertions.assertTrue(ListUtil.isSame(Collections.singletonList(4), result));
     }
 
 
@@ -105,31 +121,31 @@ public class Java_While {
      * break:结束本层循环。
      * output: 0 1 2
      */
-    public static void breakTest1() {
-        System.out.println("breakTest1 ");
+    @Test
+    public void breakTest1() {
+        List<Integer> result = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             if (i == 3) {
                 break;
             }
-            System.out.print(i + " ");
+            result.add(i);
         }
-        System.out.println(" ");
+        Assertions.assertTrue(ListUtil.isSame(Arrays.asList(0, 1, 2), result));
     }
 
     /**
      * 用于嵌套循环
      * break:结束本层循环。
      * output:
-     * 0*0=0    0*1=0    0*2=0    0*3=0    0*4=0
-     * 1*0=0    1*1=1    1*2=2    1*3=3    1*4=4
+     * 0*0=0    0*1=0    0*2=0    0*3=0
+     * 1*0=0    1*1=1    1*2=2    1*3=3
      * 2*0=0    break is executed!
-     * 3*0=0    3*1=3    3*2=6    3*3=9    3*4=12
-     * 4*0=0    4*1=4    4*2=8    4*3=12    4*4=16
+     * 3*0=0    3*1=3    3*2=6    3*3=9
      */
-    public static void breakTest2() {
-        System.out.println("breakTest2 start");
-        for (int i = 0; i <= 4; i++) {
-            for (int j = 0; j <= 4; j++) {
+    @Test
+    public void breakTest2() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 if (i == 2 && j == 1) {
                     System.out.print("break is executed!");
                     break;
@@ -138,7 +154,6 @@ public class Java_While {
             }
             System.out.println();
         }
-        System.out.println("breakTest2 end ");
     }
 
 
@@ -147,8 +162,8 @@ public class Java_While {
      * <p>
      * output: 0 1 2 4
      */
-    public static void continueTest1() {
-        System.out.println("continueTest1 ");
+    @Test
+    public void continueTest1() {
         for (int i = 0; i < 5; i++) {
             if (i == 3) {
                 continue;
@@ -161,16 +176,15 @@ public class Java_While {
     /**
      * continue:结束本层的本次循环
      * output:
-     * 0*0=0    0*1=0    0*2=0    0*3=0    0*4=0
-     * 1*0=0    1*1=1    1*2=2    1*3=3    1*4=4
-     * 2*0=0    continue 2*2=4    2*3=6    2*4=8
-     * 3*0=0    3*1=3    3*2=6    3*3=9    3*4=12
-     * 4*0=0    4*1=4    4*2=8    4*3=12    4*4=16
+     * 0*0=0    0*1=0    0*2=0    0*3=0
+     * 1*0=0    1*1=1    1*2=2    1*3=3
+     * 2*0=0    continue 2*2=4    2*3=6
+     * 3*0=0    3*1=3    3*2=6    3*3=9
      */
-    public static void continueTest2() {
-        System.out.println("continueTest2 ");
-        for (int i = 0; i <= 4; i++) {
-            for (int j = 0; j <= 4; j++) {
+    @Test
+    public void continueTest2() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 if (i == 2 && j == 1) {
                     System.out.print("continue" + " ");
                     continue;
@@ -188,8 +202,8 @@ public class Java_While {
      * output
      * 0 1 2
      */
-    public static void returnTest1() {
-        System.out.println("returnTest1 ");
+    @Test
+    public void returnTest1() {
         for (int i = 0; i < 5; i++) {
             if (i == 3) {
                 System.out.println(" ");
@@ -203,20 +217,23 @@ public class Java_While {
     /**
      * return:结束所有层的循环
      * output:
-     * 0*0=0    0*1=0    0*2=0    0*3=0    0*4=0
+     * 0*0=0    0*1=0    0*2=0    0*3=0
      * 1*0=0
      */
-    public static void returnTest2() {
-        System.out.println("returnTest2");
-        for (int i = 0; i <= 4; i++) {
-            for (int j = 0; j <= 4; j++) {
+    @Test
+    public void returnTest2() {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 if (i == 1 && j == 1) {
                     System.out.println(" ");
                     return;
                 }
                 System.out.print(i + "*" + j + "=" + i * j + "    ");
+                result.add(i * j);
             }
             System.out.println();
         }
+        Assertions.assertTrue(ListUtil.isSame(Arrays.asList(0, 0, 0, 0, 0), result));
     }
 }

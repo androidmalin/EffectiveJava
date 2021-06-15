@@ -12,7 +12,7 @@ import com.example.practice.common.TreeOperation;
 public class Main {
 
     public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4);
+        TreeNode root = TreeCreateFactory.init(false, 1, null, null, 4);
         TreeOperation.show(root);
     }
 }

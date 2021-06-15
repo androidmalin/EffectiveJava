@@ -9,14 +9,14 @@ import java.util.List;
 
 public class ListUtil {
 
-    public static <T extends Comparable<T>> boolean isSame(List<T> list1, List<T> list2) {
-        if (list1 == null && list2 == null) return true;
-        if (list1 == null ^ list2 == null) return false;
-        if (list1.size() != list2.size()) return false;
-        int size = list1.size();
+    public static <T extends Comparable<T>> boolean isSame(List<T> expectedList, List<T> actualList) {
+        if (expectedList == null && actualList == null) return true;
+        if (expectedList == null ^ actualList == null) return false;
+        if (expectedList.size() != actualList.size()) return false;
+        int size = expectedList.size();
         for (int i = 0; i < size; i++) {
-            T t1 = list1.get(i);
-            T t2 = list2.get(i);
+            T t1 = expectedList.get(i);
+            T t2 = actualList.get(i);
             if (t1 == null && t2 == null) continue;
             if (t1 == null ^ t2 == null) return false;
             if (t1.compareTo(t2) != 0) return false;

@@ -14,10 +14,16 @@ import java.util.Queue;
 public final class TreeCreateFactory {
 
     public static TreeNode init(Integer... integers) {
+        if (integers == null) throw new NullPointerException("root is null");
+        if (integers.length > 1 && integers[0] == null)
+            throw new NullPointerException("root is null");
         return init(false, integers);
     }
 
     public static TreeNode init(boolean showLog, Integer... integers) {
+        if (integers == null) throw new NullPointerException("root is null");
+        if (integers.length > 1 && integers[0] == null)
+            throw new NullPointerException("root is null");
         return _init(showLog, Arrays.asList(integers));
     }
 
@@ -62,7 +68,7 @@ public final class TreeCreateFactory {
                 }
             }
         }
-        return nodeList.isEmpty() ? null : nodeList.get(0);
+        return nodeList.get(0);
     }
 
     /**

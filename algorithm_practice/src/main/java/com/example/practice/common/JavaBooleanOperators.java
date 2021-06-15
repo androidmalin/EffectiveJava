@@ -68,12 +68,12 @@ public class JavaBooleanOperators {
         boolean left4 = true;
         System.out.println("false | true = " + (left3 | left4));
         Assertions.assertTrue((left3 | left4));
-        System.out.println(" ");
 
         boolean left5 = true;
         boolean left6 = true;
         System.out.println("true | true = " + (left5 | left6));
         Assertions.assertTrue((left5 | left6));
+        System.out.println(" ");
 
         boolean left7 = false;
         boolean left8 = false;
@@ -104,12 +104,12 @@ public class JavaBooleanOperators {
         boolean left4 = true;
         System.out.println("false || true = " + (left3 || left4));
         Assertions.assertTrue((left3 || left4));
-        System.out.println(" ");
 
         boolean left5 = true;
         boolean left6 = true;
         System.out.println("true || true = " + (left5 || left6));
         Assertions.assertTrue((left5 || left6));
+        System.out.println(" ");
 
         boolean left7 = false;
         boolean left8 = false;

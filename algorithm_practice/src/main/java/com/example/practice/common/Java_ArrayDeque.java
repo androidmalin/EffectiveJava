@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * 相同为栈
@@ -213,4 +215,37 @@ public class Java_ArrayDeque {
         return arrayDeque;
     }
 
+    /**
+     * removeLast 元素不存在会抛出异常
+     * pollLast 不会
+     */
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    @Test
+    public void test_removeLast() {
+        boolean exception = false;
+        try {
+            Deque<Integer> deque = new ArrayDeque<>();
+            deque.removeLast();
+        } catch (NoSuchElementException e) {
+            exception = true;
+        }
+        Assertions.assertTrue(exception);
+    }
+
+    /**
+     * removeLast 元素不存在会抛出异常
+     * pollLast 不会
+     */
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    @Test
+    public void test_pollLast() {
+        boolean exception = false;
+        try {
+            Deque<Integer> deque = new ArrayDeque<>();
+            deque.pollLast();
+        } catch (NoSuchElementException e) {
+            exception = true;
+        }
+        Assertions.assertFalse(exception);
+    }
 }

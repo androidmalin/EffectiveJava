@@ -1,5 +1,7 @@
 package com.example.practice.common;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,36 +10,11 @@ import java.util.List;
 
 public class JavaList {
 
-    public static void main(String[] args) {
-
-        System.out.println("  ");
-        System.out.println("reverse list  ");
-        reverse();
-        System.out.println("  ");
-
-        System.out.println("  ");
-        System.out.println("listToArray  ");
-        listToArray();
-        System.out.println("  ");
-
-        System.out.println("  ");
-        System.out.println("arrayToList  ");
-        arrayToList();
-        System.out.println("  ");
-
-        System.out.println("  ");
-        System.out.println("getList  ");
-        getList();
-        System.out.println("  ");
-
-        addFirstAndLast();
-    }
-
-
     /**
      * Collections.reverse
      */
-    private static void reverse() {
+    @Test
+    public void reverse() {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
@@ -53,7 +30,8 @@ public class JavaList {
     /**
      * list to array
      */
-    private static void listToArray() {
+    @Test
+    public void listToArray() {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
@@ -67,12 +45,9 @@ public class JavaList {
         System.out.println(Arrays.toString(array));
     }
 
-    private static void arrayToList2() {
-        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
-        System.out.println(list);
-    }
 
-    private static void arrayToList() {
+    @Test
+    public void arrayToList() {
         int[] array = new int[5];
         array[0] = 1;
         array[1] = 2;
@@ -86,7 +61,15 @@ public class JavaList {
         System.out.println(list);
     }
 
-    private static void getList() {
+    @Test
+    public void arrayToList2() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+        System.out.println(list);
+    }
+
+
+    @Test
+    public void getList() {
         List<List<Integer>> lists = new ArrayList<>();
         lists.add(Collections.singletonList(1));
         lists.add(Arrays.asList(2, 3));
@@ -94,7 +77,8 @@ public class JavaList {
         System.out.println(lists);
     }
 
-    private static void addFirstAndLast() {
+    @Test
+    public void addFirstAndLast() {
         LinkedList<Integer> list = new LinkedList<>();
         list.addLast(1);
         list.addLast(2);
@@ -113,15 +97,5 @@ public class JavaList {
         list1.addFirst(5);
         System.out.println("LinkedList addFirst 1,2,3,4,5 ");
         System.out.println(list1);
-
-        System.out.println(" ");
-        LinkedList<Integer> list2 = new LinkedList<>();
-        list2.addLast(1);
-        list2.addLast(2);
-        list2.addLast(3);
-        list2.addLast(4);
-        list2.addLast(5);
-        System.out.println("LinkedList addLast 1,2,3,4,5 ");
-        System.out.println(list2);
     }
 }
