@@ -2,6 +2,7 @@ package com.example.practice.questiones.tree.lc_958_一棵树是否是完全二�
 
 import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
+import com.example.practice.common.TreeOperation;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,11 +16,11 @@ public class Main {
      * ``````null``````
      */
     @Test
-    public void test_0() {
+    public void test() {
         TreeNode root = null;
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertTrue(completeTree);
+        Assertions.assertTrue(new Solution().isCompleteTree(root));
+        Assertions.assertTrue(new Solution2().isCompleteTree(root));
+        Assertions.assertTrue(new Solution3().isCompleteTree(root));
     }
 
     /**
@@ -34,9 +35,9 @@ public class Main {
     @Test
     public void test0() {
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, null, null);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertTrue(completeTree);
+        Assertions.assertTrue(new Solution().isCompleteTree(root));
+        Assertions.assertTrue(new Solution2().isCompleteTree(root));
+        Assertions.assertTrue(new Solution3().isCompleteTree(root));
     }
 
     /**
@@ -49,9 +50,9 @@ public class Main {
     @Test
     public void test1() {
         TreeNode root = TreeCreateFactory.init(false, 1, null, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertFalse(completeTree);
+        Assertions.assertFalse(new Solution().isCompleteTree(root));
+        Assertions.assertFalse(new Solution2().isCompleteTree(root));
+        Assertions.assertFalse(new Solution3().isCompleteTree(root));
     }
 
 
@@ -65,9 +66,9 @@ public class Main {
     @Test
     public void test2() {
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, null, null, 6, 7);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertFalse(completeTree);
+        Assertions.assertFalse(new Solution().isCompleteTree(root));
+        Assertions.assertFalse(new Solution2().isCompleteTree(root));
+        Assertions.assertFalse(new Solution3().isCompleteTree(root));
     }
 
 
@@ -82,8 +83,8 @@ public class Main {
     @Test
     public void test3() {
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, null);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertTrue(completeTree);
+        Assertions.assertTrue(new Solution().isCompleteTree(root));
+        Assertions.assertTrue(new Solution2().isCompleteTree(root));
+        Assertions.assertTrue(new Solution3().isCompleteTree(root));
     }
 }

@@ -21,7 +21,7 @@ public class Main {
         TreeOperation.show(root);
         Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), Arrays.asList(1, 2, 3, 2, 1)));
         Assertions.assertTrue(ListUtil.isSame(new Solution2().pre(root), Arrays.asList(1, 2, 3, 2, 1)));
-        Assertions.assertTrue(ListUtil.isSame(new Solution2().pre(root), new Solution2().pre(root)));
+        Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), new Solution2().pre(root)));
     }
 
     @Test
@@ -69,7 +69,6 @@ public class Main {
         );
         TreeOperation.show(root);
         List<Integer> list1 = Arrays.asList(1, 2, 4, 2, 1, 3, 7, 3, 1);
-        System.out.println(list1);
         Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), list1));
         Assertions.assertTrue(ListUtil.isSame(new Solution2().pre(root), list1));
         Assertions.assertTrue(ListUtil.isSame(new Solution().pre(root), new Solution2().pre(root)));

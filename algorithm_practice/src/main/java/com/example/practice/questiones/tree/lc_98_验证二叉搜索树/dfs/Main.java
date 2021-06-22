@@ -17,6 +17,7 @@ public class Main {
         TreeOperation.show(root);
         assertFalse(new Solution().isValidBST(root));
         assertFalse(new Solution2().isValidBST(root));
+        assertFalse(new Solution3().isValidBST(root));
     }
 
     @Test
@@ -25,5 +26,25 @@ public class Main {
         TreeOperation.show(root);
         Assertions.assertTrue(new Solution().isValidBST(root));
         Assertions.assertTrue(new Solution2().isValidBST(root));
+        Assertions.assertTrue(new Solution3().isValidBST(root));
+    }
+
+    @Test
+    public void test2() {
+        TreeNode root = TreeCreateFactory.init(false, 2, 1);
+        TreeOperation.show(root);
+        Assertions.assertTrue(new Solution().isValidBST(root));
+        Assertions.assertTrue(new Solution2().isValidBST(root));
+        Assertions.assertTrue(new Solution3().isValidBST(root));
+    }
+
+    @Test
+    public void test3() {
+        TreeNode root = TreeCreateFactory.init(false, 10, 8, 11, 4, 9);
+        TreeOperation.show(root);
+        Assertions.assertTrue(new Solution().isValidBST(root));
+        Assertions.assertTrue(new Solution2().isValidBST(root));
+        Assertions.assertTrue(new Solution3().isValidBST(root));
+
     }
 }

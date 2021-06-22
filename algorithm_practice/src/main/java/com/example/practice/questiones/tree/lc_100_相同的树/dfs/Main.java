@@ -25,5 +25,6 @@ public class Main {
         TreeOperation.show(root1);
         Assertions.assertTrue(new Solution().isSameTree(root, root1));
         Assertions.assertTrue(new Solution2().isSameTree(root, root1));
+        Assertions.assertTrue(new Solution3().isSameTree(root, root1));
     }
 }

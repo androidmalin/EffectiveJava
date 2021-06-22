@@ -13,11 +13,9 @@ public class Main {
      * ``````null``````
      */
     @Test
-    public void test_0() {
+    public void test() {
         TreeNode root = null;
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertTrue(completeTree);
+        Assertions.assertTrue(new Solution().isCompleteTree(root));
     }
 
     /**
@@ -32,9 +30,7 @@ public class Main {
     @Test
     public void test0() {
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, null, null);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertTrue(completeTree);
+        Assertions.assertTrue(new Solution().isCompleteTree(root));
     }
 
     /**
@@ -47,9 +43,7 @@ public class Main {
     @Test
     public void test1() {
         TreeNode root = TreeCreateFactory.init(false, 1, null, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertFalse(completeTree);
+        Assertions.assertFalse(new Solution().isCompleteTree(root));
     }
 
 
@@ -63,9 +57,7 @@ public class Main {
     @Test
     public void test2() {
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, null, null, 6, 7);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertFalse(completeTree);
+        Assertions.assertFalse(new Solution().isCompleteTree(root));
     }
 
 
@@ -80,8 +72,6 @@ public class Main {
     @Test
     public void test3() {
         TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, null);
-        Solution solution = new Solution();
-        boolean completeTree = solution.isCompleteTree(root);
-        Assertions.assertTrue(completeTree);
+        Assertions.assertTrue(new Solution().isCompleteTree(root));
     }
 }

@@ -11,7 +11,6 @@ public class Main {
 
     @Test
     public void test() {
-        Solution solution = new Solution();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
@@ -21,16 +20,15 @@ public class Main {
         root.right.right = null;
         TreeOperation.show(root);
         System.out.println(" ");
-        TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, null);
+        TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7,8);
         TreeOperation.show(root1);
-        Assertions.assertTrue(solution.isSameTree(root, root1));
+        Assertions.assertFalse(new Solution2().isSameTree(root, root1));
     }
 
     @Test
     public void test2() {
         TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3);
         TreeNode root2 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
-        Solution solution = new Solution();
-        Assertions.assertFalse(solution.isSameTree(root1, root2));
+        Assertions.assertFalse(new Solution2().isSameTree(root1, root2));
     }
 }

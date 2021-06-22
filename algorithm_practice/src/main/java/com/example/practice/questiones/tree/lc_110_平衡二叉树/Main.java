@@ -14,6 +14,7 @@ public class Main {
         TreeOperation.show(root);
         Assertions.assertTrue(new Solution().isBalanced(root));
         Assertions.assertTrue(new Solution2().isBalanced(root));
+        Assertions.assertTrue(new Solution3().isBalanced(root));
     }
 
 }

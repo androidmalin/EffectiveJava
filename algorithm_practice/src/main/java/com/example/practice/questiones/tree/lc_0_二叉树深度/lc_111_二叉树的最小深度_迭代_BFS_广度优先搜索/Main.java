@@ -16,5 +16,6 @@ public class Main {
         TreeOperation.show(root);
         assertEquals(2, new Solution().minDepth(root));
         assertEquals(2, new Solution2().minDepth(root));
+        assertEquals(2, new Solution3().minDepth(root));
     }
 }

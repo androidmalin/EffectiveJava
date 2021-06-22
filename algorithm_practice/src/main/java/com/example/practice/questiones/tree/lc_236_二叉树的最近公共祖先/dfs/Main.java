@@ -22,15 +22,16 @@ public class Main {
         root.right.right = new TreeNode(8);
         TreeOperation.show(root);
 
-        Solution solution = new Solution();
         TreeNode p = root.left.left;
         TreeNode q = root.left.right.right;
-        TreeNode node = solution.lowestCommonAncestor(root, p, q);
+        TreeNode node = new Solution().lowestCommonAncestor(root, p, q);
 
         System.out.println(" ");
         System.out.println("p:" + p + ",q:" + q + " lowestCommonAncestor=>" + node);
 
-        Assertions.assertEquals(root.left, node);
+        Assertions.assertEquals(root.left, new Solution().lowestCommonAncestor(root, p, q));
+        Assertions.assertEquals(root.left, new Solution2().lowestCommonAncestor(root, p, q));
+        Assertions.assertEquals(root.left, new Solution3().lowestCommonAncestor(root, p, q));
 
     }
 }

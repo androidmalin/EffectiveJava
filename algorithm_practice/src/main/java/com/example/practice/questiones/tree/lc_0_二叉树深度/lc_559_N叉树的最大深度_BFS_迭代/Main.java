@@ -20,6 +20,7 @@ public class Main {
 
         assertEquals(2, new Solution().maxDepth(node));
         assertEquals(2, new Solution2().maxDepth(node));
+        assertEquals(2, new Solution3().maxDepth(node));
     }
 
 }
