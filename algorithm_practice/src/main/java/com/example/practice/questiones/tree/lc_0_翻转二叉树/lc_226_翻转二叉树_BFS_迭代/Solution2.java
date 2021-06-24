@@ -30,7 +30,7 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, null, 7);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, null, 7);
         TreeOperation.show(root);
         Solution2 solution2 = new Solution2();
         TreeNode treeNode = solution2.invertTree(root);

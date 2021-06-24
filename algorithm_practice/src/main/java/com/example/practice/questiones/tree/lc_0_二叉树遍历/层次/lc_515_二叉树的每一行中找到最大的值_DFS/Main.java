@@ -19,7 +19,7 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 5, -73, null, -91, -22);
+        TreeNode root = TreeCreateFactory.init(5, -73, null, -91, -22);
         TreeOperation.show(root);
         List<Integer> actualList = new Solution().largestValues(root);
         List<Integer> expectedList = Arrays.asList(5, -73, -22);

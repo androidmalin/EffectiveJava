@@ -12,7 +12,7 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, null, null, 6, 7);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, null, null, 6, 7);
         TreeOperation.show(root);
         assertEquals(2, new Solution().minDepth(root));
         assertEquals(2, new Solution2().minDepth(root));

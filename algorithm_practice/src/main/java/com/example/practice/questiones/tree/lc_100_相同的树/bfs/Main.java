@@ -20,15 +20,15 @@ public class Main {
         root.right.right = null;
         TreeOperation.show(root);
         System.out.println(" ");
-        TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7,8);
+        TreeNode root1 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7,8);
         TreeOperation.show(root1);
         Assertions.assertFalse(new Solution2().isSameTree(root, root1));
     }
 
     @Test
     public void test2() {
-        TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3);
-        TreeNode root2 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        TreeNode root1 = TreeCreateFactory.init(1, 2, 3);
+        TreeNode root2 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
         Assertions.assertFalse(new Solution2().isSameTree(root1, root2));
     }
 }

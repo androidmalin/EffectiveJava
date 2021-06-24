@@ -38,7 +38,7 @@ public class Main {
 
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3,
+        TreeNode root = TreeCreateFactory.init(1, 2, 3,
                 4, 5, 6, 7,
                 8, 9, 10, 11, 12, 13, 14, 15
         );
@@ -63,7 +63,7 @@ public class Main {
      */
     @Test
     public void test3() {
-        TreeNode root = TreeCreateFactory.init(false,
+        TreeNode root = TreeCreateFactory.init(
                 1, 2, 3,
                 4, null, null, 7
         );
@@ -76,7 +76,7 @@ public class Main {
 
     @Test
     public void test4() {
-        TreeNode root = TreeCreateFactory.init(false,
+        TreeNode root = TreeCreateFactory.init(
                 1, 2, 3
         );
         TreeOperation.show(root);

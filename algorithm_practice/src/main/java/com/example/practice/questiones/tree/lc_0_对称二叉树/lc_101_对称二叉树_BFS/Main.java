@@ -12,26 +12,26 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 2, 3, 4, 4, 3);
+        TreeNode root = TreeCreateFactory.init(1, 2, 2, 3, 4, 4, 3);
         assertTrue(new Solution().isSymmetric(root));
 
-        TreeNode root2 = TreeCreateFactory.init(false, 1, 2, 3);
+        TreeNode root2 = TreeCreateFactory.init(1, 2, 3);
         assertFalse(new Solution().isSymmetric(root2));
     }
 
 
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 2, 3, 4, 4, 3);
+        TreeNode root = TreeCreateFactory.init(1, 2, 2, 3, 4, 4, 3);
         assertTrue(new Solution2().isSymmetric(root));
 
-        TreeNode root2 = TreeCreateFactory.init(false, 1, 2, 3);
+        TreeNode root2 = TreeCreateFactory.init(1, 2, 3);
         assertFalse(new Solution2().isSymmetric(root2));
     }
 
     @Test
     public void test3() {
-        TreeNode root = TreeCreateFactory.init(false, 1,0);
+        TreeNode root = TreeCreateFactory.init(1,0);
         assertFalse(new Solution2().isSymmetric(root));
     }
 }

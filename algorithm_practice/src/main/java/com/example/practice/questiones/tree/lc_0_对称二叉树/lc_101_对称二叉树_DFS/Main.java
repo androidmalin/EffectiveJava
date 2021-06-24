@@ -12,7 +12,7 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1,
+        TreeNode root = TreeCreateFactory.init(1,
                 2, 2,
                 3, 4, 4, 3,
                 5, 6, 7, 8, 8, 7, 6, 5

@@ -37,7 +37,7 @@ public class Solution2 {
 
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(false, -2147483648, null, 2147483647);
+        TreeNode root = TreeCreateFactory.init(-2147483648, null, 2147483647);
         TreeOperation.show(root);
         Solution2 solution2 = new Solution2();
         List<Integer> list = solution2.inorder(root);

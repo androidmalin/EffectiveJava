@@ -29,7 +29,7 @@ public class Main {
      */
     @Test
     public void test0() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, null, null);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, null, null);
         Assertions.assertTrue(new Solution().isCompleteTree(root));
     }
 
@@ -42,7 +42,7 @@ public class Main {
      */
     @Test
     public void test1() {
-        TreeNode root = TreeCreateFactory.init(false, 1, null, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(1, null, 3, 4, 5, 6, 7);
         Assertions.assertFalse(new Solution().isCompleteTree(root));
     }
 
@@ -56,7 +56,7 @@ public class Main {
      */
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, null, null, 6, 7);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, null, null, 6, 7);
         Assertions.assertFalse(new Solution().isCompleteTree(root));
     }
 
@@ -71,7 +71,7 @@ public class Main {
      */
     @Test
     public void test3() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, null);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
         Assertions.assertTrue(new Solution().isCompleteTree(root));
     }
 }

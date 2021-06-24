@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class Main {
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
         Solution solution = new Solution();
         boolean b = solution.hasPathSum(root, 7);
         boolean b1 = solution.hasPathSum(root, 8);
@@ -23,7 +23,7 @@ public class Main {
 
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
         Solution solution = new Solution();
         boolean b = solution.hasPathSum(root, 9);
         boolean b1 = solution.hasPathSum(root, 12);

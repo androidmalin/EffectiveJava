@@ -23,7 +23,7 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 3, 9, 20, null, null, 15, 7);
+        TreeNode root = TreeCreateFactory.init(3, 9, 20, null, null, 15, 7);
         TreeOperation.show(root);
         Solution solution = new Solution();
         List<List<Integer>> lists = new ArrayList<>();

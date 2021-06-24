@@ -47,7 +47,7 @@ public class Solution2 {
         System.out.println("max:" + (Integer.MIN_VALUE == a));
         System.out.println("result:" + result);
 
-        TreeNode root = TreeCreateFactory.init(false, -2147483648, null, 2147483647);
+        TreeNode root = TreeCreateFactory.init(-2147483648, null, 2147483647);
         TreeOperation.show(root);
         Solution2 solution2 = new Solution2();
         solution2.inorder(root, new ArrayList<>());

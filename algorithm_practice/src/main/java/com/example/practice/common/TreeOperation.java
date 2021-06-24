@@ -25,7 +25,7 @@ public class TreeOperation {
 
     public static void main(String[] args) {
         // 根据给定的数组创建一棵树
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
         // 将刚刚创建的树打印出来
         TreeOperation.show(root);
     }

@@ -39,7 +39,7 @@ public class Solution2 {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, null, 3);
+        TreeNode root = TreeCreateFactory.init(1, null, 3);
         TreeOperation.show(root);
         Solution2 solution2 = new Solution2();
         int totalNum = solution2.countNode(root);
@@ -50,7 +50,7 @@ public class Solution2 {
 
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(false, 1, null, 3);
+        TreeNode root = TreeCreateFactory.init(1, null, 3);
         TreeOperation.show(root);
         Solution2 solution2 = new Solution2();
         int totalNum = solution2.countNode(root);

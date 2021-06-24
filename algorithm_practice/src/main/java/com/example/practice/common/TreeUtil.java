@@ -7,6 +7,30 @@ import java.util.Queue;
 
 public class TreeUtil {
 
+
+    public static TreeNode getRandomTree() {
+        Integer[] randomArray = getRandomArray(100);
+        return TreeCreateFactory.createBinTree(randomArray);
+    }
+
+    public static TreeNode getRandomTree(int size) {
+        Integer[] randomArray = getRandomArray(size);
+        return TreeCreateFactory.createBinTree(randomArray);
+    }
+
+    private static Integer[] getRandomArray(int length) {
+        int size = (int) (Math.random() * length);
+        int nullPosition = (int) (Math.random() * (size - 1));
+        Integer[] arrayResult = new Integer[size];
+        for (int i = 0; i < size; i++) {
+            arrayResult[i] = (int) (Math.random() * 100);
+            if (nullPosition != 0) {
+                arrayResult[nullPosition] = null;
+            }
+        }
+        return arrayResult;
+    }
+
     /**
      * 两棵树是否相同
      * test pass
@@ -124,7 +148,7 @@ public class TreeUtil {
     }
 
     public static TreeNode getCompleteTree() {
-        return TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        return TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
     }
 
     /**

@@ -13,7 +13,7 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 1);
+        TreeNode root = TreeCreateFactory.init(1, 1);
         TreeOperation.show(root);
         assertFalse(new Solution().isValidBST(root));
         assertFalse(new Solution2().isValidBST(root));
@@ -22,7 +22,7 @@ public class Main {
 
     @Test
     public void test1() {
-        TreeNode root = TreeCreateFactory.init(false, 2, 1, 3);
+        TreeNode root = TreeCreateFactory.init(2, 1, 3);
         TreeOperation.show(root);
         Assertions.assertTrue(new Solution().isValidBST(root));
         Assertions.assertTrue(new Solution2().isValidBST(root));
@@ -31,7 +31,7 @@ public class Main {
 
     @Test
     public void test2() {
-        TreeNode root = TreeCreateFactory.init(false, 2, 1);
+        TreeNode root = TreeCreateFactory.init(2, 1);
         TreeOperation.show(root);
         Assertions.assertTrue(new Solution().isValidBST(root));
         Assertions.assertTrue(new Solution2().isValidBST(root));
@@ -40,7 +40,7 @@ public class Main {
 
     @Test
     public void test3() {
-        TreeNode root = TreeCreateFactory.init(false, 10, 8, 11, 4, 9);
+        TreeNode root = TreeCreateFactory.init(10, 8, 11, 4, 9);
         TreeOperation.show(root);
         Assertions.assertTrue(new Solution().isValidBST(root));
         Assertions.assertTrue(new Solution2().isValidBST(root));

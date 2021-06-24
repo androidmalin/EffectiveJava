@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Main {
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, 7);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, 7);
         TreeOperation.show(root);
         assertEquals(3, new Solution().maxDepth(root));
         assertEquals(3, new Solution2().maxDepth(root));

@@ -28,7 +28,7 @@ public class Solution {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3);
+        TreeNode root = TreeCreateFactory.init(1, 2, 3);
         TreeOperation.show(root);
         int sum = sumNumbers(root);
         System.out.println(sum);

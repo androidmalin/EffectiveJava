@@ -21,7 +21,7 @@ public class Main {
         TreeOperation.show(root);
         System.out.println(" ");
 
-        TreeNode root1 = TreeCreateFactory.init(false, 1, 2, 3, 4, 5, 6, null);
+        TreeNode root1 = TreeCreateFactory.init(1, 2, 3, 4, 5, 6, null);
         TreeOperation.show(root1);
         Assertions.assertTrue(new Solution().isSameTree(root, root1));
         Assertions.assertTrue(new Solution2().isSameTree(root, root1));

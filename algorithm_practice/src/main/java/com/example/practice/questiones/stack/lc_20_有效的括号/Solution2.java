@@ -12,28 +12,26 @@ import java.util.Map;
  * 左括号必须以正确的顺序闭合。
  * <p>
  * https://leetcode-cn.com/problems/valid-parentheses/
- * <p>
- * 提示：
- * 1 <= s.length <= 10^4
- * s 仅由括号 '()[]{}' 组成
  */
-public class Solution {
+public class Solution2 {
+
     public boolean isValid(String s) {
-        int n = s.length();
-        if (n % 2 == 1) return false;
-        Map<Character, Character> pairs = new HashMap<Character, Character>() {{
+        //参数判断
+        int length = s.length();
+        if (length % 2 != 0) return false;
+
+        Map<Character, Character> map = new HashMap<Character, Character>() {{
             put(')', '(');
-            put(']', '[');
             put('}', '{');
+            put(']', '[');
         }};
+
         Deque<Character> stack = new LinkedList<>();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < length; i++) {
             char ch = s.charAt(i);
-            if (pairs.containsKey(ch)) {
-                if (stack.isEmpty() || stack.peek() != pairs.get(ch)) {
-                    return false;
-                }
-                stack.pop();
+            if (map.containsKey(ch)) {
+                if (stack.isEmpty() || !stack.peek().equals(map.get(ch))) return false;
+                stack.poll();
             } else {
                 stack.push(ch);
             }

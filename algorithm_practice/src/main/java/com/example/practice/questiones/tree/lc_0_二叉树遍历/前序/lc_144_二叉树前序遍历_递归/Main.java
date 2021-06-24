@@ -1,5 +1,6 @@
 package com.example.practice.questiones.tree.lc_0_二叉树遍历.前序.lc_144_二叉树前序遍历_递归;
 
+import com.example.practice.common.ListUtil;
 import com.example.practice.common.TreeNode;
 import com.example.practice.common.TreeUtil;
 
@@ -15,8 +16,7 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeUtil.getTreeNode();
-        Solution solution = new Solution();
-        Assertions.assertEquals(TreeUtil.preOrder(root), solution.preorderTraversal(root));
+        TreeNode root = TreeUtil.getRandomTree();
+        Assertions.assertTrue(ListUtil.isSame(TreeUtil.preOrder(root), new Solution().preorderTraversal(root)));
     }
 }

@@ -1,10 +1,7 @@
 package com.example.practice.questiones.huisu.lc_129_求根节点到叶节点数字之和;
 
 
-import com.example.practice.common.TreeCreateFactory;
 import com.example.practice.common.TreeNode;
-
-import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -48,13 +45,5 @@ public class Solution_BFS {
             }
         }
         return sum;
-    }
-
-    @Test
-    public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 1, 2, 3);
-        Solution_BFS solution = new Solution_BFS();
-        int i = solution.sumNumbers(root);
-        System.out.println(i);
     }
 }

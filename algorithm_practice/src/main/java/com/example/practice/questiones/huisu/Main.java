@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        TreeNode root = TreeCreateFactory.init(false,
+        TreeNode root = TreeCreateFactory.init(
                 1,
                 2, 5,
                 3, null, null, null

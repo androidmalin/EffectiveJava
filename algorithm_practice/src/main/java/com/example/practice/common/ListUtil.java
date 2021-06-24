@@ -5,23 +5,43 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListUtil {
 
-    public static <T extends Comparable<T>> boolean isSame(List<T> expectedList, List<T> actualList) {
-        if (expectedList == null && actualList == null) return true;
-        if (expectedList == null ^ actualList == null) return false;
-        if (expectedList.size() != actualList.size()) return false;
-        int size = expectedList.size();
-        for (int i = 0; i < size; i++) {
-            T t1 = expectedList.get(i);
-            T t2 = actualList.get(i);
-            if (t1 == null && t2 == null) continue;
-            if (t1 == null ^ t2 == null) return false;
-            if (t1.compareTo(t2) != 0) return false;
+    public static void main() {
+        List<Integer> list1 = Arrays.asList(1, 2, 3, 4);
+        List<String> list2 = Arrays.asList("1", "2", "3");
+        boolean equalList = isSame(list1, list2);
+        System.out.println(equalList);
+    }
+
+    public static boolean isSame(final Collection<?> list1, final Collection<?> list2) {
+        if (list1 == list2) return true;
+        if (list1 == null ^ list2 == null) return false;
+        if (list1.size() != list2.size()) return false;
+        final Iterator<?> it1 = list1.iterator();
+        final Iterator<?> it2 = list2.iterator();
+        Object obj1;
+        Object obj2;
+        while (it1.hasNext() && it2.hasNext()) {
+            obj1 = it1.next();
+            obj2 = it2.next();
+            if (obj1 == null && obj2 == null) continue;
+            if (obj1 == null ^ obj2 == null) return false;
+            if (!obj1.equals(obj2)) return false;
         }
-        return true;
+        return !it1.hasNext() && !it2.hasNext();
+    }
+
+    @Test
+    public void test() {
+        List<List<Integer>> expectedList = new ArrayList<>();
+        expectedList.add(new ArrayList<>(Arrays.asList(1, 2, 3)));
+        expectedList.add(new ArrayList<>(Arrays.asList(1, 5)));
+        Assertions.assertFalse(ListUtil.isSame(expectedList, null));
     }
 
     @Test

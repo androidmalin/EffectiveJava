@@ -20,7 +20,7 @@ public class Main {
 
     @Test
     public void test() {
-        TreeNode root = TreeCreateFactory.init(false, 3, 9, 20, 15, null, 7, null);
+        TreeNode root = TreeCreateFactory.init(3, 9, 20, 15, null, 7, null);
         TreeOperation.show(root);
         List<Double> expectedList = Arrays.asList(3.0, 14.5, 11.0);
         assertEquals(expectedList, new Solution().averageOfLevels(root));
